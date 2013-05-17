@@ -1,0 +1,17 @@
+/*
+Theme Name: WP Foundation
+Theme URI: http://wordpress.org/
+Description: A simple wordpress theme based on the Foundation CSS framework by Zurb
+Author: Micah Blu
+Author URI: http://micahblu.com
+Version: 1.0
+Tags: black, blue, white, two-columns, fixed-width, custom-header, custom-background, threaded-comments, sticky-post, translation-ready, microformats, rtl-language-support, editor-style, custom-menu (optional)
+
+License:
+License URI:
+
+*/
+
+#menu-main-menu li a {
+	color:white!important;	
+}
