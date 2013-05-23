@@ -1,5 +1,6 @@
 <?php
-add_theme_support('menus'); 
+
+//add_theme_support('menus'); 
 
 /*
 http://codex.wordpress.org/Function_Reference/register_nav_menus#Examples
@@ -17,7 +18,7 @@ function foundation_nav_bar() {
         'container' => false,             // remove menu container
         'container_class' => '',          // class of container
         'menu' => '',                     // menu name
-        'menu_class' => 'nav-bar',        // adding custom nav class
+        'menu_class' => 'nav-bar right button-group',        // adding custom nav class
         'theme_location' => 'main-menu',  // where it's located in the theme
         'before' => '',                   // before each link <a>
         'after' => '',                    // after each link </a>
@@ -34,7 +35,7 @@ function foundation_nav_bar() {
 http://codex.wordpress.org/Template_Tags/wp_list_pages
 */
 function main_nav_fb() {
-	echo '<ul class="nav-bar">';
+	echo '<ul class="nav-bar right button-group">';
 	wp_list_pages(array(
 		'depth'        => 0,
 		'child_of'     => 0,
@@ -60,16 +61,17 @@ http://www.kriesi.at/archives/improve-your-wordpress-navigation-menu-output
 http://code.hyperspatial.com/1514/twitter-bootstrap-walker-classes/ 
 */
 class nav_walker extends Walker_Nav_Menu {
+	
     function start_el(&$output, $item, $depth, $args) {
         global $wp_query;
-		
+	
         $indent = ($depth) ? str_repeat("\t", $depth) : '';
 
         $class_names = $value = '';
 
         $classes = empty($item->classes) ? array() : (array) $item->classes;
 		  
-	$classes[] = ($item->current) ? 'active' : '';
+		$classes[] = ($item->current) ? 'active' : '';
         $classes[] = ($args->has_children) ? 'has-flyout' : '';
 
         $class_names = join(' ', apply_filters('nav_menu_css_class', array_filter($classes), $item, $args ) );
@@ -86,7 +88,7 @@ class nav_walker extends Walker_Nav_Menu {
         $description = !empty($item->description) ? '<span class="menu-item-description">'.esc_attr($item->description).'</span>' : '';
 
         $item_output  = $args->before;
-        $item_output .= '<a'.$attributes.'>';
+        $item_output .= '<a'.$attributes.' class="button">';
         $item_output .= $args->link_before.apply_filters('the_title', $item->title, $item->ID);
         $item_output .= $description.$args->link_after;
         $item_output .= ($args->has_children && depth == 0) ? '</a><a href="'.$item->url.'" class="flyout-toggle"><span> </span></a>' : '</a>';
@@ -125,7 +127,6 @@ class page_walker extends Walker_Page {
     function start_el(&$output, $page, $depth, $args, $current_page) {
 		
         $indent = ($depth) ? str_repeat("\t", $depth) : '';
-
         extract($args, EXTR_SKIP);
         $classes = array('page_item', 'page-item-'.$page->ID);
         if (!empty($current_page)) {
@@ -145,7 +146,7 @@ class page_walker extends Walker_Page {
         $classes = implode(' ', apply_filters('page_css_class', $classes, $page));
 		
         $output .= $indent.'<li class="'.$classes.'">';
-        $output .= '<a href="'.get_page_link($page->ID).'" title="'.esc_attr(wp_strip_all_tags($page->post_title)).'">';
+        $output .= '<a class="button" href="'.get_page_link($page->ID).'" title="'.esc_attr(wp_strip_all_tags($page->post_title)).'">';
         $output .= $args['link_before'].$page->post_title.$args['link_after'];
         $output .= '</a>';
     }
