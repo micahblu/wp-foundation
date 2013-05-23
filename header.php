@@ -4,7 +4,7 @@ global $wp_foundation_options;
 <!DOCTYPE html>
 <!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
-<head>
+<head <?php language_attributes(); ?>>
   <meta charset="utf-8" />
 
   <!-- Set the viewport width to device width for mobile -->
@@ -39,7 +39,7 @@ global $wp_foundation_options;
 
   <?php wp_head(); ?>
 </head>
-<body>
+<body <?php body_class(); ?>>
 
   <div class="row">
     <div class="large-9 columns">

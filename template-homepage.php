@@ -11,7 +11,7 @@
  *
  * @package WordPress
  * @subpackage WP Foundation
- * @since WP Foundation 0.7
+ * @since WP Foundation 1.0
  */
 
 get_header(); ?>
