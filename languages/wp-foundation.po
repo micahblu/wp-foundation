@@ -1,0 +1,911 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. Text in echo
+#: 404.php:22
+msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
+msgstr ""
+
+#. Text in echo
+#: 404.php:18
+msgid "This is somewhat embarrassing, isn&rsquo;t it?"
+msgstr ""
+
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. Text in echo
+#: archive.php:19
+msgid "Archives"
+msgstr ""
+
+#. Text in function
+#: archive.php:19
+msgid "Daily Archives: %s"
+msgstr ""
+
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. Text in function
+#: author.php:51
+msgid "About %s"
+msgstr ""
+
+#. Text in function
+#: author.php:32
+msgid "Author Archives: %s"
+msgstr ""
+
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. Text in function
+#: category.php:21
+msgid "Category Archives: %s"
+msgstr ""
+
+
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. Text in function
+#: comments.php:41
+msgid "&larr; Older Comments"
+msgstr ""
+
+#. Text in echo
+#: comments.php:40
+msgid "Comment navigation"
+msgstr ""
+
+#. Text in echo
+#: comments.php:51
+msgid "Comments are closed."
+msgstr ""
+
+#. Text in function
+#: comments.php:42
+msgid "Newer Comments &rarr;"
+msgstr ""
+
+
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. Text in function
+#: content-aside.php:23
+msgid "1 Reply"
+msgstr ""
+
+
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. Text in function
+#: content-image.php:23
+msgid "% Replies"
+msgstr ""
+
+#. Text in function
+#: content-image.php:13
+msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
+msgstr ""
+
+#. Text in function
+#: content-image.php:26
+msgid "Edit"
+msgstr ""
+
+#. Text in function
+#: content-image.php:23
+msgid "Leave a reply"
+msgstr ""
+
+#. Text in function
+#: content-image.php:17
+msgid "Permalink to %s"
+msgstr ""
+
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. Text in function
+#: content-image.php:23
+msgid "1 Reply"
+msgstr ""
+
+
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. Text in function
+#: content-link.php:21
+msgid "% Replies"
+msgstr ""
+
+#. Text in function
+#: content-link.php:14
+msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
+msgstr ""
+
+#. Text in function
+#: content-link.php:24
+msgid "Edit"
+msgstr ""
+
+#. Text in function
+#: content-link.php:21
+msgid "Leave a reply"
+msgstr ""
+
+#. Text in function
+#: content-link.php:18
+msgid "Permalink to %s"
+msgstr ""
+
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. Text in function
+#: content-link.php:21
+msgid "1 Reply"
+msgstr ""
+
+#. Text in echo
+#: content-link.php:12
+msgid "Link"
+msgstr ""
+
+
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. Text in echo
+#: content-none.php:17
+msgid "Apologies, but no results were found. Perhaps searching will help find a related post."
+msgstr ""
+
+#. Text in echo
+#: content-none.php:13
+msgid "Nothing Found"
+msgstr ""
+
+
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. Text in function
+#: content-page.php:21
+msgid "Edit"
+msgstr ""
+
+#. Text in function
+#: content-page.php:18
+msgid "Pages:"
+msgstr ""
+
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. Text in function
+#: content-quote.php:20
+msgid "% Replies"
+msgstr ""
+
+#. Text in function
+#: content-quote.php:13
+msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
+msgstr ""
+
+#. Text in function
+#: content-quote.php:23
+msgid "Edit"
+msgstr ""
+
+#. Text in function
+#: content-quote.php:20
+msgid "Leave a reply"
+msgstr ""
+
+#. Text in function
+#: content-quote.php:17
+msgid "Permalink to %s"
+msgstr ""
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. Text in function
+#: content-quote.php:20
+msgid "1 Reply"
+msgstr ""
+
+
+
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. Text in function
+#: content-status.php:27
+msgid "1 Reply"
+msgstr ""
+
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. Text in function
+#: content-status.php:27
+msgid "% Replies"
+msgstr ""
+
+#. Text in function
+#: content-status.php:21
+msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
+msgstr ""
+
+#. Text in function
+#: content-status.php:30
+msgid "Edit"
+msgstr ""
+
+#. Text in function
+#: content-status.php:27
+msgid "Leave a reply"
+msgstr ""
+
+#. Text in function
+#: content-status.php:15
+msgid "Permalink to %s"
+msgstr ""
+
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. Text in function
+#: content.php:31
+msgid "1 Reply"
+msgstr ""
+
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. Text in function
+#: content.php:31
+msgid "% Replies"
+msgstr ""
+
+#. Text in function
+#: content.php:57
+msgid "About %s"
+msgstr ""
+
+#. Text in function
+#: content.php:43
+msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
+msgstr ""
+
+#. Text in function
+#: content.php:50
+msgid "Edit"
+msgstr ""
+
+#. Text in echo
+#: content.php:14
+msgid "Featured post"
+msgstr ""
+
+#. Text in function
+#: content.php:31
+msgid "Leave a reply"
+msgstr ""
+
+#. Text in function
+#: content.php:44
+msgid "Pages:"
+msgstr ""
+
+#. Text in function
+#: content.php:23
+msgid "Permalink to %s"
+msgstr ""
+
+#. Text in function
+#: content.php:61
+msgid "View all posts by %s <span class=\"meta-nav\">&rarr;</span>"
+msgstr ""
+
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. Text in function
+#: functions.php:154
+msgid ", "
+msgstr ""
+
+#. Text in function
+#: functions.php:154
+msgid "This entry was posted in %1$s and tagged %2$s on %3$s<span class=\"by-author\"> by %4$s</span>."
+msgstr ""
+
+#. Text in function
+#: functions.php:154
+msgid "This entry was posted in %1$s on %3$s<span class=\"by-author\"> by %4$s</span>."
+msgstr ""
+
+#. Text in function
+#: functions.php:154
+msgid "This entry was posted on %3$s<span class=\"by-author\"> by %4$s</span>."
+msgstr ""
+
+#. Text in function
+#: functions.php:154
+msgid "View all posts by %s"
+msgstr ""
+
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. Text in function
+#: header.php:12
+msgid "Page %s"
+msgstr ""
+
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. Text in function
+#: widgets.php:1
+msgid "Blog Sidebar"
+msgstr ""
+
+#. Text in function
+#: widgets.php:1
+msgid "Home Widget Center"
+msgstr ""
+
+#. Text in function
+#: widgets.php:1
+msgid "Home Widget Left"
+msgstr ""
+
+#. Text in function
+#: widgets.php:1
+msgid "Home Widget Right"
+msgstr ""
+
+#. Text in function
+#: widgets.php:1
+msgid "Page Sidebar"
+msgstr ""
+
+
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. Text in function
+#: widgets.php:1
+msgid "Blog Sidebar"
+msgstr ""
+
+#. Text in function
+#: widgets.php:1
+msgid "Home Widget Center"
+msgstr ""
+
+#. Text in function
+#: widgets.php:1
+msgid "Home Widget Left"
+msgstr ""
+
+#. Text in function
+#: widgets.php:1
+msgid "Home Widget Right"
+msgstr ""
+
+#. Text in function
+#: widgets.php:1
+msgid "Page Sidebar"
+msgstr ""
+
+
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. Text in echo
+#: index.php:51
+msgid "Apologies, but no results were found. Perhaps searching will help find a related post."
+msgstr ""
+
+#. Text in echo
+#: index.php:36
+msgid "No posts to display"
+msgstr ""
+
+#. Text in echo
+#: index.php:47
+msgid "Nothing Found"
+msgstr ""
+
+#. Text in function
+#: index.php:40
+msgid "Ready to publish your first post? <a href=\"%s\">Get started here</a>."
+msgstr ""
+
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. Text in echo
+#: search.php:32
+msgid "Nothing Found"
+msgstr ""
+
+#. Text in function
+#: search.php:18
+msgid "Search Results for: %s"
+msgstr ""
+
+#. Text in echo
+#: search.php:36
+msgid "Sorry, but nothing matched your search criteria. Please try again with some different keywords."
+msgstr ""
+
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. Text in function
+#: sidebar.php:20
+msgid "This is your sidebar, add your widgets in appearance&ndash;&gt;widgets to see them"
+msgstr ""
+
+
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. Text in function
+#: single.php:23
+msgid "Posted by <a href=\"%2$s\" title=\"%3$s\" rel=\"author\">%4$s</a> %1$s"
+msgstr ""
+
+#. Text in function
+#: single.php:23
+msgid "View all posts by %s"
+msgstr ""
+
+
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. Text in function
+#: tag.php:21
+msgid "Tag Archives: %s"
+msgstr ""
+
+
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. Text in function
+#: template-homepage.php:88
+msgid "This is a content section."
+msgstr ""
+
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. Text in function
+#: options.php:362
+msgid "Passed an array of tags with term_id and term_name"
+msgstr ""
+
+#. Text in function
+#: options.php:362
+msgid "Select a Tag"
+msgstr ""
+
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. Text in function
+#: options.php:362
+msgid "A wider select box."
+msgstr ""
+
+#. Text in function
+#: options.php:362
+msgid "Advanced Settings"
+msgstr ""
+
+#. Text in function
+#: options.php:362
+msgid "Basic Settings"
+msgstr ""
+
+#. Text in function
+#: options.php:362
+msgid "Change Background"
+msgstr ""
+
+#. Text in function
+#: options.php:362
+msgid "Change the background CSS."
+msgstr ""
+
+#. Text in function
+#: options.php:362
+msgid "Change the background color and/or image."
+msgstr ""
+
+#. Text in function
+#: options.php:362
+msgid "Check to Show a Hidden Text Input"
+msgstr ""
+
+#. Text in function
+#: options.php:362
+msgid "Click here and see what happens."
+msgstr ""
+
+#. Text in function
+#: options.php:362
+msgid "Colorpicker"
+msgstr ""
+
+#. Text in function
+#: options.php:362
+msgid "Crepe"
+msgstr ""
+
+#. Text in function
+#: options.php:362
+msgid "Custom Typography"
+msgstr ""
+
+#. Text in function
+#: options.php:362
+msgid "Custom typography options."
+msgstr ""
+
+#. Text in function
+#: options.php:362
+msgid "Default Text Editor"
+msgstr ""
+
+#. Text in function
+#: options.php:362
+msgid "Example Background"
+msgstr ""
+
+#. Text in function
+#: options.php:362
+msgid "Example Info"
+msgstr ""
+
+#. Text in function
+#: options.php:362
+msgid "Example checkbox, defaults to true."
+msgstr ""
+
+#. Text in function
+#: options.php:362
+msgid "Example typography."
+msgstr ""
+
+#. Text in function
+#: options.php:362
+msgid "Favicon Uploader"
+msgstr ""
+
+#. Text in function
+#: options.php:362
+msgid "Five"
+msgstr ""
+
+#. Text in function
+#: options.php:362
+msgid "Four"
+msgstr ""
+
+#. Text in function
+#: options.php:362
+msgid "French Toast"
+msgstr ""
+
+#. Text in function
+#: options.php:362
+msgid "Global Link color"
+msgstr ""
+
+#. Text in function
+#: options.php:362
+msgid "Hidden Text Input"
+msgstr ""
+
+#. Text in function
+#: options.php:362
+msgid "Input Checkbox"
+msgstr ""
+
+#. Text in function
+#: options.php:362
+msgid "Input Radio (one)"
+msgstr ""
+
+#. Text in function
+#: options.php:362
+msgid "Input Select Small"
+msgstr ""
+
+#. Text in function
+#: options.php:362
+msgid "Input Select Wide"
+msgstr ""
+
+#. Text in function
+#: options.php:362
+msgid "Logo Uploader"
+msgstr ""
+
+#. Text in function
+#: options.php:362
+msgid "Multicheck"
+msgstr ""
+
+#. Text in function
+#: options.php:362
+msgid "Multicheck description."
+msgstr ""
+
+#. Text in function
+#: options.php:362
+msgid "No color selected by default."
+msgstr ""
+
+#. Text in function
+#: options.php:362
+msgid "Omelette"
+msgstr ""
+
+#. Text in function
+#: options.php:362
+msgid "One"
+msgstr ""
+
+#. Text in function
+#: options.php:362
+msgid "Pancake"
+msgstr ""
+
+#. Text in function
+#: options.php:362
+msgid "Passed an array of categories with cat_ID and cat_name"
+msgstr ""
+
+#. Text in function
+#: options.php:362
+msgid "Passed an pages with ID and post_title"
+msgstr ""
+
+#. Text in function
+#: options.php:362
+msgid "Paste Your Google Analytics code or other footer scripts here"
+msgstr ""
+
+#. Text in function
+#: options.php:362
+msgid "Radio select with default options \"one\"."
+msgstr ""
+
+#. Text in function
+#: options.php:362
+msgid "Select a Category"
+msgstr ""
+
+#. Text in function
+#: options.php:362
+msgid "Select a Page"
+msgstr ""
+
+#. Text in function
+#: options.php:362
+msgid "Select a global link color"
+msgstr ""
+
+#. Text in function
+#: options.php:362
+msgid "Set your global Font Face."
+msgstr ""
+
+#. Text in function
+#: options.php:362
+msgid "Small Select Box."
+msgstr ""
+
+#. Text in function
+#: options.php:362
+msgid "Text Editor"
+msgstr ""
+
+#. Text in function
+#: options.php:362
+msgid "This creates a full size uploader that previews the image."
+msgstr ""
+
+#. Text in function
+#: options.php:362
+msgid "This is just some example information you can put in the panel."
+msgstr ""
+
+#. Text in function
+#: options.php:362
+msgid "This option is hidden unless activated by a checkbox click."
+msgstr ""
+
+#. Text in function
+#: options.php:362
+msgid "Three"
+msgstr ""
+
+#. Text in function
+#: options.php:362
+msgid "Tracking code"
+msgstr ""
+
+#. Text in function
+#: options.php:362
+msgid "Two"
+msgstr ""
+
+#. Text in function
+#: options.php:362
+msgid "Typography"
+msgstr ""
+
+#. Text in function
+#: options.php:362
+msgid "Upload your custom favicon here. Filename should be named \"favicon.ico\" and be 16 X 16"
+msgstr ""
+
+#. Text in function
+#: options.php:362
+msgid "Upload your logo here"
+msgstr ""
+
+#. Text in function
+#: options.php:362
+msgid "Uploader Test"
+msgstr ""
+
+#. Text in function
+#: options.php:362
+msgid "Waffle"
+msgstr ""
+
+#. Text in function
+#: options.php:362
+msgid "You can also pass settings to the editor.  Read more about wp_editor in <a href=\"%1$s\" target=\"_blank\">the WordPress codex</a>"
+msgstr ""
+
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. Text in echo
+#: options-framework.php:253
+msgid "Restore Defaults"
+msgstr ""
+
+#. Text in echo
+#: options-framework.php:252
+msgid "Save Options"
+msgstr ""
+
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. Text in function
+#: options-framework.php:253
+msgid "Click OK to reset. Any theme settings will be lost!"
+msgstr ""
+
+#. Text in echo
+#: options-framework.php:228
+msgid "Donate"
+msgstr ""
+
+#. Text in echo
+#: options-framework.php:231
+msgid "Rate WP Foundation"
+msgstr ""
+
+#. Text in function
+#: options-framework.php:262
+msgid "Theme Options"
+msgstr ""
+
+#. Text in echo
+#: options-framework.php:226
+msgid "Upgrade to Pro"
+msgstr ""
+
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. Text in function
+#: options-medialibrary-uploader.php:278
+msgid "View File"
+msgstr ""
+
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. Text in function
+#: options-medialibrary-uploader.php:278
+msgid "Upload"
+msgstr ""

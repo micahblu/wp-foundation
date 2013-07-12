@@ -23,7 +23,7 @@ if ( ! function_exists( 'optionsframework_mlu_init' ) ) {
 	function optionsframework_mlu_init () {
 		register_post_type( 'optionsframework', array(
 			'labels' => array(
-				'name' => __( 'Theme Options Media', 'options_framework_theme' ),
+				'name' => __( 'Theme Options Media', 'wp-foundation' ),
 			),
 			'public' => true,
 			'show_ui' => false,

@@ -37,7 +37,7 @@ function hwim_action_admin_footer() {
 add_action( 'admin_footer', 'hwim_action_admin_footer' );
 
 function hwim_action_plugins_loaded() {
-	load_plugin_textdomain( 'hwim', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
+	load_plugin_textdomain( 'hwim', false, get_template_directory() . '/includes/widgets/hw-image-widget/languages/' );
 }
 add_action( 'plugins_loaded', 'hwim_action_plugins_loaded' );
 

@@ -31,7 +31,7 @@ function optionsframework_option_name() {
  * Defines an array of options that will be used to generate the settings page and be saved in the database.
  * When creating the 'id' fields, make sure to use all lowercase and no spaces.
  *
- * If you are making your theme translatable, you should replace 'options_framework_theme'
+ * If you are making your theme translatable, you should replace 'wp-foundation'
  * with the actual text domain for your theme.  Read more:
  * http://codex.wordpress.org/Function_Reference/load_theme_textdomain
  */
@@ -40,20 +40,20 @@ function optionsframework_options() {
 
 	// Test data
 	$test_array = array(
-		'one' => __('One', 'options_framework_theme'),
-		'two' => __('Two', 'options_framework_theme'),
-		'three' => __('Three', 'options_framework_theme'),
-		'four' => __('Four', 'options_framework_theme'),
-		'five' => __('Five', 'options_framework_theme')
+		'one' => __('One', 'wp-foundation'),
+		'two' => __('Two', 'wp-foundation'),
+		'three' => __('Three', 'wp-foundation'),
+		'four' => __('Four', 'wp-foundation'),
+		'five' => __('Five', 'wp-foundation')
 	);
 
 	// Multicheck Array
 	$multicheck_array = array(
-		'one' => __('French Toast', 'options_framework_theme'),
-		'two' => __('Pancake', 'options_framework_theme'),
-		'three' => __('Omelette', 'options_framework_theme'),
-		'four' => __('Crepe', 'options_framework_theme'),
-		'five' => __('Waffle', 'options_framework_theme')
+		'one' => __('French Toast', 'wp-foundation'),
+		'two' => __('Pancake', 'wp-foundation'),
+		'three' => __('Omelette', 'wp-foundation'),
+		'four' => __('Crepe', 'wp-foundation'),
+		'five' => __('Waffle', 'wp-foundation')
 	);
 
 	// Multicheck Defaults
@@ -123,39 +123,39 @@ function optionsframework_options() {
 	
 	/* Begin of Basic Settings */
 	$options[] = array(
-		'name' => __('Basic Settings', 'options_framework_theme'),
+		'name' => __('Basic Settings', 'wp-foundation'),
 		'type' => 'heading');
 	
 	$options[] = array(
-		'name' => __('Logo Uploader', 'options_framework_theme'),
-		'desc' => __('Upload your logo here', 'options_framework_theme'),
+		'name' => __('Logo Uploader', 'wp-foundation'),
+		'desc' => __('Upload your logo here', 'wp-foundation'),
 		'id' => 'logo',
 		'type' => 'upload');
 	
 	/*
 	$options[] = array(
-		'name' => __('Favicon Uploader', 'options_framework_theme'),
-		'desc' => __('Upload your custom favicon here. Filename should be named "favicon.ico" and be 16 X 16', 'options_framework_theme'),
+		'name' => __('Favicon Uploader', 'wp-foundation'),
+		'desc' => __('Upload your custom favicon here. Filename should be named "favicon.ico" and be 16 X 16', 'wp-foundation'),
 		'id' => 'wpf-favicon',
 		'type' => 'upload');
 	*/
 	
 	$options[] = array(
-		'name' =>  __('Change Background', 'options_framework_theme'),
-		'desc' => __('Change the background color and/or image.', 'options_framework_theme'),
+		'name' =>  __('Change Background', 'wp-foundation'),
+		'desc' => __('Change the background color and/or image.', 'wp-foundation'),
 		'id' => 'background',
 		'std' => $background_defaults,
 		'type' => 'background' );
 		
 	$options[] = array(
-		'name' => __('Global Link color', 'options_framework_theme'),
-		'desc' => __('Select a global link color', 'options_framework_theme'),
+		'name' => __('Global Link color', 'wp-foundation'),
+		'desc' => __('Select a global link color', 'wp-foundation'),
 		'id' => 'global_link_color',
 		'std' => 'gray',
 		'type' => 'color');
 		
-	$options[] = array( 'name' => __('Typography', 'options_framework_theme'),
-		'desc' => __('Set your global Font Face.', 'options_framework_theme'),
+	$options[] = array( 'name' => __('Typography', 'wp-foundation'),
+		'desc' => __('Set your global Font Face.', 'wp-foundation'),
 		'id' => "typography",
 		'std' => $typography_defaults,
 		'type' => 'typography',
@@ -163,16 +163,16 @@ function optionsframework_options() {
 		
 		
 	$options[] = array(
-		'name' => __('Tracking code', 'options_framework_theme'),
-		'desc' => __('Paste Your Google Analytics code or other footer scripts here', 'options_framework_theme'),
+		'name' => __('Tracking code', 'wp-foundation'),
+		'desc' => __('Paste Your Google Analytics code or other footer scripts here', 'wp-foundation'),
 		'id' => 'footer_scripts',
 		'std' => '',
 		'type' => 'textarea');
 	
 	/*
 	$options[] = array(
-		'name' => __('Input Select Small', 'options_framework_theme'),
-		'desc' => __('Small Select Box.', 'options_framework_theme'),
+		'name' => __('Input Select Small', 'wp-foundation'),
+		'desc' => __('Small Select Box.', 'wp-foundation'),
 		'id' => 'example_select',
 		'std' => 'three',
 		'type' => 'select',
@@ -180,16 +180,16 @@ function optionsframework_options() {
 		'options' => $test_array);
 
 	$options[] = array(
-		'name' => __('Input Select Wide', 'options_framework_theme'),
-		'desc' => __('A wider select box.', 'options_framework_theme'),
+		'name' => __('Input Select Wide', 'wp-foundation'),
+		'desc' => __('A wider select box.', 'wp-foundation'),
 		'id' => 'example_select_wide',
 		'std' => 'two',
 		'type' => 'select',
 		'options' => $test_array);
 
 	$options[] = array(
-		'name' => __('Select a Category', 'options_framework_theme'),
-		'desc' => __('Passed an array of categories with cat_ID and cat_name', 'options_framework_theme'),
+		'name' => __('Select a Category', 'wp-foundation'),
+		'desc' => __('Passed an array of categories with cat_ID and cat_name', 'wp-foundation'),
 		'id' => 'example_select_categories',
 		'type' => 'select',
 		'options' => $options_categories);
@@ -202,28 +202,28 @@ function optionsframework_options() {
 		'options' => $options_tags);
 
 	$options[] = array(
-		'name' => __('Select a Page', 'options_framework_theme'),
-		'desc' => __('Passed an pages with ID and post_title', 'options_framework_theme'),
+		'name' => __('Select a Page', 'wp-foundation'),
+		'desc' => __('Passed an pages with ID and post_title', 'wp-foundation'),
 		'id' => 'example_select_pages',
 		'type' => 'select',
 		'options' => $options_pages);
 
 	$options[] = array(
-		'name' => __('Input Radio (one)', 'options_framework_theme'),
-		'desc' => __('Radio select with default options "one".', 'options_framework_theme'),
+		'name' => __('Input Radio (one)', 'wp-foundation'),
+		'desc' => __('Radio select with default options "one".', 'wp-foundation'),
 		'id' => 'example_radio',
 		'std' => 'one',
 		'type' => 'radio',
 		'options' => $test_array);
 
 	$options[] = array(
-		'name' => __('Example Info', 'options_framework_theme'),
-		'desc' => __('This is just some example information you can put in the panel.', 'options_framework_theme'),
+		'name' => __('Example Info', 'wp-foundation'),
+		'desc' => __('This is just some example information you can put in the panel.', 'wp-foundation'),
 		'type' => 'info');
 
 	$options[] = array(
-		'name' => __('Input Checkbox', 'options_framework_theme'),
-		'desc' => __('Example checkbox, defaults to true.', 'options_framework_theme'),
+		'name' => __('Input Checkbox', 'wp-foundation'),
+		'desc' => __('Example checkbox, defaults to true.', 'wp-foundation'),
 		'id' => 'example_checkbox',
 		'std' => '1',
 		'type' => 'checkbox');
@@ -233,26 +233,26 @@ function optionsframework_options() {
 	/* Advanced Options 
 	
 	$options[] = array(
-		'name' => __('Advanced Settings', 'options_framework_theme'),
+		'name' => __('Advanced Settings', 'wp-foundation'),
 		'type' => 'heading');
 
 	$options[] = array(
-		'name' => __('Check to Show a Hidden Text Input', 'options_framework_theme'),
-		'desc' => __('Click here and see what happens.', 'options_framework_theme'),
+		'name' => __('Check to Show a Hidden Text Input', 'wp-foundation'),
+		'desc' => __('Click here and see what happens.', 'wp-foundation'),
 		'id' => 'example_showhidden',
 		'type' => 'checkbox');
 		
 	$options[] = array(
-		'name' => __('Hidden Text Input', 'options_framework_theme'),
-		'desc' => __('This option is hidden unless activated by a checkbox click.', 'options_framework_theme'),
+		'name' => __('Hidden Text Input', 'wp-foundation'),
+		'desc' => __('This option is hidden unless activated by a checkbox click.', 'wp-foundation'),
 		'id' => 'example_text_hidden',
 		'std' => 'Hello',
 		'class' => 'hidden',
 		'type' => 'text');
 
 	$options[] = array(
-		'name' => __('Uploader Test', 'options_framework_theme'),
-		'desc' => __('This creates a full size uploader that previews the image.', 'options_framework_theme'),
+		'name' => __('Uploader Test', 'wp-foundation'),
+		'desc' => __('This creates a full size uploader that previews the image.', 'wp-foundation'),
 		'id' => 'example_uploader',
 		'type' => 'upload');
 
@@ -269,36 +269,36 @@ function optionsframework_options() {
 	);
 
 	$options[] = array(
-		'name' =>  __('Example Background', 'options_framework_theme'),
-		'desc' => __('Change the background CSS.', 'options_framework_theme'),
+		'name' =>  __('Example Background', 'wp-foundation'),
+		'desc' => __('Change the background CSS.', 'wp-foundation'),
 		'id' => 'example_background',
 		'std' => $background_defaults,
 		'type' => 'background' );
 
 	$options[] = array(
-		'name' => __('Multicheck', 'options_framework_theme'),
-		'desc' => __('Multicheck description.', 'options_framework_theme'),
+		'name' => __('Multicheck', 'wp-foundation'),
+		'desc' => __('Multicheck description.', 'wp-foundation'),
 		'id' => 'example_multicheck',
 		'std' => $multicheck_defaults, // These items get checked by default
 		'type' => 'multicheck',
 		'options' => $multicheck_array);
 
 	$options[] = array(
-		'name' => __('Colorpicker', 'options_framework_theme'),
-		'desc' => __('No color selected by default.', 'options_framework_theme'),
+		'name' => __('Colorpicker', 'wp-foundation'),
+		'desc' => __('No color selected by default.', 'wp-foundation'),
 		'id' => 'example_colorpicker',
 		'std' => '',
 		'type' => 'color' );
 		
-	$options[] = array( 'name' => __('Typography', 'options_framework_theme'),
-		'desc' => __('Example typography.', 'options_framework_theme'),
+	$options[] = array( 'name' => __('Typography', 'wp-foundation'),
+		'desc' => __('Example typography.', 'wp-foundation'),
 		'id' => "example_typography",
 		'std' => $typography_defaults,
 		'type' => 'typography' );
 		
 	$options[] = array(
-		'name' => __('Custom Typography', 'options_framework_theme'),
-		'desc' => __('Custom typography options.', 'options_framework_theme'),
+		'name' => __('Custom Typography', 'wp-foundation'),
+		'desc' => __('Custom typography options.', 'wp-foundation'),
 		'id' => "custom_typography",
 		'std' => $typography_defaults,
 		'type' => 'typography',
@@ -308,7 +308,7 @@ function optionsframework_options() {
 	
 	/* Text Editor
 	$options[] = array(
-		'name' => __('Text Editor', 'options_framework_theme'),
+		'name' => __('Text Editor', 'wp-foundation'),
 		'type' => 'heading' );
 
 	/**
@@ -326,8 +326,8 @@ function optionsframework_options() {
 	);
 	
 	$options[] = array(
-		'name' => __('Default Text Editor', 'options_framework_theme'),
-		'desc' => sprintf( __( 'You can also pass settings to the editor.  Read more about wp_editor in <a href="%1$s" target="_blank">the WordPress codex</a>', 'options_framework_theme' ), 'http://codex.wordpress.org/Function_Reference/wp_editor' ),
+		'name' => __('Default Text Editor', 'wp-foundation'),
+		'desc' => sprintf( __( 'You can also pass settings to the editor.  Read more about wp_editor in <a href="%1$s" target="_blank">the WordPress codex</a>', 'wp-foundation' ), 'http://codex.wordpress.org/Function_Reference/wp_editor' ),
 		'id' => 'example_editor',
 		'type' => 'editor',
 		'settings' => $wp_editor_settings );

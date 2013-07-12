@@ -167,7 +167,7 @@ function optionsframework_setdefaults() {
 if ( !function_exists( 'optionsframework_add_page' ) ) {
 
 	function optionsframework_add_page() {
-		$of_page = add_theme_page(__('Theme Options', 'options_framework_theme'), __('Theme Options', 'options_framework_theme'), 'edit_theme_options', 'options-framework','optionsframework_page');
+		$of_page = add_theme_page(__('Theme Options', 'wp-foundation'), __('Theme Options', 'wp-foundation'), 'edit_theme_options', 'options-framework','optionsframework_page');
 		
 		// Load the required CSS and javscript
 		add_action('admin_enqueue_scripts', 'optionsframework_load_scripts');
@@ -250,7 +250,7 @@ if ( !function_exists( 'optionsframework_page' ) ) {
 			<?php optionsframework_fields(); /* Settings */ ?>
 			<div id="optionsframework-submit">
 				<input type="submit" class="button-primary" name="update" value="<?php esc_attr_e( 'Save Options', 'optionsframework' ); ?>" />
-				<input type="submit" class="reset-button button-secondary" name="reset" value="<?php esc_attr_e( 'Restore Defaults', 'optionsframework' ); ?>" onclick="return confirm( '<?php print esc_js( __( 'Click OK to reset. Any theme settings will be lost!', 'options_framework_theme' ) ); ?>' );" />
+				<input type="submit" class="reset-button button-secondary" name="reset" value="<?php esc_attr_e( 'Restore Defaults', 'optionsframework' ); ?>" onclick="return confirm( '<?php print esc_js( __( 'Click OK to reset. Any theme settings will be lost!', 'wp-foundation' ) ); ?>' );" />
 				<div class="clear"></div>
 			</div>
 			</form>
@@ -282,7 +282,7 @@ function optionsframework_validate( $input ) {
 	 */
 
 	if ( isset( $_POST['reset'] ) ) {
-		add_settings_error( 'options-framework', 'restore_defaults', __( 'Default options restored.', 'options_framework_theme' ), 'updated fade' );
+		add_settings_error( 'options-framework', 'restore_defaults', __( 'Default options restored.', 'wp-foundation' ), 'updated fade' );
 		return of_get_default_values();
 	} else {
 	
@@ -325,7 +325,7 @@ function optionsframework_validate( $input ) {
 			}
 		}
 
-		add_settings_error( 'options-framework', 'save_options', __( 'Options saved.', 'options_framework_theme' ), 'updated fade' );
+		add_settings_error( 'options-framework', 'save_options', __( 'Options saved.', 'wp-foundation' ), 'updated fade' );
 		return $clean;
 	}
 
@@ -376,7 +376,7 @@ function optionsframework_adminbar() {
 	$wp_admin_bar->add_menu( array(
 			'parent' => 'appearance',
 			'id' => 'of_theme_options',
-			'title' => __( 'Theme Options', 'options_framework_theme' ),
+			'title' => __( 'Theme Options', 'wp-foundation' ),
 			'href' => admin_url( 'themes.php?page=options-framework' )
 		));
 }
