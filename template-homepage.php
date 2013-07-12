@@ -2,10 +2,7 @@
 /**
  * Template Name: Homepage
  *
- * This is the most generic template file in a WordPress theme
- * and one of the two required files for a theme (the other being style.css).
- * It is used to display a page when nothing more specific matches a query.
- * For example, it puts together the home page when no home.php file exists.
+ * This is template for the front page, being that the user elects to use it
  *
  * Learn more: http://codex.wordpress.org/Template_Hierarchy
  *
@@ -17,64 +14,83 @@
 get_header(); ?>
 
 <!-- First Band (Slider) -->
-
-  <div class="row">
+	
+  <div class="row" id="featured">
     <div class="large-12 columns">
-    <ul data-orbit>
-      <li><img src="http://placehold.it/1000x400&text=[ img 1 ]" /></li>
-      <li><img src="http://placehold.it/1000x400&text=[ img 2 ]" /></li>
-      <li><img src="http://placehold.it/1000x400&text=[ img 3 ]" /></li>
-      <li><img src="http://placehold.it/1000x400&text=[ img 4 ]" /></li>
+      <ul data-orbit>
+    	<?php
+    	 
+  		$args = array(
+				'posts_per_page'  => 5,
+				'offset'          => 0,
+				'category'        => '',
+				'orderby'         => 'post_date',
+				'order'           => 'DESC',
+				'include'         => '',
+				'exclude'         => '',
+				'meta_key'        => '',
+				'meta_value'      => '',
+				'post_type'       => 'slide',
+				'post_mime_type'  => '',
+				'post_parent'     => '',
+				'post_status'     => 'publish',
+				'suppress_filters' => true 
+			);
+    	$slides = get_posts($args);
+    
+    	foreach($slides as $slide) : ?>
+    		
+    		<?php if ( $url = wp_get_attachment_url( get_post_thumbnail_id($slide->ID) ) ): ?>
+	
+					<li style="background: url('<?php echo $url; ?>') no-repeat center center">
+						<h1><?php echo $slide->post_title; ?></h1>
+						<p><?php echo $slide->post_content; ?></p>	
+					</li>
+					<?php else : ?>
+					
+					<?php endif; ?>
+
+    	<?php endforeach; ?>
     </ul>
-    <!-- <div id="slider">
-      
-    </div> -->
     
     <hr />
     </div>
   </div>
   
-<!-- Three-up Content Blocks -->
+	<!-- Three-up Content Blocks -->
 
-	<div class="row">
+	<div id="home-widgets" class="row">
 		<div class="large-4 columns">
+			<div class="panel">
+			<?php if(!dynamic_sidebar('home-widget-left')) : ?>
+			
 	      <img src="http://placehold.it/400x300&text=[img]" />
-	      <h4>This is a content section.</h4>
+	      <h4><?php echo __('This is a content section.', 'wp-foundation') ;?></h4>
 	      <p>Bacon ipsum dolor sit amet nulla ham qui sint exercitation eiusmod commodo, chuck duis velit. Aute in reprehenderit, dolore aliqua non est magna in labore pig pork biltong. Eiusmod swine spare ribs reprehenderit culpa. Boudin aliqua adipisicing rump corned beef.</p>
+	    <?php endif; ?>
+			</div>
 		</div>
     
-	    <div class="large-4 columns">
-	      <img src="http://placehold.it/400x300&text=[img]" />
-	      <h4>This is a content section.</h4>
+    <div class="large-4 columns">
+    	<div class="panel">
+      <?php if(!dynamic_sidebar('home-widget-center')) : ?>
+      <img src="http://placehold.it/400x300&text=[img]" />
+	      <h4><?php echo __('This is a content section.', 'wp-foundation') ;?></h4>
 	      <p>Bacon ipsum dolor sit amet nulla ham qui sint exercitation eiusmod commodo, chuck duis velit. Aute in reprehenderit, dolore aliqua non est magna in labore pig pork biltong. Eiusmod swine spare ribs reprehenderit culpa. Boudin aliqua adipisicing rump corned beef.</p>
-	    </div>
+    <?php endif; ?>
+    	</div><!-- .panel -->
+    </div><!-- .large-4 columns -->
     
-	    <div class="large-4 columns">
+    <div class="large-4 columns">
+    	<div class="panel">
+      <?php if(!dynamic_sidebar('home-widget-right')) : ?>
 	      <img src="http://placehold.it/400x300&text=[img]" />
-	      <h4>This is a content section.</h4>
+	      <h4><?php echo __('This is a content section.', 'wp-foundation') ;?></h4>
 	      <p>Bacon ipsum dolor sit amet nulla ham qui sint exercitation eiusmod commodo, chuck duis velit. Aute in reprehenderit, dolore aliqua non est magna in labore pig pork biltong. Eiusmod swine spare ribs reprehenderit culpa. Boudin aliqua adipisicing rump corned beef.</p>
-	    </div>
-    </div>
-    
-<!-- Call to Action Panel -->
-<div class="row">
-    <div class="large-12 columns">
-    
-      <div class="panel">
-        <h4>Get in touch!</h4>
-            
-        <div class="row">
-          <div class="large-9 columns">
-            <p>We'd love to hear from you, you attractive person you.</p>
-          </div>
-          <div class="large-3 columns">
-            <a href="#" class="radius button right">Contact Us</a>
-          </div>
-        </div>
-      </div>
-      
-    </div>
-  </div>
+    <?php endif; ?>
+    	</div><!-- .panel -->
+    </div><!-- .large-4 columns -->
+  </div><!-- .row -->
 <?php 
 get_footer();
 ?>

@@ -1,12 +1,11 @@
 <?php
 
-//add_theme_support('menus'); 
-
 /*
 http://codex.wordpress.org/Function_Reference/register_nav_menus#Examples
 */
 register_nav_menus( array(
-	'main-menu' => 'Main Menu' // registers the menu in the WordPress admin menu editor
+	'main-menu' => 'Main Menu',
+	'footer-menu' => 'Footer Menu'
 ) );
 
 
@@ -29,7 +28,6 @@ function foundation_nav_bar() {
         'walker' => new nav_walker()      // walker to customize menu (see foundation-nav-walker)
 	));
 }
-
 
 /*
 http://codex.wordpress.org/Template_Tags/wp_list_pages
@@ -91,7 +89,7 @@ class nav_walker extends Walker_Nav_Menu {
         $item_output .= '<a'.$attributes.' class="button">';
         $item_output .= $args->link_before.apply_filters('the_title', $item->title, $item->ID);
         $item_output .= $description.$args->link_after;
-        $item_output .= ($args->has_children && depth == 0) ? '</a><a href="'.$item->url.'" class="flyout-toggle"><span> </span></a>' : '</a>';
+        $item_output .= ($args->has_children && $depth == 0) ? '</a><a href="'.$item->url.'" class="flyout-toggle"><span> </span></a>' : '</a>';
         $item_output .= $args->after;
 
         $output .= apply_filters('walker_nav_menu_start_el', $item_output, $item, $depth, $args);

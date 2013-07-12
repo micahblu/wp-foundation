@@ -1,43 +1,48 @@
 <?php
 /**
- * Functions.php
+ * Theme's Bootstrap 
  *
- * This file acts as a bootstrap for our theme's functions, hooks and filters
- *
+ * @package WordPress
+ * @subpackage WP Foundation
+ * @since WP Foundation 0.7
  */
-
-
-if ( ! isset( $content_width ) ) $content_width = 960;
+ 
+if ( ! isset( $content_width ) ) $content_width = 1000;
 
 //before we go any further let's add our wordpress extension methods
-require dirname( __FILE__ ) . '/lib/extends.php';	
+require dirname( __FILE__ ) . '/includes/wp-extend.php';
+require dirname( __FILE__ ) . '/includes/widgets.php';
+require dirname( __FILE__ ) . '/includes/orbit-carousel-slider.php';	
+require dirname( __FILE__ ) . '/includes/foundation-shortcodes.php';
+require dirname( __FILE__ ) . '/includes/pro-shortcodes.php';
+require dirname( __FILE__ ) . '/lib/prism/prism.php';
 
 /** 
  * Globally Declare our Theme Options if they exist
  * ------------------------------------------------------------------------------- */
- 
 $optionsframework_settings = get_option('optionsframework');
 
 $theme = wp_get_theme();
+
 $template = $theme->template;
 
 // Gets the unique option id
-if( !empty($template) ){
-	$option_name = $template;
-}
-elseif ( isset( $optionsframework_settings['id'] ) ) {
-	$option_name = $optionsframework_settings['id'];
-	
-}
-else {
-	$option_name = 'optionsframework';
-}
+if( !empty($template) ) $option_name = $template;
 
+elseif ( isset( $optionsframework_settings['id'] ) ) $option_name = $optionsframework_settings['id'];	
+
+else $option_name = 'optionsframework';
+
+//our global options variable
 $wp_foundation_options = get_option($option_name);
 
 /**
- * wp_foundation_setup
+ * Sets up Theme Options
  *
+ * @since 0.7
+ * @access private
+ *
+ * @return null
  */
 function wp_foundation_setup() {
 	
@@ -46,92 +51,117 @@ function wp_foundation_setup() {
 		require_once dirname( __FILE__ ) . '/lib/options-framework.php';
 	}
 	
-	// theme supports
+	// Add native Wordpress Theme support
 	add_theme_support( 'menus' ); 
 	add_theme_support( 'post-thumbnails', array( 'post', 'page' ) );
 	add_theme_support( 'automatic-feed-links' );
-	$defaults = array(
-		'default-color'          => '',
-		'default-image'          => '',
-		'wp-head-callback'       => '_custom_background_cb',
-		'admin-head-callback'    => '',
-		'admin-preview-callback' => ''
-	);
-	add_theme_support( 'custom-background', $defaults );
 	
-	/* Add our custom Foundation Menu Walker */
+	// Add our custom Foundation Menu Walker
 	include get_template_directory() . '/lib/FoundationMenuWalker.php';
+	include get_template_directory() . '/lib/FoundationTopBarMenuWalker.php';
+	
 }
 
 add_action("after_setup_theme", "wp_foundation_setup");
 
+/**
+ * Queue our javascript and css.
+ *
+ * @since 0.7
+ * @access private
+ *
+ *
+ * @return null
+ */
 function wp_foundation_enqueue_scripts() {
-	wp_enqueue_style( 'foundation-core', get_stylesheet_directory_uri() . '/css/foundation.css', false ); 
-	wp_enqueue_style( 'core', get_stylesheet_directory_uri() . '/style.css', false ); 
-	
-	wp_enqueue_script( 'comment-reply' );
-}
 
-function wp_foundation_enqueue_script() {
+	// styles	
+	wp_enqueue_style('foundation-core', get_stylesheet_directory_uri() . '/css/foundation.css', false);
 	
+	wp_enqueue_style('core', get_stylesheet_directory_uri() . '/style.css', false); 
+	
+	//wp_register_style('open-sans', 'http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,700,800,600');
+  //wp_enqueue_style('open-sans' );
+	
+	// scripts
+	wp_enqueue_script('modernizr', get_stylesheet_directory_uri() . '/js/vendor/custom.modernizr.js', null, null, true);
+	
+	// deregister wp's jquery as we want to use the version that has been tested with and comes with foundation
+	wp_deregister_script('jquery');
+	wp_register_script('jquery', get_stylesheet_directory_uri() . '/js/vendor/jquery.js', null, null, true);
+	wp_enqueue_script('jquery');
+	
+	wp_enqueue_script('foundation-js', get_stylesheet_directory_uri() . '/js/foundation.min.js', null, null, true);
+	
+	if ( is_singular() ) wp_enqueue_script( 'comment-reply' );
+
 }
 
 add_action( 'wp_enqueue_scripts', 'wp_foundation_enqueue_scripts' );
 
-
 /**
- * Register widgetized area and update sidebar with default widgets
+ * Insert Theme Option Styles in the header that will override style.css
  *
- * @since wp_launchpad 1.0
- */
-function wp_foundation_widgets_init() {
-	register_sidebar( array(
-		'name' => __( 'Page Sidebar', 'wp_foundation' ),
-		'id' => 'page-sidebar',
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget' => "</aside>",
-		'before_title' => '<h1 class="widget-title"><small>',
-		'after_title' => '</small></h1>',
-	) );
-
-
-	register_sidebar( array(
-		'name' => __( 'Blog Sidebar', 'wp_foundation' ),
-		'id' => 'blog-sidebar',
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget' => "</aside>",
-		'before_title' => '<h1 class="widget-title"><small>',
-		'after_title' => '</small></h1>',
-	) );
-
-}
-add_action( 'widgets_init', 'wp_foundation_widgets_init' );
-
-/**
- * wp_foundation_head
+ * @since  1.0
+ * @access private
+ *
+ * @return null
  */
 function wp_foundation_head(){
+
 	global $wp_foundation_options;
 	?>
 	<style type="text/css">
 	/* Custom Theme Styles */
 	body{
+	
+		<?php if(!empty($wp_foundation_options["background"]["image"]) or !empty($wp_foundation_options["background"]["color"])) : ?>
+			
 		background: <?php echo (!empty($wp_foundation_options["background"]["image"]) ? "url(".$wp_foundation_options["background"]["image"].") " . $wp_foundation_options["background"]["position"] . " " . $wp_foundation_options["background"]["repeat"] : $wp_foundation_options["background"]["color"]); ?>;
+		<?php endif; ?>
 		
+		<?php if(!empty($wp_foundation_options["background"]["attachment"])) : ?>
 		background-attachment: <?php echo $wp_foundation_options["background"]["attachment"] == "fixed" ? "fixed" : "scroll" ?>;
+		<?php endif; ?>
 		
+		<?php if(!empty($wp_foundation_options["typography"]["face"])) : ?>
 		font-family: <?php echo $wp_foundation_options["typography"]["face"]; ?>;
+		<?php endif; ?>
+				
+		<?php if(!empty($wp_foundation_options["typography"]["style"])) : ?>
 		font-weight: <?php echo $wp_foundation_options["typography"]["style"]; ?>;
-		font-size: <?php echo $wp_foundation_options["typography"]["size"]	; ?>;
+		<?php endif; ?>
+		
+		<?php if(!empty($wp_foundation_options["typography"]["color"])) : ?>
 		color: <?php echo $wp_foundation_options["typography"]["color"]; ?>;
+		<?php endif; ?>
 	}
 	
+	p{
+		<?php if(!empty($wp_foundation_options["typography"]["size"])
+				  && !is_array($wp_foundation_options["typography"]["size"])) : ?>
+		font-size: <?php echo $wp_foundation_options["typography"]["size"]; ?>;
+		<?php endif; ?>
+	}
+	
+	<?php if(!empty($wp_foundation_options["global_link_color"])) : ?>
 	a, a:visited{
 		color: <?php echo $wp_foundation_options["global_link_color"]; ?>;
 	}
+	<?php endif; ?>
+	
 	</style>
-<?php }
+	<?php 
+}
 
+/**
+ * Insert Footer scripts
+ *
+ * @since  1.0
+ * @access private
+ *
+ * @return null
+ */
 function wp_foundation_footer(){
 	global $wp_foundation_options;
 	
@@ -141,19 +171,20 @@ function wp_foundation_footer(){
 add_action("wp_head", "wp_foundation_head");
 add_action("wp_footer", "wp_foundation_footer");
 
-
-if ( ! function_exists( 'wp_foundation_entry_meta' ) ) :
 /**
  * Prints HTML with meta information for current post: categories, tags, permalink, author, and date.
  *
- * @since wp-foundation 1.0
+ * @since  1.0
+ * @access private
+ *
+ * @return null
  */
 function wp_foundation_entry_meta() {
 	// Translators: used between list items, there is a space after the comma.
-	$categories_list = get_the_category_list( __( ', ', 'wp_foundation' ) );
+	$categories_list = get_the_category_list( __( ', ', 'wp-foundation' ) );
 
 	// Translators: used between list items, there is a space after the comma.
-	$tag_list = get_the_tag_list( '', __( ', ', 'wp_foundation' ) );
+	$tag_list = get_the_tag_list( '', __( ', ', 'wp-foundation' ) );
 
 	$date = sprintf( '<a href="%1$s" title="%2$s" rel="bookmark"><time class="entry-date" datetime="%3$s">%4$s</time></a>',
 		esc_url( get_permalink() ),
@@ -164,17 +195,17 @@ function wp_foundation_entry_meta() {
 
 	$author = sprintf( '<span class="author vcard"><a class="url fn n" href="%1$s" title="%2$s" rel="author">%3$s</a></span>',
 		esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
-		esc_attr( sprintf( __( 'View all posts by %s', 'wp_foundation' ), get_the_author() ) ),
+		esc_attr( sprintf( __( 'View all posts by %s', 'wp-foundation' ), get_the_author() ) ),
 		get_the_author()
 	);
 
 	// Translators: 1 is category, 2 is tag, 3 is the date and 4 is the author's name.
 	if ( $tag_list ) {
-		$utility_text = __( 'This entry was posted in %1$s and tagged %2$s on %3$s<span class="by-author"> by %4$s</span>.', 'wp_foundation' );
+		$utility_text = __( 'This entry was posted in %1$s and tagged %2$s on %3$s<span class="by-author"> by %4$s</span>.', 'wp-foundation' );
 	} elseif ( $categories_list ) {
-		$utility_text = __( 'This entry was posted in %1$s on %3$s<span class="by-author"> by %4$s</span>.', 'wp_foundation' );
+		$utility_text = __( 'This entry was posted in %1$s on %3$s<span class="by-author"> by %4$s</span>.', 'wp-foundation' );
 	} else {
-		$utility_text = __( 'This entry was posted on %3$s<span class="by-author"> by %4$s</span>.', 'wp_foundation' );
+		$utility_text = __( 'This entry was posted on %3$s<span class="by-author"> by %4$s</span>.', 'wp-foundation' );
 	}
 
 	printf(
@@ -185,6 +216,48 @@ function wp_foundation_entry_meta() {
 		$author
 	);
 }
-endif;
+
+
+remove_filter( 'the_content', array( $GLOBALS['wp_embed'], 'autoembed' ), 8 );
+add_filter( 'the_content', 'youtube_url_to_embed'); 
+
+/** 
+	* Convert YouTu.be URLs into their full length counterparts 
+	* 
+	* @param string $url A URL, maybe with youtu.be in it 
+	* @return string A URL, with any YouTube URL expanded 
+	*/ 
+
+function youtube_url_to_embed( $content ) { 
+	
+	preg_match_all("/http:\/\/youtu.be\/(.*)/i", $content, $matches);
+	
+	$yturl = trim(strip_tags($matches[0][0]));
+	
+	if(!empty($yturl)){
+	
+		$ytID = str_replace("http://youtu.be/", "", $yturl);
+	
+		return str_replace($yturl, '<div class="flex-video widescreen"><iframe width="420" height="315" src="http://www.youtube.com/embed/' . $ytID . '" frameborder="0" allowfullscreen></iframe></div>', $content);
+	}else{
+		return $content;
+	}
+} 
+
+/** 
+	* Apply do_shortcode to widget text
+	* 
+	* @param string $url A URL, maybe with youtu.be in it 
+	* @return string A URL, with any YouTube URL expanded 
+	*
+	* @since 1.0
+	* @param string
+	*/ 
+
+function apply_shortcode_to_widget_text($content){
+	return do_shortcode(nl2br($content));
+}
+
+add_filter("widget_text", "apply_shortcode_to_widget_text");
 
 ?>

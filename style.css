@@ -1,6 +1,6 @@
 /*
 Theme Name: WP Foundation
-Theme URI: http://wordpress.org/
+Theme URI: http://micahblu.com/lab/wp-foundation
 Description: A simple wordpress theme based on the Foundation CSS framework by Zurb
 Author: Micah Blu
 Author URI: http://micahblu.com
@@ -11,7 +11,90 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 Tags: dark, blue, light, white, black, gray, one-column, two-columns, left-sidebar, right-sidebar, fixed-width, flexible-width, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-images, flexible-header, full-width-template, microformats, post-formats, sticky-post, theme-options, translation-ready
 Text Domain: wp-foundation
+
+ * WP Foundation WordPress Theme Copyright 2013 Micah Blu Sylvester.
+ * This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+ 
+ * Note: You will see that most of this file is simply a CSS shell... its becuase most of the heavy lifting is done by the Foundation framework, I've included the standard wordpress classnames & Id's so that you can begin to add your custom styles without having to look for all the elements yourself. Happy theming... :)
+
 */
+
+
+/* =Orbit Carousel Slider
+-------------------------------------------------------------- */
+.orbit-slides-container li{
+	min-height: 400px;
+	-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+	-moz-box-sizing: border-box;    /* Firefox, other Gecko */
+	box-sizing: border-box;         /* Opera/IE 8+ */
+	padding: 50px;
+}
+
+.orbit-slides-container li h1,
+.orbit-slides-container li p{
+	color: white;
+	text-shadow: 2px 3px 4px black;
+}
+
+/* Default Typography
+-------------------------------------------------------------- */
+h1, h2, p{
+	font-family: 'Open Sans', Helvetica, sans-serif;
+	font-weight: 300;
+}
+
+h3, h4, h5, h6, strong, b{
+	font-family: 'Open Sans', Helvetica, sans-serif;
+	font-weight: 800;
+}
+
+/* =Header 
+-------------------------------------------------------------- */
+
+#header .site-title{
+	margin-bottom: 0px;
+}
+
+#header .subheader{
+	margin-top:0px;
+}
+
+.archive-title,
+.page-title{
+	font-size: 1.6em;
+}
+
+/* =Sidebar & Widgets
+-------------------------------------------------------------- */
+#secondary ul li{
+	list-style: none;
+}
+
+#home-widgets h2{
+	font-size: 1.6em;
+}
+
+.home-widget-text-wrapper{
+	margin-top: 15px;
+}
+
+/* =Meta
+-------------------------------------------------------------- */
+.vcard {
+	display: inline-block;
+	margin: inherit;
+	border: 0px;
+	padding: inherit;
+}
+
+.meta {
+	font-size: .45em;
+	top: -25px;
+	padding: 0px;
+	position: relative;
+	color: rgb(179, 179, 179);
+}
 
 /* =WordPress Core
 -------------------------------------------------------------- */
@@ -52,7 +135,17 @@ Text Domain: wp-foundation
 
 /* Default Post Styles */
 .post-id {}
-.post {}
+.post {
+	border-bottom: 1px solid #ccc;
+	padding-bottom: 55px;
+	margin-bottom: 45px;
+}
+
+.post:last-child{
+	margin-bottom: 0px;
+	border-bottom: 0px;
+}
+
 .page {}
 .attachment {}
 .sticky {}

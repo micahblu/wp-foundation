@@ -2,6 +2,29 @@
 /* Options Framework Admin Styles */
 /*-------------------------------------------------------------------------------------------*/
 
+.upgrade-cta{
+	background: #2ba6cb;
+	padding: 35px;
+	border-radius: 15px;
+	margin: 15px 15px 15px 5px;	
+	box-sizing: border-box;
+}
+
+.upgrade-button,
+.donate-button{
+	padding: 8px;
+	border: 1px solid #348198;
+	border-radius: 8px;
+	text-decoration: none;
+	background: yellow;
+}
+
+
+.upgrade-cta h1{
+	color:white;
+	text-shadow: 1px 1px 3px #333;
+}
+
 .updated {
 	max-width:764px;
 	margin-bottom:0px !important;
@@ -173,10 +196,10 @@
 }
 #optionsframework .controls input.upload_button {
 	float:right;
-	width:45px;
+	width:65px;
 	border-color:#BBBBBB;
 	cursor:pointer;
-	height:16px;
+	
 }
 #optionsframework .controls input.upload_button:hover {
 	border-color:#666666;

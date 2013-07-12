@@ -1,5 +1,11 @@
 <?php
 /**
+ * Theme Options Settings used by the Options Framework
+ *
+ * @package Wordpress
+ * @subpackage WP Foundation 
+ * @since WP Foundation 0.7
+ *
  * A unique identifier is defined to store the options in the database and reference them from the theme.
  * By default it uses the theme name, in lowercase and without spaces, but this can be changed if needed.
  * If the identifier changes, it'll appear as if the options have been reset.
@@ -66,15 +72,15 @@ function optionsframework_options() {
 
 	// Typography Defaults
 	$typography_defaults = array(
-		'size' => '13',
-		'face' => 'Helvetica Neue',
+		'size' => '14',
+		'face' => 'Open Sans',
 		'style' => 'normal',
 		'color' => '#333' );
 		
 	// Typography Options
 	$typography_options = array(
 		'sizes' => array( '6', '8', '12', '13', '14', '15', '16', '20' ),
-		'faces' => array( 'Helvetica Neue' => 'Helvetica Neue',
+		'faces' => array( 'Open Sans' => 'Open Sans',
 						  'Helvetica' => 'Helvetica',
 						  'Arial' => 'Arial',
 						  'Verdana' => 'Verdana',
@@ -126,6 +132,14 @@ function optionsframework_options() {
 		'id' => 'logo',
 		'type' => 'upload');
 	
+	/*
+	$options[] = array(
+		'name' => __('Favicon Uploader', 'options_framework_theme'),
+		'desc' => __('Upload your custom favicon here. Filename should be named "favicon.ico" and be 16 X 16', 'options_framework_theme'),
+		'id' => 'wpf-favicon',
+		'type' => 'upload');
+	*/
+	
 	$options[] = array(
 		'name' =>  __('Change Background', 'options_framework_theme'),
 		'desc' => __('Change the background color and/or image.', 'options_framework_theme'),
@@ -133,7 +147,7 @@ function optionsframework_options() {
 		'std' => $background_defaults,
 		'type' => 'background' );
 		
-		$options[] = array(
+	$options[] = array(
 		'name' => __('Global Link color', 'options_framework_theme'),
 		'desc' => __('Select a global link color', 'options_framework_theme'),
 		'id' => 'global_link_color',

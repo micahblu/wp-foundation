@@ -10,8 +10,8 @@
  * Learn more: http://codex.wordpress.org/Template_Hierarchy
  *
  * @package WordPress
- * @subpackage wp foundation
- * @since wp foundation 0.7
+ * @subpackage WP Foundation
+ * @since WP Foundation 0.7
  */
 
 get_header(); ?>
@@ -33,22 +33,22 @@ get_header(); ?>
 				// Show a different message to a logged-in user who can add posts.
 			?>
 				<header class="entry-header">
-					<h1 class="entry-title"><?php _e( 'No posts to display', 'wp_foundation' ); ?></h1>
+					<h1 class="entry-title"><?php _e( 'No posts to display', 'wp-foundation' ); ?></h1>
 				</header>
 
 				<div class="entry-content">
-					<p><?php printf( __( 'Ready to publish your first post? <a href="%s">Get started here</a>.', 'wp_foundation' ), admin_url( 'post-new.php' ) ); ?></p>
+					<p><?php printf( __( 'Ready to publish your first post? <a href="%s">Get started here</a>.', 'wp-foundation' ), admin_url( 'post-new.php' ) ); ?></p>
 				</div><!-- .entry-content -->
 
 			<?php else :
 				// Show the default message to everyone else.
 			?>
 				<header class="entry-header">
-					<h1 class="entry-title"><?php _e( 'Nothing Found', 'wp_foundation' ); ?></h1>
+					<h1 class="entry-title"><?php _e( 'Nothing Found', 'wp-foundation' ); ?></h1>
 				</header>
 
 				<div class="entry-content">
-					<p><?php _e( 'Apologies, but no results were found. Perhaps searching will help find a related post.', 'wp_foundation' ); ?></p>
+					<p><?php _e( 'Apologies, but no results were found. Perhaps searching will help find a related post.', 'wp-foundation' ); ?></p>
 					<?php get_search_form(); ?>
 				</div><!-- .entry-content -->
 			<?php endif; // end current_user_can() check ?>

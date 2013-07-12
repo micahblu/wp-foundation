@@ -1,15 +1,15 @@
 <?php
 /**
- * WP Launchpad Custom shortcodes 
+ * WP Foundation Custom shortcodes 
  * 
- * HTML/CSS shortcodes mostly based on Foundation 3 framework
+ * HTML/CSS shortcodes mostly based on Foundation 4 framework
  * 
- * @package wp_launchpad
- * @since wp_launchpad 1.0
+ * @package WordPress
+ * @subpackage WP Foundation
+ * @since WP Foundation 1.0
  */
 
-
-class WPLaunchpadShortcodes {
+class WPFoundationShortcodes {
 
 	function __construct() {
 		add_action( 'init', array( $this, 'add_shortcodes' ) );
@@ -20,79 +20,67 @@ class WPLaunchpadShortcodes {
 	*
     * add_shortcodes
 	*
-	* @package wp_launchpad
-	* @since wp_launchpad 1.0
+	* @package WP Foundation
+	* @since WP Foundation 1.0
 	*
 	*-------------------------------------------------------------------------------------*/
 	function add_shortcodes() {
 	
-		add_shortcode('button', array( $this, 'wplp_button' ));
-		add_shortcode('alert', array( $this, 'wplp_alert' ));
-		add_shortcode('code', array( $this, 'wplp_code' ));
-		add_shortcode('span', array( $this, 'wplp_span' ));
-		add_shortcode('row', array( $this, 'wplp_row' ));
-		add_shortcode('label', array( $this, 'wplp_label' ));
-		add_shortcode('badge', array( $this, 'wplp_badge' ));
-		add_shortcode('icon', array( $this, 'wplp_icon' ));
-		add_shortcode('icon_white', array( $this, 'wplp_icon_white' ));
-		add_shortcode('table', array( $this, 'wplp_table' ));
-		add_shortcode('collapsibles', array( $this, 'wplp_collapsibles' ));
-		add_shortcode('collapse', array( $this, 'wplp_collapse' ));
-		add_shortcode('panel', array( $this, 'wplp_panel' ));
-		add_shortcode('tabs', array( $this, 'wplp_tabs' ));
-		add_shortcode('tab', array( $this, 'wplp_tab' ));
+		add_shortcode('button', array( $this, 'wpf_button' ));
+		add_shortcode('alert', array( $this, 'wpf_alert' ));
+		add_shortcode('row', array( $this, 'wpf_row' ));
+		add_shortcode('column', array( $this, 'wpf_column' ));
+		add_shortcode('panel', array( $this, 'wpf_panel' ));
+		add_shortcode('label', array( $this, 'wpf_label' ));
 	}
-
-	
 
 
 	/*--------------------------------------------------------------------------------------
 	*
-	* wplp_button
+	* wpf_button
 	*
-	* @package wp_launchpad
-	* @since wp_launchpad 1.0
+	* @package WP Foundation
+	* @since WP Foundation 1.0
 	*
 	*-------------------------------------------------------------------------------------*/
-	function wplp_button($atts, $content = null) {
+	function wpf_button($atts, $content = null) {
 		extract(shortcode_atts(array(
 			"type" => '',
 			"size" => '',
 			"link" => '',
-			"style" => 'radius'
+			"style" => 'radius',
+			"target" => '_self'
 		), $atts));
-		return '<a href="' . $link . '" class="button ' . $size . ' ' . $type . ' ' . $style . '">' . do_shortcode( $content ) . '</a>';
+		return '<a href="' . $link . '" target="' . $target . '" class="button ' . $size . ' ' . $type . ' ' . $style . '">' . do_shortcode( $content ) . '</a>';
 	}
   
-
+	
 	/*--------------------------------------------------------------------------------------
 	*
-	* wplp_alert
+	* wpf_alert
 	*
-	* @package wp_launchpad
-	* @since wp_launchpad 1.0
+	* @package WP Foundation
+	* @since WP Foundation 1.0
 	*
 	*-------------------------------------------------------------------------------------*/
-	function wplp_alert($atts, $content = null) {
+	function wpf_alert($atts, $content = null) {
 	 extract(shortcode_atts(array(
 	    "type" => '',
 	    "close" => true
 	 ), $atts));
-	 return '<div class="alert ' . $type . '">' . do_shortcode( $content ) . '<a href="" class="close">&times;</a></div>';
+	 return '<div data-alert class="alert-box ' . $type . '">' . do_shortcode( $content ) . '<a href="" class="close">&times;</a></div>';
 	}
-	
-	
 	
 	
 	/*--------------------------------------------------------------------------------------
 	*
-	* wplp_code
+	* wpf_code
 	*
-	* @package wp_launchpad
-	* @since wp_launchpad 1.0
+	* @package WP Foundation
+	* @since WP Foundation 1.0
 	*
 	*-------------------------------------------------------------------------------------*/
-	function wplp_code($atts, $content = null) {
+	function wpf_code($atts, $content = null) {
 		extract(shortcode_atts(array(
 			"type" => '',
 			"size" => '',
@@ -101,55 +89,57 @@ class WPLaunchpadShortcodes {
 		return '<pre><code>' . do_shortcode( $content ) . '</code></pre>';
 	}
 	
-	
-	
-	
 	/*--------------------------------------------------------------------------------------
 	*
-	* wplp_span
+	* wpf_row
 	*
-	* @package wp_launchpad
-	* @since wp_launchpad 1.0
+	* @package WP Foundation
+	* @since WP Foundation 1.0
 	*
 	*-------------------------------------------------------------------------------------*/
-	function wplp_span( $atts, $content = null ) {
+	function wpf_row( $atts, $content = null ) {
 		extract(shortcode_atts(array(
-		  "size" => 'size'
+			"addclass" => '',
+		  "addid" => ''
+		), $atts));
+		 
+		$content = str_replace("<br />", "", do_shortcode($content));
+		
+		return '<div' . (isset($addid) ? ' id="' . $addid . '"' : '') . 'class="row' . (isset($addclass) ? ' ' . $addclass : '') . '">' . $content . '</div>';
+			
+	}
+	
+
+	/*--------------------------------------------------------------------------------------
+	*
+	* wpf_column 
+	*
+	* @package WP Foundation
+	* @since WP Foundation 1.0
+	*
+	*-------------------------------------------------------------------------------------*/
+	function wpf_column( $atts, $content = null ) {
+		extract(shortcode_atts(array(
+		  "size" => 'large',
+		  "offset" => '',
+		  "span" => '12',
+		  "addclass" => ''
 		), $atts));
 		
-		return '<div class="span' . $size . '">' . do_shortcode( $content ) . '</div>';
+		return '<div class="' . $size . '-' . $span . (!empty($offset) ? ' offset-' . $offset : '') . ' columns ' . $addclass . '">' . do_shortcode( $content ) . '</div>';
 	
 	}
-	
-	
-	
+		
 	
 	/*--------------------------------------------------------------------------------------
 	*
-	* wplp_row
+	* wpf_label
 	*
-	* @package wp_launchpad
-	* @since wp_launchpad 1.0
-	*
-	*-------------------------------------------------------------------------------------*/
-	function wplp_row( $atts, $content = null ) {
-	
-		return '<div class="row">' . do_shortcode( $content ) . '</div>';
-	
-	}
-	
-	
-	
-	
-	/*--------------------------------------------------------------------------------------
-	*
-	* wplp_label
-	*
-	* @package wp_launchpad
-	* @since wp_launchpad 1.0
+	* @package WP Foundation
+	* @since WP Foundation 1.0
 	*
 	*-------------------------------------------------------------------------------------*/
-	function wplp_label( $atts, $content = null ) {
+	function wpf_label( $atts, $content = null ) {
 		extract(shortcode_atts(array(
 		  "type" => '',
 		  "style" => ''
@@ -159,76 +149,16 @@ class WPLaunchpadShortcodes {
 
 	}
 	
-	
-	
-	
-	/*--------------------------------------------------------------------------------------
-	*
-	* wplp_badge
-	*
-	* @package wp_launchpad
-	* @since wp_launchpad 1.0
-	*
-	*-------------------------------------------------------------------------------------*/
-	function wplp_badge($atts, $content = null){
-		extract(shortcode_atts(array(
-			"css" => ''
-		), $atts));
 		
-		return '<div class="label round" style="' . $css . '">' . do_shortcode( $content ) . '</div>';
-	}
-	
-	
 	/*--------------------------------------------------------------------------------------
 	*
-	* wplp_icon
+	* wpf_table
 	*
-	* @package wp_launchpad
-	* @since wp_launchpad 1.0
-	*
-	*-------------------------------------------------------------------------------------*/
-	function wplp_icon( $atts, $content = null ) {
-		extract(shortcode_atts(array(
-		  "type" => 'type'
-		), $atts));
-		
-		return '<i class="icon icon-' . $type . '"></i>';
-	
-	}
-	
-	
-	
-	
-	/*--------------------------------------------------------------------------------------
-	*
-	* wplp_icon_white
-	*
-	* @package wp_launchpad
-	* @since wp_launchpad 1.0
+	* @package WP Foundation
+	* @since WP Foundation 1.0
 	*
 	*-------------------------------------------------------------------------------------*/
-	function wplp_icon_white( $atts, $content = null ) {
-		extract(shortcode_atts(array(
-		  "type" => 'type'
-		), $atts));
-		
-		return '<i class="icon icon-' . $type . ' icon-white"></i>';
-	
-	}
-	
-	
-	
-	
-	
-	/*--------------------------------------------------------------------------------------
-	*
-	* wplp_table
-	*
-	* @package wp_launchpad
-	* @since wp_launchpad 1.0
-	*
-	*-------------------------------------------------------------------------------------*/
-	function wplp_table( $atts ) {
+	function wpf_table( $atts ) {
 	  extract( shortcode_atts( array(
 	      'cols' => 'none',
 	      'data' => 'none',
@@ -260,13 +190,13 @@ class WPLaunchpadShortcodes {
 	
 	/*--------------------------------------------------------------------------------------
 	*
-	* wplp_panel
+	* wpf_panel
 	*
-	* @package wp_launchpad
-	* @since wp_launchpad 1.0
+	* @package WP Foundation
+	* @since WP Foundation 1.0
 	*
 	*-------------------------------------------------------------------------------------*/
-	function wplp_panel( $atts, $content = null ) {
+	function wpf_panel( $atts, $content = null ) {
 	  extract(shortcode_atts(array(
 	    "type" => '',
 	    "style" => ''
@@ -279,13 +209,13 @@ class WPLaunchpadShortcodes {
 	
 	/*--------------------------------------------------------------------------------------
 	*
-	* wplp_tabs
+	* wpf_tabs
 	*
-	* @package wp_launchpad
-	* @since wp_launchpad 1.0
+	* @package WP Foundation
+	* @since WP Foundation 1.0
 	*
 	*-------------------------------------------------------------------------------------*/
-	function wplp_tabs( $atts, $content = null ) {
+	function wpf_tabs( $atts, $content = null ) {
 	
 		if( isset($GLOBALS['tabs_count']) )
 			$GLOBALS['tabs_count']++;
@@ -333,13 +263,13 @@ class WPLaunchpadShortcodes {
 	
 	/*--------------------------------------------------------------------------------------
 	*
-	* wplp_tab
+	* wpf_tab
 	*
-	* @package wp_launchpad
-	* @since wp_launchpad 1.0
+	* @package WP Foundation
+	* @since WP Foundation 1.0
 	*
 	*-------------------------------------------------------------------------------------*/
-	function wplp_tab( $atts, $content = null ) {
+	function wpf_tab( $atts, $content = null ) {
 		
 		if( !isset($GLOBALS['current_tabs']) ) {
 			$GLOBALS['current_tabs'] = $GLOBALS['tabs_count'];
@@ -365,13 +295,13 @@ class WPLaunchpadShortcodes {
 	
 	/*--------------------------------------------------------------------------------------
 	*
-	* wplp_collapsibles
+	* wpf_collapsibles
 	*
-	* @package wp_launchpad
-	* @since wp_launchpad 1.0
+	* @package WP Foundation
+	* @since WP Foundation 1.0
 	*
 	*-------------------------------------------------------------------------------------*/
-	function wplp_collapsibles( $atts, $content = null ) {
+	function wpf_collapsibles( $atts, $content = null ) {
 		
 		if( isset($GLOBALS['collapsibles_count']) )
 			$GLOBALS['collapsibles_count']++;
@@ -405,13 +335,13 @@ class WPLaunchpadShortcodes {
 	
 	/*--------------------------------------------------------------------------------------
 	*
-	* wplp_collapse
+	* wpf_collapse
 	*
-	* @package wp_launchpad
-	* @since wp_launchpad 1.0
+	* @package WP Foundation
+	* @since WP Foundation 1.0
 	*
 	*-------------------------------------------------------------------------------------*/
-	function wplp_collapse( $atts, $content = null ) {
+	function wpf_collapse( $atts, $content = null ) {
 	
 		if( !isset($GLOBALS['current_collapse']) )
 		  $GLOBALS['current_collapse'] = 0;
@@ -443,6 +373,6 @@ class WPLaunchpadShortcodes {
 
 }
 
-new WPLaunchpadShortcodes();
+new WPFoundationShortcodes();
 
 ?>

@@ -221,7 +221,22 @@ if ( !function_exists( 'optionsframework_page' ) ) {
 	function optionsframework_page() {
 		settings_errors();
 ?>
-
+	<div class="upgrade-cta">
+		<h1><?php _e( 'Want to add bunch of additional features? Upgrade to Pro version!', 'attitude' ); ?></h1>
+		<a title="<?php esc_attr_e( 'Upgrade to Pro', 'wp-foundation' ); ?>" href="<?php echo esc_url( 'http://micahblu.com/themes/wp-foundation-pro' ); ?>" target="_blank" class="upgrade-button"><?php _e( 'Upgrade to Pro', 'wp-foundation' ); ?></a>
+		
+		<a title="<?php esc_attr_e( 'Donate', 'wp-foundation' ); ?>" href="<?php echo esc_url( 'https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=K7G4JVMP2JKGY' ); ?>" target="_blank" class="donate-button"><?php _e( 'Donate', 'wp-foundation' ); ?></a>
+		
+		<!--
+		<a title="<?php esc_attr_e( 'Rate WP Foundation', 'wp-foundation' ); ?>" href="<?php echo esc_url( '' ); ?>" target="_blank" class="review"><?php _e( 'Rate WP Foundation', 'wp-foundation' ); ?></a>
+		
+		<div id="social-share">
+	    	<div class="fb-like" data-href="https://www.facebook.com/micahblu4hire" data-send="false" data-layout="button_count" data-width="90" data-show-faces="true"></div>
+	    	
+	    	<div class="tw-follow" ><a href="<?php echo esc_url( 'http://twitter.com/micahblu' ); ?>" class="twitter-follow-button" data-button="grey" data-text-color="#FFFFFF" data-link-color="#00AEFF" data-width="150px" data-show-screen-name="true" data-show-count="false"></a></div>
+	   -->
+  </div><!-- .upgrade-info -->	
+		
 	<div id="optionsframework-wrap" class="wrap">
     <?php screen_icon( 'themes' ); ?>
     <h2 class="nav-tab-wrapper">

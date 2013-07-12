@@ -3,8 +3,8 @@
  * The template used for displaying page content in page.php
  *
  * @package WordPress
- * @subpackage wp foundation
- * @since wp foundation 0.7 
+ * @subpackage WP Foundation
+ * @since WP Foundation 0.7 
  */
 ?>
 
@@ -15,9 +15,9 @@
 
 		<div class="entry-content">
 			<?php the_content(); ?>
-			<?php wp_link_pages( array( 'before' => '<div class="page-links">' . __( 'Pages:', 'wp_foundation' ), 'after' => '</div>' ) ); ?>
+			<?php wp_link_pages( array( 'before' => '<div class="page-links">' . __( 'Pages:', 'wp-foundation' ), 'after' => '</div>' ) ); ?>
 		</div><!-- .entry-content -->
 		<footer class="entry-meta">
-			<?php edit_post_link( __( 'Edit', 'wp_foundation' ), '<span class="edit-link">', '</span>' ); ?>
+			<?php edit_post_link( __( 'Edit', 'wp-foundation' ), '<span class="edit-link">', '</span>' ); ?>
 		</footer><!-- .entry-meta -->
 	</article><!-- #post -->

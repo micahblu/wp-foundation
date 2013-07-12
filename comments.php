@@ -8,8 +8,8 @@
  * located in the functions.php file.
  *
  * @package WordPress
- * @subpackage wp foundation
- * @since wp foundation 0.7 
+ * @subpackage WP Foundation
+ * @since WP Foundation 0.7 
  */
 
 /*
@@ -23,12 +23,10 @@ if ( post_password_required() )
 
 <div id="comments" class="comments-area">
 
-	<?php // You can start editing here -- including this comment! ?>
-
 	<?php if ( have_comments() ) : ?>
 		<h2 class="comments-title">
 			<?php
-				printf( _n( 'One thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', get_comments_number(), 'wp_foundation' ),
+				printf( _n( 'One thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', get_comments_number(), 'wp-foundation' ),
 					number_format_i18n( get_comments_number() ), '<span>' . get_the_title() . '</span>' );
 			?>
 		</h2>
@@ -36,12 +34,12 @@ if ( post_password_required() )
 		<ol class="commentlist">
 			<?php wp_list_comments( array( 'callback' => 'wp_foundation_comment', 'style' => 'ol' ) ); ?>
 		</ol><!-- .commentlist -->
-
+		
 		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // are there comments to navigate through ?>
 		<nav id="comment-nav-below" class="navigation" role="navigation">
-			<h1 class="assistive-text section-heading"><?php _e( 'Comment navigation', 'wp_foundation' ); ?></h1>
-			<div class="nav-previous"><?php previous_comments_link( __( '&larr; Older Comments', 'wp_foundation' ) ); ?></div>
-			<div class="nav-next"><?php next_comments_link( __( 'Newer Comments &rarr;', 'wp_foundation' ) ); ?></div>
+			<h1 class="assistive-text section-heading"><?php _e( 'Comment navigation', 'wp-foundation' ); ?></h1>
+			<div class="nav-previous"><?php previous_comments_link( __( '&larr; Older Comments', 'wp-foundation' ) ); ?></div>
+			<div class="nav-next"><?php next_comments_link( __( 'Newer Comments &rarr;', 'wp-foundation' ) ); ?></div>
 		</nav>
 		<?php endif; // check for comment navigation ?>
 
@@ -50,11 +48,11 @@ if ( post_password_required() )
 		 * But we only want the note on posts and pages that had comments in the first place.
 		 */
 		if ( ! comments_open() && get_comments_number() ) : ?>
-		<p class="nocomments"><?php _e( 'Comments are closed.' , 'wp_foundation' ); ?></p>
+		<p class="nocomments"><?php _e( 'Comments are closed.' , 'wp-foundation' ); ?></p>
 		<?php endif; ?>
 
 	<?php endif; // have_comments() ?>
 
-	<?php comment_form(); ?>
+	<?php comment_form(array('class_submit'=>'button')); ?>
 
 </div><!-- #comments .comments-area -->

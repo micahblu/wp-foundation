@@ -5,8 +5,8 @@
  * If no active widgets in sidebar, let's hide it completely.
  *
  * @package WordPress
- * @subpackage wp foundation
- * @since wp foundation 0.7
+ * @subpackage WP Foundation
+ * @since WP Foundation 0.7
  */
 
 $pagetype = is_blog() ? "blog" : "page";
@@ -17,6 +17,6 @@ $pagetype = is_blog() ? "blog" : "page";
 		<?php dynamic_sidebar( $pagetype . '-sidebar' ); ?>
 		
 	<?php else :  ?>
-		<p><em>This is your sidebar, add your widgets in appearance->widgets to see them</em></p>
+		<p><em><?php echo __( 'This is your sidebar, add your widgets in appearance&ndash;&gt;widgets to see them', 'wp-foundation' ) ?> </em></p>
 	<?php endif; ?>
 	</div><!-- #secondary -->

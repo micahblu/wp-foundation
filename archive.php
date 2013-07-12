@@ -2,19 +2,11 @@
 /**
  * The template for displaying Archive pages.
  *
- * Used to display archive-type pages if nothing more specific matches a query.
- * For example, puts together date-based pages if no date.php file exists.
- *
- * If you'd like to further customize these archive views, you may create a
- * new template file for each specific one. For example, Twenty Twelve already
- * has tag.php for Tag archives, category.php for Category archives, and
- * author.php for Author archives.
- *
  * Learn more: http://codex.wordpress.org/Template_Hierarchy
  *
  * @package WordPress
- * @subpackage wp foundation
- * @since wp foundation 0.7 
+ * @subpackage WP Foundation
+ * @since WP Foundation 0.7 
  */
 
 get_header(); ?>
@@ -26,13 +18,13 @@ get_header(); ?>
 			<header class="archive-header">
 				<h1 class="archive-title"><?php
 					if ( is_day() ) :
-						printf( __( 'Daily Archives: %s', 'wp_foundation' ), '<span>' . get_the_date() . '</span>' );
+						printf( __( 'Daily Archives: %s', 'wp-foundation' ), '<span>' . get_the_date() . '</span>' );
 					elseif ( is_month() ) :
-						printf( __( 'Monthly Archives: %s', 'wp_foundation' ), '<span>' . get_the_date( _x( 'F Y', 'monthly archives date format', 'wp_foundation' ) ) . '</span>' );
+						printf( __( 'Monthly Archives: %s', 'wp-foundation' ), '<span>' . get_the_date( _x( 'F Y', 'monthly archives date format', 'wp-foundation' ) ) . '</span>' );
 					elseif ( is_year() ) :
-						printf( __( 'Yearly Archives: %s', 'wp_foundation' ), '<span>' . get_the_date( _x( 'Y', 'yearly archives date format', 'wp_foundation' ) ) . '</span>' );
+						printf( __( 'Yearly Archives: %s', 'wp-foundation' ), '<span>' . get_the_date( _x( 'Y', 'yearly archives date format', 'wp-foundation' ) ) . '</span>' );
 					else :
-						_e( 'Archives', 'wp_foundation' );
+						_e( 'Archives', 'wp-foundation' );
 					endif;
 				?></h1>
 			</header><!-- .archive-header -->
@@ -48,8 +40,6 @@ get_header(); ?>
 				get_template_part( 'content', get_post_format() );
 
 			endwhile;
-
-			wp_foundation_content_nav( 'nav-below' );
 			?>
 
 		<?php else : ?>
