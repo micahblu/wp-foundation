@@ -155,7 +155,10 @@ function wp_foundation_head(){
 }
 
 /**
- * Insert Footer scripts
+ * Insert Footer Scripts
+ *
+ * The scripts here are added from theme options for code the 
+ * user needs to add before the end of </body>. i.e. google analytics code
  *
  * @since  1.0
  * @access private
