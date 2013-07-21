@@ -1,6 +1,6 @@
 <?php
 /**
- * Theme's Bootstrap 
+ * WP Foundation 
  *
  * @package WordPress
  * @subpackage WP Foundation
@@ -155,7 +155,10 @@ function wp_foundation_head(){
 }
 
 /**
- * Insert Footer scripts
+ * Insert Footer Scripts
+ *
+ * The scripts here are added from theme options for code the 
+ * user needs to add before the end of </body>. i.e. google analytics code
  *
  * @since  1.0
  * @access private
@@ -232,8 +235,9 @@ function youtube_url_to_embed( $content ) {
 	
 	preg_match_all("/http:\/\/youtu.be\/(.*)/i", $content, $matches);
 	
-	$yturl = trim(strip_tags($matches[0][0]));
-	
+	if(isset($matches[0][0])){
+		$yturl = trim(strip_tags($matches[0][0]));
+	}
 	if(!empty($yturl)){
 	
 		$ytID = str_replace("http://youtu.be/", "", $yturl);
