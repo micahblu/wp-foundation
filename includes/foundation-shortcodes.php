@@ -7,7 +7,7 @@
  * @package WordPress
  * @subpackage WP Foundation
  * @since WP Foundation 1.0
- */
+ */	
 
 class WPFoundationShortcodes {
 
@@ -32,6 +32,7 @@ class WPFoundationShortcodes {
 		add_shortcode('column', array( $this, 'wpf_column' ));
 		add_shortcode('panel', array( $this, 'wpf_panel' ));
 		add_shortcode('label', array( $this, 'wpf_label' ));
+		add_shortcode('line', array( $this, 'wpf_line' ));
 	}
 
 
@@ -149,6 +150,23 @@ class WPFoundationShortcodes {
 
 	}
 	
+	
+	/*--------------------------------------------------------------------------------------
+	*
+	* wpf_code
+	*
+	* @package WP Foundation
+	* @since WP Foundation 1.0
+	*
+	*-------------------------------------------------------------------------------------*/
+	function wpf_line($atts, $content = null) {
+		extract(shortcode_atts(array(
+			"type" => '',
+			"size" => '',
+			"link" => ''
+		), $atts));
+		return '<hr />';
+	}
 		
 	/*--------------------------------------------------------------------------------------
 	*
