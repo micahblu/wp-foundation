@@ -221,10 +221,14 @@ if ( !function_exists( 'optionsframework_page' ) ) {
 	function optionsframework_page() {
 		settings_errors();
 ?>
+	
 	<div class="upgrade-cta">
-		<h1><?php _e( 'Want to add bunch of additional features? Upgrade to Pro version!', 'attitude' ); ?></h1>
-		<a title="<?php esc_attr_e( 'Upgrade to Pro', 'wp-foundation' ); ?>" href="<?php echo esc_url( 'http://micahblu.com/themes/wp-foundation-pro' ); ?>" target="_blank" class="upgrade-button"><?php _e( 'Upgrade to Pro', 'wp-foundation' ); ?></a>
 		
+		<h1><?php _e( 'Like WP Foundation? Help support her!', 'wp-foundation' ); ?></h1>
+		<p>Donations will help to build new features, offer support and fix bugs</p>
+		<!---
+		<a title="<?php esc_attr_e( 'Upgrade to Pro', 'wp-foundation' ); ?>" href="<?php echo esc_url( 'http://micahblu.com/themes/wp-foundation-pro' ); ?>" target="_blank" class="upgrade-button"><?php _e( 'Upgrade to Pro', 'wp-foundation' ); ?></a>
+		-->
 		<a title="<?php esc_attr_e( 'Donate', 'wp-foundation' ); ?>" href="<?php echo esc_url( 'https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=K7G4JVMP2JKGY' ); ?>" target="_blank" class="donate-button"><?php _e( 'Donate', 'wp-foundation' ); ?></a>
 		
 		<!--
