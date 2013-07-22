@@ -18,19 +18,19 @@
  * @return null
  */
 function wp_foundation_widgets_init() {
+
 	register_sidebar( array(
-		'name' => __( 'Page Sidebar', 'wp_foundation' ),
-		'id' => 'page-sidebar',
+		'name' => __( 'Blog Sidebar', 'wp_foundation' ),
+		'id' => 'blog-sidebar',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget' => "</aside>",
 		'before_title' => '<h1 class="widget-title"><small>',
 		'after_title' => '</small></h1>',
 	) );
-
-
+	
 	register_sidebar( array(
-		'name' => __( 'Blog Sidebar', 'wp_foundation' ),
-		'id' => 'blog-sidebar',
+		'name' => __( 'Page Sidebar', 'wp_foundation' ),
+		'id' => 'page-sidebar',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget' => "</aside>",
 		'before_title' => '<h1 class="widget-title"><small>',
