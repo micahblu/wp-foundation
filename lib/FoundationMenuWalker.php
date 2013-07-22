@@ -4,7 +4,7 @@
 http://codex.wordpress.org/Function_Reference/register_nav_menus#Examples
 */
 register_nav_menus( array(
-	'main-menu' => 'Main Menu',
+	//'main-menu' => 'Main Menu',
 	'footer-menu' => 'Footer Menu'
 ) );
 
@@ -12,7 +12,7 @@ register_nav_menus( array(
 /* 
 http://codex.wordpress.org/Function_Reference/wp_nav_menu 
 */
-function foundation_nav_bar() {
+function wp_foundation_basic_nav_bar() {
     wp_nav_menu(array( 
         'container' => false,             // remove menu container
         'container_class' => '',          // class of container
@@ -24,8 +24,8 @@ function foundation_nav_bar() {
         'link_before' => '',              // before each link text
         'link_after' => '',               // after each link text
         'depth' => 1,                     // limit the depth of the nav
-    	'fallback_cb' => 'main_nav_fb',   // fallback function (see below)
-        'walker' => new nav_walker()      // walker to customize menu (see foundation-nav-walker)
+    	  'fallback_cb' => 'main_nav_fb',   // fallback function (see below)
+        'walker' => new Nav_Walker()      // walker to customize menu (see foundation-nav-walker)
 	));
 }
 
@@ -45,7 +45,7 @@ function main_nav_fb() {
 		'sort_column'  => 'menu_order, post_title',
 		'link_before'  => '',
 		'link_after'   => '',
-		'walker'       => new page_walker(),
+		'walker'       => new Page_Walker(),
 		'post_type'    => 'page',
 		'post_status'  => 'publish' 
 	));
@@ -58,7 +58,7 @@ Customize the output of menus for Foundation nav classes and add descriptions
 http://www.kriesi.at/archives/improve-your-wordpress-navigation-menu-output
 http://code.hyperspatial.com/1514/twitter-bootstrap-walker-classes/ 
 */
-class nav_walker extends Walker_Nav_Menu {
+class Nav_Walker extends Walker_Nav_Menu {
 	
     function start_el(&$output, $item, $depth, $args) {
         global $wp_query;
@@ -69,8 +69,8 @@ class nav_walker extends Walker_Nav_Menu {
 
         $classes = empty($item->classes) ? array() : (array) $item->classes;
 		  
-		$classes[] = ($item->current) ? 'active' : '';
-        $classes[] = ($args->has_children) ? 'has-flyout' : '';
+        $classes[] = ($item->current) ? 'active' : '';
+        $classes[] = ($args->has_children) ? 'dropdown' : '';
 
         $class_names = join(' ', apply_filters('nav_menu_css_class', array_filter($classes), $item, $args ) );
         $class_names = strlen(trim($class_names)) > 0 ? ' class="'.esc_attr($class_names).'"' : '';
@@ -82,13 +82,17 @@ class nav_walker extends Walker_Nav_Menu {
         $attributes .= !empty($item->xfn)         ? ' rel="'   .esc_attr($item->xfn       ).'"' : '';
         $attributes .= !empty($item->url)         ? ' href="'  .esc_attr($item->url       ).'"' : '';
         $attributes .= !empty($item->description) ? ' class="' .esc_attr('has-description').'"' : '';
-
+        
+        $attributes .= ($args->has_children) ? ' 	data-dropdown="'.$depth.'"' : '';
+        
+        
         $description = !empty($item->description) ? '<span class="menu-item-description">'.esc_attr($item->description).'</span>' : '';
 
         $item_output  = $args->before;
-        $item_output .= '<a'.$attributes.' class="button">';
+        $item_output .= '<a'.$attributes.' class="button dropdown">';
         $item_output .= $args->link_before.apply_filters('the_title', $item->title, $item->ID);
         $item_output .= $description.$args->link_after;
+        
         $item_output .= ($args->has_children && $depth == 0) ? '</a><a href="'.$item->url.'" class="flyout-toggle"><span> </span></a>' : '</a>';
         $item_output .= $args->after;
 
@@ -99,7 +103,7 @@ class nav_walker extends Walker_Nav_Menu {
     }	
     function start_lvl(&$output, $depth) {
         $indent  = str_repeat("\t", $depth);
-        $output .= "\n".$indent.'<ul class="sub-menu flyout">'."\n";
+        $output .= "\n".$indent.'<ul class="sub-menu content" data-dropdown-content id="'.$depth.'">'."\n";
     }
     function end_lvl(&$output, $depth) {
         $indent  = str_repeat("\t", $depth);
@@ -121,7 +125,7 @@ Customize the output of page list for Foundation nav classes in main_nav_fb
 
 http://forrst.com/posts/Using_Short_Page_Titles_for_wp_list_pages_Wordp-uV9
 */
-class page_walker extends Walker_Page {
+class Page_Walker extends Walker_Page {
     function start_el(&$output, $page, $depth, $args, $current_page) {
 		
         $indent = ($depth) ? str_repeat("\t", $depth) : '';
@@ -138,13 +142,13 @@ class page_walker extends Walker_Page {
         } elseif ($page->ID == get_option('page_for_posts') ) {
             $classes[] = 'current_page_parent';
         }
-        if (get_children($page->ID))
-            $classes[] = 'has-flyout';
-		
+        		
         $classes = implode(' ', apply_filters('page_css_class', $classes, $page));
 		
         $output .= $indent.'<li class="'.$classes.'">';
-        $output .= '<a class="button" href="'.get_page_link($page->ID).'" title="'.esc_attr(wp_strip_all_tags($page->post_title)).'">';
+        
+        $output .= '<a ' . (get_children($page->ID) ? 'data-dropdown="' . $depth . '"' :'' ) . ' class="small button ' . (get_children($page->ID) ? 'dropdown' :'' ) . '" href="'.get_page_link($page->ID).'" title="'.esc_attr(wp_strip_all_tags($page->post_title)).'">';
+        
         $output .= $args['link_before'].$page->post_title.$args['link_after'];
         $output .= '</a>';
     }
@@ -153,7 +157,7 @@ class page_walker extends Walker_Page {
     }
     function start_lvl(&$output, $depth) {
         $indent = str_repeat("\t", $depth);
-        $output .= "\n$indent<ul class=\"sub-menu flyout\">\n";
+        $output .= "\n$indent<ul style='display:none' id='$depth' class='sub-menu'>\n";
     }
     function end_lvl(&$output, $depth) {
         $indent = str_repeat("\t", $depth);
