@@ -60,7 +60,26 @@ function wp_foundation_setup() {
 	include get_template_directory() . '/lib/FoundationMenuWalker.php';
 	include get_template_directory() . '/lib/FoundationTopBarMenuWalker.php';
 	
+	
+	// add theme support for woocommerce
+	add_theme_support( 'woocommerce' );
+	
+	remove_action( 'woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10);
+	remove_action( 'woocommerce_after_main_content', 'woocommerce_output_content_wrapper_end', 10);
+
+	add_action('woocommerce_before_main_content', 'wp_foundation_wc_content_wrapper_start', 10);
+	add_action('woocommerce_after_main_content', 'wp_foundation_wc_content_wrapper_end', 10);	
+	
 }
+
+function wp_foundation_wc_content_wrapper_start() {
+  echo '<div class="large-8 columns">';
+}
+
+function wp_foundation_wc_content_wrapper_end() {
+  echo '</div>';
+}
+
 
 add_action("after_setup_theme", "wp_foundation_setup");
 

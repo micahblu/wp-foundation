@@ -1,4 +1,4 @@
-
+	</div><!-- .row -->
   <!-- Footer -->  
   <footer class="row">
     <div class="large-12 columns">

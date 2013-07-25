@@ -75,5 +75,5 @@ global $wp_foundation_options;
     </div><!-- .large-9 .columns -->
   </div><!-- .row -->
   <?php endif; ?>
-  
-<!-- End Header and Nav -->
+  <!-- End Header and Nav -->
+  <div class="row">

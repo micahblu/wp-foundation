@@ -14,19 +14,18 @@
 
 get_header(); ?>
 
-	<div class="row">
-		<div class="large-8 columns">
+	<div class="large-8 columns">
 
-			<?php while ( have_posts() ) : the_post(); ?>
-				<?php get_template_part("content", "page"); ?>
-				<?php //comments_template( '', true ); ?>
-			<?php endwhile; // end of the loop. ?>
+		<?php while ( have_posts() ) : the_post(); ?>
+			<?php get_template_part("content", "page"); ?>
+			<?php //comments_template( '', true ); ?>
+		<?php endwhile; // end of the loop. ?>
 
-		</div><!-- .large-8 .columns -->
+	</div><!-- .large-8 .columns -->
+
+	<div class="large-4 columns">
+		<?php get_sidebar(); ?>
+	</div><!-- .large-4 .columns -->
 	
-		<div class="large-4 columns">
-			<?php get_sidebar(); ?>
-		</div><!-- .large-4 .columns -->
-	</div><!-- .row -->
 	
 <?php get_footer(); ?>

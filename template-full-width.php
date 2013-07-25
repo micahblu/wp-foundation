@@ -13,15 +13,13 @@
 
 get_header(); ?>
 
-	<div class="row">
-		<div class="large-12 columns">
+	<div class="large-12 columns">
 
-			<?php while ( have_posts() ) : the_post(); ?>
-				<?php get_template_part("content", "page"); ?>
-				<?php //comments_template( '', true ); ?>
-			<?php endwhile; // end of the loop. ?>
+		<?php while ( have_posts() ) : the_post(); ?>
+			<?php get_template_part("content", "page"); ?>
+			<?php //comments_template( '', true ); ?>
+		<?php endwhile; // end of the loop. ?>
 
-		</div><!-- .large-8 .columns -->
-	</div><!-- .row -->
+	</div><!-- .large-8 .columns -->
 	
 <?php get_footer(); ?>

@@ -9,42 +9,40 @@
 
 get_header(); ?>
 
-	<div class="row">
-		<div class="large-8 columns" role="main">
+	<div class="large-8 columns" role="main">
 
-		<?php if ( have_posts() ) : ?>
+	<?php if ( have_posts() ) : ?>
 
-			<header class="page-header">
-				<h1 class="page-title"><?php printf( __( 'Search Results for: %s', 'wp-foundation' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
+		<header class="page-header">
+			<h1 class="page-title"><?php printf( __( 'Search Results for: %s', 'wp-foundation' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
+		</header>
+
+
+		<?php /* Start the Loop */ ?>
+		<?php while ( have_posts() ) : the_post(); ?>
+			<?php get_template_part( 'content', get_post_format() ); ?>
+		<?php endwhile; ?>
+
+
+	<?php else : ?>
+
+		<article id="post-0" class="post no-results not-found">
+			<header class="entry-header">
+				<h1 class="entry-title"><?php _e( 'Nothing Found', 'wp-foundation' ); ?></h1>
 			</header>
 
+			<div class="entry-content">
+				<p><?php _e( 'Sorry, but nothing matched your search criteria. Please try again with some different keywords.', 'wp-foundation' ); ?></p>
+				<?php get_search_form(); ?>
+			</div><!-- .entry-content -->
+		</article><!-- #post-0 -->
 
-			<?php /* Start the Loop */ ?>
-			<?php while ( have_posts() ) : the_post(); ?>
-				<?php get_template_part( 'content', get_post_format() ); ?>
-			<?php endwhile; ?>
+	<?php endif; ?>
 
-
-		<?php else : ?>
-
-			<article id="post-0" class="post no-results not-found">
-				<header class="entry-header">
-					<h1 class="entry-title"><?php _e( 'Nothing Found', 'wp-foundation' ); ?></h1>
-				</header>
-
-				<div class="entry-content">
-					<p><?php _e( 'Sorry, but nothing matched your search criteria. Please try again with some different keywords.', 'wp-foundation' ); ?></p>
-					<?php get_search_form(); ?>
-				</div><!-- .entry-content -->
-			</article><!-- #post-0 -->
-
-		<?php endif; ?>
-
-		</div><!-- .large-8 .columns -->
-		
-		<div class="large-4 columns">
-			<?php get_sidebar(); ?>
-		</div><!-- .large-4 .columns -->
-	</div><!-- .row -->
-
+	</div><!-- .large-8 .columns -->
+	
+	<div class="large-4 columns">
+		<?php get_sidebar(); ?>
+	</div><!-- .large-4 .columns -->
+	
 <?php get_footer(); ?>
