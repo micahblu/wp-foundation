@@ -8,6 +8,11 @@ ________
 
 http://micahblu.com/lab/wp-foundation
 
+DOCUMENTATION
+________
+
+http://micahblu.com/lab/wp-foundation/documentation/
+
 FEATURES
 ________
 
