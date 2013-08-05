@@ -152,7 +152,7 @@ h3, h4, h5, h6, strong, b{
 
 .page {}
 .attachment {}
-.sticky {}
+.sticky { background: white }
 .hentry {}
 .category-misc {}
 .category-example {}
