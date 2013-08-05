@@ -26,7 +26,7 @@ function foundation_top_bar_menu() {
         'link_before' => '',                            // before each link text
         'link_after' => '',                             // after each link text
         'depth' => 5,                                   // limit the depth of the nav
-    	  'fallback_cb' => main_nav_top_bar_fb(),                         // fallback function (see below)
+    	  'fallback_cb' => 'main_nav_top_bar_fb',         // fallback function (see below)
         'walker' => new Top_Bar_Walker()
 	));
 	echo '</section>';
@@ -38,6 +38,7 @@ function foundation_top_bar_menu() {
 http://codex.wordpress.org/Template_Tags/wp_list_pages
 */
 function main_nav_top_bar_fb() {
+
 	echo '<ul class="right">';
 	wp_list_pages(array(
 		'depth'        => 0,
@@ -94,11 +95,17 @@ class Top_Bar_Walker extends Walker_Nav_Menu {
 } // end top bar walker
 
 class Top_Bar_Page_Walker extends Walker_Page {
+
 	function display_element($element, &$children_elements, $max_depth, $depth=0, $args, &$output) {
-        $element->has_children = !empty($children_elements[$element->ID]);
-        $element->classes[] = ($element->current || $element->current_item_ancestor) ? 'active' : '';
-        $element->classes[] = ($element->has_children) ? 'has-dropdown' : '';
-		
+
+        // $element->has_children = !empty($children_elements[$element->ID]);     
+        
+        // $element->classes[] = ($element->current || $element->current_item_ancestor) ? 'active' : '';
+
+        // $element->classes[] = $element->has_children ? 'has-dropdown' : '';
+        
+        // die(print_r($element->classes));
+   
         parent::display_element($element, $children_elements, $max_depth, $depth, $args, $output);
     }
 	
