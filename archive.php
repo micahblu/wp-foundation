@@ -44,7 +44,7 @@ get_header(); ?>
 	<?php else : ?>
 		<?php get_template_part( 'content', 'none' ); ?>
 	<?php endif; ?>
-
+	
 	</div><!-- .large-8 .columns -->
 	
 	<div class="large-4 columns">
