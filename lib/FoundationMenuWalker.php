@@ -5,7 +5,7 @@ http://codex.wordpress.org/Function_Reference/register_nav_menus#Examples
 */
 register_nav_menus( array(
 	//'main-menu' => 'Main Menu',
-	'footer-menu' => 'Footer Menu'
+	//'footer-menu' => 'Footer Menu'
 ) );
 
 

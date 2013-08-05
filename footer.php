@@ -11,7 +11,7 @@
          
             <?php //footer menu
             	wp_nav_menu(array( 
-				        'container' => true,             // remove menu container
+				        'container' => false,             // remove menu container
 				        'container_class' => '',          // class of container
 				        'menu' => '',                     // menu name
 				        'menu_class' => 'inline-list right', // adding custom nav class
