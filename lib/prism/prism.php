@@ -68,7 +68,7 @@ add_action( 'wp_enqueue_scripts', 'sh_add_js' );
  * @uses	is_admin()
  * @uses	is_singular()
  * @uses	wp_enqueue_script()
- * @uses	get_stylesheet_directory_uri(()
+ * @uses	get_template_directory_uri(()
  *
  * @since 1.0.0
  */
@@ -76,8 +76,8 @@ function sh_add_js() {
 	
 	if ( ! is_admin() ) {
 		if ( sh_has_shortcode( 'code' ) ) {
-	    wp_enqueue_script( 'prism_js', get_stylesheet_directory_uri() . '/lib/prism/js/sh.js', '', '', true );
-			wp_enqueue_style( 'prism_css',  get_stylesheet_directory_uri() . '/lib/prism/css/sh.css');
+	    wp_enqueue_script( 'prism_js', get_template_directory_uri() . '/lib/prism/js/sh.js', '', '', true );
+			wp_enqueue_style( 'prism_css',  get_template_directory_uri() . '/lib/prism/css/sh.css');
 		}
 	}
 	

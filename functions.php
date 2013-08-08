@@ -95,22 +95,19 @@ add_action("after_setup_theme", "wp_foundation_setup");
 function wp_foundation_enqueue_scripts() {
 
 	// styles	
-	wp_enqueue_style('foundation-core', get_stylesheet_directory_uri() . '/css/foundation.css', false);
+	wp_enqueue_style('foundation-core', get_template_directory_uri() . '/css/foundation.css', false);
 	
-	wp_enqueue_style('core', get_stylesheet_directory_uri() . '/style.css', false); 
-	
-	//wp_register_style('open-sans', 'http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,700,800,600');
-  //wp_enqueue_style('open-sans' );
+	wp_enqueue_style('core', get_template_directory_uri() . '/style.css', false); 
 	
 	// scripts
-	wp_enqueue_script('modernizr', get_stylesheet_directory_uri() . '/js/vendor/custom.modernizr.js', null, null, true);
+	wp_enqueue_script('modernizr', get_template_directory_uri() . '/js/vendor/custom.modernizr.js', null, null, true);
 	
 	// deregister wp's jquery as we want to use the version that has been tested with and comes with foundation
 	wp_deregister_script('jquery');
-	wp_register_script('jquery', get_stylesheet_directory_uri() . '/js/vendor/jquery.js', null, null, true);
+	wp_register_script('jquery', get_template_directory_uri() . '/js/vendor/jquery.js', null, null, true);
 	wp_enqueue_script('jquery');
 	
-	wp_enqueue_script('foundation-js', get_stylesheet_directory_uri() . '/js/foundation.min.js', null, null, true);
+	wp_enqueue_script('foundation-js', get_template_directory_uri() . '/js/foundation.min.js', null, null, true);
 	
 	if ( is_singular() ) wp_enqueue_script( 'comment-reply' );
 
