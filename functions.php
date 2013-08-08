@@ -97,7 +97,7 @@ function wp_foundation_enqueue_scripts() {
 	// styles	
 	wp_enqueue_style('foundation-core', get_template_directory_uri() . '/css/foundation.css', false);
 	
-	wp_enqueue_style('core', get_template_directory_uri() . '/style.css', false); 
+	wp_enqueue_style('core', get_stylesheet_directory_uri() . '/style.css', false); 
 	
 	// scripts
 	wp_enqueue_script('modernizr', get_template_directory_uri() . '/js/vendor/custom.modernizr.js', null, null, true);
