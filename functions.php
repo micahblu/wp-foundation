@@ -184,7 +184,7 @@ function wp_foundation_head(){
 function wp_foundation_footer(){
 	global $wp_foundation_options;
 	
-	if(!empty($wp_foundation_options["footer_scripts"])) echo $wp_foundation_options["footer_scripts"];
+    if(!empty($wp_foundation_options["footer_scripts"])) echo '<script>' . $wp_foundation_options["footer_scripts"] . '</script>';
 }
 
 add_action("wp_head", "wp_foundation_head");
