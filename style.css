@@ -93,12 +93,37 @@ h3, h4, h5, h6, strong, b{
 }
 
 .meta {
+    display: block;
 	font-size: .6em;
 	top: -5px;
 	padding: 0px;
 	position: relative;
 	color: rgb(179, 179, 179);
 }
+
+/* =Social
+-------------------------------------------------------------- */
+
+#social-header-block{
+    float:right;
+}
+
+.social-icon{
+    width: 32px;
+    height: 32px;
+    background-size: 32px 32px;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    display: inline-block;
+    text-indent: -999em;
+}
+.facebook{ background-image: url("images/social/facebook.png") }
+.twitter{ background-image: url("images/social/twitter.png") }
+.instagram{ background-image: url("images/social/instagram.png") }
+.pinterest{ background-image: url("images/social/pinterest.png") }
+.youtube{ background-image: url("images/social/youtube.png") }
+
+
 
 /* =WordPress Core
 -------------------------------------------------------------- */

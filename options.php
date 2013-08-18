@@ -169,6 +169,55 @@ function optionsframework_options() {
 		'std' => '',
 		'type' => 'textarea');
 	
+
+	$options[] = array(
+		'name' => __('Social Settings', 'wp-foundation'),
+		'type' => 'heading');
+
+	$options[] = array(
+		'name' => __('Facebook URL', 'wp-foundation'),
+		'desc' => __('Enter your Facebook URL here.', 'wp-foundation'),
+		'id' => 'facebook_url',
+		'std' => '',
+		'type' => 'text',
+		'class' => '' //mini, tiny, small 
+	);
+
+	$options[] = array(
+		'name' => __('Twitter URL', 'wp-foundation'),
+		'desc' => __('Enter your Twitter URL here.', 'wp-foundation'),
+		'id' => 'twitter_url',
+		'std' => '',
+		'type' => 'text',
+		'class' => '' //mini, tiny, small 
+	);
+
+	$options[] = array(
+		'name' => __('Instagram URL', 'wp-foundation'),
+		'desc' => __('Enter your Instagram URL here.', 'wp-foundation'),
+		'id' => 'instagram_url',
+		'std' => '',
+		'type' => 'text',
+		'class' => '' //mini, tiny, small 
+	);
+
+	$options[] = array(
+		'name' => __('Pinterest URL', 'wp-foundation'),
+		'desc' => __('Enter your Pinterest URL here.', 'wp-foundation'),
+		'id' => 'pinterest_url',
+		'std' => '',
+		'type' => 'text',
+		'class' => '' //mini, tiny, small 
+	);
+
+	$options[] = array(
+		'name' => __('Youtube URL', 'wp-foundation'),
+		'desc' => __('Enter your Youtube URL here.', 'wp-foundation'),
+		'id' => 'youtube_url',
+		'std' => '',
+		'type' => 'text',
+		'class' => '' //mini, tiny, small 
+	);
 	/*
 	$options[] = array(
 		'name' => __('Input Select Small', 'wp-foundation'),

@@ -66,9 +66,22 @@ global $wp_foundation_options;
 			<h2 class="subheader site-description"><small><?php bloginfo( 'description' ); ?></small></h2>
 		<?php endif; ?>
     </div><!-- #brand .large-9 .columns -->
+
+
+    <div id="social-header-block">
+			<?php if( !empty($wp_foundation_options['facebook_url'])) : ?><a href="<?php echo $wp_foundation_options['facebook_url'] ?>" target="_blank" class="facebook social-icon">Facebook</a><?php endif; ?>
+			<?php if( !empty($wp_foundation_options['twitter_url'])) : ?><a href="<?php echo $wp_foundation_options['twitter_url'] ?>" target="_blank" class="twitter social-icon">Twitter</a><?php endif; ?>
+			<?php if( !empty($wp_foundation_options['instagram_url'])) : ?><a href="<?php echo $wp_foundation_options['instagram_url'] ?>" target="_blank" class="instagram social-icon">Instagram</a><?php endif; ?>
+			<?php if( !empty($wp_foundation_options['pinterest_url'])) : ?><a href="<?php echo $wp_foundation_options['pinterest_url'] ?>" target="_blank" class="pinterest social-icon">Pinterest</a><?php endif; ?>
+			<?php if( !empty($wp_foundation_options['youtube_url']) ) : ?><a href="<?php echo $wp_foundation_options['youtube_url'] ?>" target="_blank" class="youtube social-icon">Youtube</a><?php endif; ?>
+		</div><!-- #social-header -->
   </div><!-- #header .row -->  
    
-  <?php if(false) : //if basic_menu == true ?> 
+  <?php 
+  /**
+   * TODO - Basic Menu Support
+   */
+  if(false) : //if basic_menu == true ?> 
   <div class="row">
     <div class="large-12 columns">
     <?php foundation_nav_bar(); ?>
