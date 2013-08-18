@@ -17,17 +17,20 @@ get_header(); ?>
 	<div class="large-8 columns">
 
 		<?php while ( have_posts() ) : the_post();  ?>
-			<h1 class="entry-title"><?php the_title(); ?><br />
-				<span class="meta">
-					<?php printf( __('Posted by <a href="%2$s" title="%3$s" rel="author">%4$s</a> %1$s', 'wp-foundation' ),
-					esc_html( get_the_date(get_option('date_format')) ),
-					esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
-					esc_attr( sprintf( __( 'View all posts by %s', 'wp-foundation' ), get_the_author() ) ),
-					get_the_author()
-					);
-					?>
-				</span>
-			</h1>
+		<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+			<header class="entry-header">
+				<h1 class="entry-title"><?php the_title(); ?>
+					<span class="meta">
+						<?php printf( __('Posted by <a href="%2$s" title="%3$s" rel="author">%4$s</a> %1$s', 'wp-foundation' ),
+						esc_html( get_the_date(get_option('date_format')) ),
+						esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
+						esc_attr( sprintf( __( 'View all posts by %s', 'wp-foundation' ), get_the_author() ) ),
+						get_the_author()
+						);
+						?>
+					</span>
+				</h1>
+			</header>
 			<?php the_post_thumbnail(get_the_ID()); ?>
 			<p><?php the_content(); ?></p>
 			

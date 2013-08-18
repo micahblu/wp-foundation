@@ -93,7 +93,7 @@ h3, h4, h5, h6, strong, b{
 }
 
 .meta {
-	font-size: .45em;
+	font-size: .6em;
 	top: -5px;
 	padding: 0px;
 	position: relative;
@@ -143,6 +143,7 @@ h3, h4, h5, h6, strong, b{
 	border-bottom: 1px solid #ccc;
 	padding-bottom: 55px;
 	margin-bottom: 45px;
+    margin-top: 3em;
 }
 
 .post:last-child{
@@ -267,6 +268,10 @@ a img.aligncenter {
 
 /* Default widget styles */
 .widget {}
+
+#secondary{
+  margin-top: 3em;
+}
 
 #searchform {}
 .widget_search {}
