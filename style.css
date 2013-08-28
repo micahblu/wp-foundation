@@ -298,6 +298,10 @@ a img.aligncenter {
   margin-top: 3em;
 }
 
+.archive-header{
+    margin-top: 3em;
+}
+
 #searchform {}
 .widget_search {}
 .screen-reader-text {}

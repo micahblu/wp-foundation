@@ -20,9 +20,28 @@
 function is_blog () {
 	global $post;
 
-	$posttype = get_post_type($post);
+	$posttype = 'post';
+	$posttype =  get_post_type($post);
 	
-	return ( ((is_archive()) || (is_search()) || (is_author()) || (is_category()) || (is_home()) || (is_single()) || (is_tag())) && ( $posttype == 'post')  ) ? true : false ;
+	if($posttype == '') $posttype = 'post'; // default to post if we get an empty result
+
+	return ( ((is_archive()) || (is_search_page()) || (is_author()) || (is_category()) || (is_home()) || (is_single()) || (is_tag())) && ( $posttype == 'post')  ) ? true : false ;
+}
+
+/**
+ * is_search_page
+ *
+ * Acts much as is_search() except this method will return true even if there are no search results
+ *
+ * @return bool
+ * @since 1.0
+ */
+function is_search_page(){
+	if(is_search() || isset($_GET['s'])){
+		return true;
+	}else{
+		return false;
+	}
 }
 
 
