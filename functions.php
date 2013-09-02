@@ -165,9 +165,10 @@ function wp_foundation_head(){
 		color: <?php echo $wp_foundation_options["global_link_color"]; ?>;
 	}
 	<?php endif; ?>
-	
 	</style>
 	<?php 
+
+	do_action("wp_foundation_head");
 }
 
 /**
