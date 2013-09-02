@@ -1,38 +1,4 @@
-/*-------------------------------------------------------------------------------------------*/
 /* Options Framework Admin Styles */
-/*-------------------------------------------------------------------------------------------*/
-
-.upgrade-cta{
-	background: #2ba6cb;
-	padding: 35px;
-	border-radius: 3px;
-	margin: 15px 15px 15px 5px;	
-	box-sizing: border-box;
-}
-
-.upgrade-button,
-.donate-button{
-	padding: 8px;
-	border-radius: 2px;
-	text-decoration: none;
-	background: yellow;
-}
-
-
-.upgrade-cta h1{
-	color:white;
-	text-shadow: 1px 1px 3px #333;
-	font-family: 'Open Sans', Helvetica, sans-serif;
-	font-weight: 300;
-	padding: 15px 0px;
-	display: block;
-	padding-top: 0px;
-}
-
-.upgrade-cta p{
-	color: white;
-	font-size: 1.05em;
-}
 
 .updated {
 	max-width:764px;
@@ -82,11 +48,10 @@
 #optionsframework .section-checkbox .explain {
 	max-width:94%;
 }
-#optionsframework .section-color .controls {
-	min-width:125px;
-	width:125px
+#optionsframework .of-input {
+	width:100%;
 }
-#optionsframework .controls input, #optionsframework .controls select, #optionsframework .controls textarea {
+#optionsframework .controls select, #optionsframework .controls textarea {
 	margin-bottom:10px;
 	width:100%;
 }
@@ -102,15 +67,16 @@
 	float:left;
 	clear:both;
 }
-#optionsframework .controls .of-color {
-	float:left;
-	width: 80px;
-	margin-left:5px;
-	margin-right:5px;
+#optionsframework .section-typography .controls {
+	float:none;
+	width:auto;
+}
+#optionsframework .section-typography .explain {
+	float:none;
+	width:auto;
 }
 #optionsframework .controls .of-typography-size {
 	width:80px;
-	margin-left:5px;
 	float:left
 }
 #optionsframework .controls .of-typography-unit {
@@ -148,8 +114,8 @@
 	margin-right:5px;
 	float:left
 }
-#optionsframework div.section-background .controls input.upload {
-	width:47%;
+#optionsframework .section-background .wp-picker-container {
+	margin-bottom:10px;
 }
 #optionsframework .controls .of-radio-img-img {
 	border:3px solid #f9f9f9;
@@ -205,10 +171,8 @@
 }
 #optionsframework .controls input.upload_button {
 	float:right;
-	width:65px;
 	border-color:#BBBBBB;
 	cursor:pointer;
-	
 }
 #optionsframework .controls input.upload_button:hover {
 	border-color:#666666;
@@ -231,7 +195,7 @@
 	padding:4px;
 	margin-bottom:10px;
 }
-#optionsframework .screenshot .mlu_remove {
+#optionsframework .screenshot .remove-image {
 	background:url("../images/ico-delete.png") no-repeat;
 	border:medium none;
 	bottom:4px;
@@ -247,7 +211,7 @@
 #optionsframework .screenshot .no_image .file_link {
 	margin-left: 20px;
 }
-#optionsframework .screenshot .no_image .mlu_remove {
+#optionsframework .screenshot .no_image .remove-button {
 	bottom: 0px;
 }
 #optionsframework .reset-button {
@@ -266,10 +230,7 @@
 #optionsframework .button-primary {
 	float:right;
 }
-
-/* Bottom Section */
-
-#optionsframework .section:before, #optionsframework .section:after {
+#optionsframework .section:after {
 	content: "";
 	display: table;
 }

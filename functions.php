@@ -47,8 +47,8 @@ $wp_foundation_options = get_option($option_name);
 function wp_foundation_setup() {
 	
 	if ( !function_exists( 'optionsframework_init' ) ) {
-		define( 'OPTIONS_FRAMEWORK_DIRECTORY', get_template_directory_uri() . '/lib/' );
-		require_once dirname( __FILE__ ) . '/lib/options-framework.php';
+		define( 'OPTIONS_FRAMEWORK_DIRECTORY', get_template_directory_uri() . '/inc/' );
+		require_once dirname( __FILE__ ) . '/inc/options-framework.php';
 	}
 	
 	// Add native Wordpress Theme support
@@ -280,5 +280,7 @@ function apply_shortcode_to_widget_text($content){
 }
 
 add_filter("widget_text", "apply_shortcode_to_widget_text");
+
+
 
 ?>
