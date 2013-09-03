@@ -376,5 +376,8 @@ function optionsframework_options() {
 		'type' => 'editor',
 		'settings' => $wp_editor_settings );
 	*/
+
+	$options = apply_filters("wp_foundation_custom_options", $options);
+
 	return $options;
 }
