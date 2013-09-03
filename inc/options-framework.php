@@ -444,6 +444,10 @@ function optionsframework_adminbar() {
  *
  * @return array (by reference)
  */
+<<<<<<< HEAD
+=======
+
+>>>>>>> c7bc85f
 function &_optionsframework_options() {
 	static $options = null;
 
@@ -474,9 +478,15 @@ function &_optionsframework_options() {
  * Needed because options are saved as serialized strings.
  */
 
+<<<<<<< HEAD
 if ( ! function_exists( 'of_get_option' ) ) {
 
 	function of_get_option( $name, $default = false ) {
+=======
+//if ( ! function_exists( 'of_get_option' ) ) {
+
+	function of_get_option( $name = '', $default = false ) {
+>>>>>>> c7bc85f
 		$config = get_option( 'optionsframework' );
 
 		if ( ! isset( $config['id'] ) ) {
@@ -491,4 +501,8 @@ if ( ! function_exists( 'of_get_option' ) ) {
 
 		return $default;
 	}
+<<<<<<< HEAD
 }
+=======
+//}
+>>>>>>> c7bc85f

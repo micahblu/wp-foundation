@@ -244,6 +244,7 @@ function optionsframework_fields() {
 				$sizes = $typography_options['sizes'];
 				foreach ( $sizes as $i ) {
 					$size = $i . 'px';
+					//$size = $i;
 					$font_size .= '<option value="' . esc_attr( $size ) . '" ' . selected( $typography_stored['size'], $size, false ) . '>' . esc_html( $size ) . '</option>';
 				}
 				$font_size .= '</select>';

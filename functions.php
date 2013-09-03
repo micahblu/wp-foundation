@@ -17,24 +17,6 @@ require dirname( __FILE__ ) . '/includes/foundation-shortcodes.php';
 require dirname( __FILE__ ) . '/includes/pro-shortcodes.php';
 require dirname( __FILE__ ) . '/lib/prism/prism.php';
 
-/** 
- * Globally Declare our Theme Options if they exist
- * ------------------------------------------------------------------------------- */
-$optionsframework_settings = get_option('optionsframework');
-
-$theme = wp_get_theme();
-
-$template = $theme->template;
-
-// Gets the unique option id
-if( !empty($template) ) $option_name = $template;
-
-elseif ( isset( $optionsframework_settings['id'] ) ) $option_name = $optionsframework_settings['id'];	
-
-else $option_name = 'optionsframework';
-
-//our global options variable
-$wp_foundation_options = get_option($option_name);
 
 /**
  * Sets up Theme Options
@@ -50,7 +32,7 @@ function wp_foundation_setup() {
 		define( 'OPTIONS_FRAMEWORK_DIRECTORY', get_template_directory_uri() . '/inc/' );
 		require_once dirname( __FILE__ ) . '/inc/options-framework.php';
 	}
-	
+
 	// Add native Wordpress Theme support
 	add_theme_support( 'menus' ); 
 	add_theme_support( 'post-thumbnails', array( 'post', 'page' ) );
@@ -124,50 +106,55 @@ add_action( 'wp_enqueue_scripts', 'wp_foundation_enqueue_scripts' );
  * @return null
  */
 function wp_foundation_head(){
-
-	global $wp_foundation_options;
-	?>
-	<style type="text/css">
-	/* Custom Theme Styles */
-	body{
 	
-		<?php if(!empty($wp_foundation_options["background"]["image"]) or !empty($wp_foundation_options["background"]["color"])) : ?>
+	$background = of_get_option('body_background');
+	$header     = of_get_option('header_font');
+	$subheader  = of_get_option('sub_header_font');
+	$paragraph  = of_get_option('paragraph');
+	$linkcolor  = of_get_option('global_link_color');
+
+	echo "<style type=\"text/css\">\n";
+	echo "/* Custom Theme Styles */\n";
+
+	echo "body{\n";
+		if(!empty($background["image"]) or !empty($background["color"])) :
+			echo "background:" . (!empty($background["image"]) ? "url(".$background["image"].") " . $background["position"] . " " . $background["repeat"] : $background["color"]) . ";";
+		endif;
 			
-		background: <?php echo (!empty($wp_foundation_options["background"]["image"]) ? "url(".$wp_foundation_options["background"]["image"].") " . $wp_foundation_options["background"]["position"] . " " . $wp_foundation_options["background"]["repeat"] : $wp_foundation_options["background"]["color"]); ?>;
-		<?php endif; ?>
-		
-		<?php if(!empty($wp_foundation_options["background"]["attachment"])) : ?>
-		background-attachment: <?php echo $wp_foundation_options["background"]["attachment"] == "fixed" ? "fixed" : "scroll" ?>;
-		<?php endif; ?>
-		
-		<?php if(!empty($wp_foundation_options["typography"]["face"])) : ?>
-		font-family: <?php echo $wp_foundation_options["typography"]["face"]; ?>;
-		<?php endif; ?>
-				
-		<?php if(!empty($wp_foundation_options["typography"]["style"])) : ?>
-		font-weight: <?php echo $wp_foundation_options["typography"]["style"]; ?>;
-		<?php endif; ?>
-		
-		<?php if(!empty($wp_foundation_options["typography"]["color"])) : ?>
-		color: <?php echo $wp_foundation_options["typography"]["color"]; ?>;
-		<?php endif; ?>
-	}
+		if(!empty($background["attachment"])) :
+			echo "background-attachment:" . ($background["attachment"] == "fixed" ? "fixed" : "scroll") . ";";
+		endif;
+	echo "}\n";
 	
-	p{
-		<?php if(!empty($wp_foundation_options["typography"]["size"])
-				  && !is_array($wp_foundation_options["typography"]["size"])) : ?>
-		font-size: <?php echo $wp_foundation_options["typography"]["size"]; ?>;
-		<?php endif; ?>
-	}
-	
-	<?php if(!empty($wp_foundation_options["global_link_color"])) : ?>
-	a, a:visited{
-		color: <?php echo $wp_foundation_options["global_link_color"]; ?>;
-	}
-	<?php endif; ?>
-	</style>
-	<?php 
+	echo "h1, .site-title{\n";
+		echo (!empty($header["size"]) ? "font-size: " . $header['size'] : '') . ";";
+		echo (!empty($header["face"]) ? "font-family: " . $header['face'] : '') . ";";
+		echo (!empty($header["style"]) ? "font-weight: " . $header['style'] : '') . ";";
+		echo (!empty($header["color"]) ? "font-size: " . $header['color'] : '') . ";";
+	echo "}\n";
 
+	echo ".subheader{\n";
+		echo (!empty($subheader["size"]) ? "font-size: " . $subheader['size'] : '') . ";";
+		echo (!empty($subheader["face"]) ? "font-family: " . $subheader['face'] : '') . ";";
+		echo (!empty($subheader["style"]) ? "font-weight: " . $subheader['style'] : '') . ";";
+		echo (!empty($subheader["color"]) ? "font-size: " . $subheader['color'] : '') . ";";
+	echo "}\n";
+
+	echo "p{\n";
+			echo (!empty($paragraph["size"]) ? "font-size: " . $paragraph['size'] : '') . ";";
+			echo (!empty($paragraph["face"]) ? "font-family: " . $paragraph['face'] : '') . ";";
+			echo (!empty($paragraph["style"]) ? "font-weight: " . $paragraph['style'] : '') . ";";
+			echo (!empty($paragraph["color"]) ? "font-size: " . $paragraph['color'] : '') . ";";
+	echo "}\n";
+	
+	if(!empty($linkcolor)) :
+		echo "a, a:visited{\n";
+		echo "color:" . $linkcolor . ";";
+		echo "}\n";
+	endif;
+
+	echo "</style>\n";
+	
 	do_action("wp_foundation_head");
 }
 
@@ -183,9 +170,9 @@ function wp_foundation_head(){
  * @return null
  */
 function wp_foundation_footer(){
-	global $wp_foundation_options;
-	
-    if(!empty($wp_foundation_options["footer_scripts"])) echo '<script>' . $wp_foundation_options["footer_scripts"] . '</script>';
+		
+		$footer_scripts = of_get_option('footer_scripts');
+    if(!empty($footer_scripts)) echo '<script>' . $footer_scripts . '</script>';
 }
 
 add_action("wp_head", "wp_foundation_head");
