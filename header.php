@@ -1,5 +1,13 @@
 <?php
-global $wp_foundation_options;	
+$favicon = of_get_option('wpf-favicon'); // this is  TODO item
+$logo    = of_get_option('logo');
+$social  = array(
+	"facebook"   => of_get_option("facebook_url"),
+	"twitter"    => of_get_option("twitter_url"),
+	"instagram"  => of_get_option("instagram_url"),
+	"pinterest"  => of_get_option("pinterest_url"),
+	"youtube"    => of_get_option("youtube_url"),
+);
 ?>
 <!DOCTYPE html>
 <!--[if IE 8]>    <html class="no-js lt-ie9"  <?php language_attributes(); ?>> <![endif]-->
@@ -57,23 +65,26 @@ global $wp_foundation_options;
 
   <div id="header" class="row">
     <div id="brand" class="large-9 columns">
-		<?php if(!empty($wp_foundation_options["logo"])) : ?>
+
+
+    <?php if(!empty($logo)) : ?>
 			<a href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
-				<img id="logo" src="<?php echo $wp_foundation_options["logo"]; ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" />
+				<img id="logo" src="<?php echo $logo ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" />
 			</a>
 		<?php else: ?>
 			<h1 class="site-title"><a href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 			<h2 class="subheader site-description"><small><?php bloginfo( 'description' ); ?></small></h2>
 		<?php endif; ?>
+
     </div><!-- #brand .large-9 .columns -->
 
 
     <div id="social-header-block">
-			<?php if( !empty($wp_foundation_options['facebook_url'])) : ?><a href="<?php echo $wp_foundation_options['facebook_url'] ?>" target="_blank" class="facebook social-icon">Facebook</a><?php endif; ?>
-			<?php if( !empty($wp_foundation_options['twitter_url'])) : ?><a href="<?php echo $wp_foundation_options['twitter_url'] ?>" target="_blank" class="twitter social-icon">Twitter</a><?php endif; ?>
-			<?php if( !empty($wp_foundation_options['instagram_url'])) : ?><a href="<?php echo $wp_foundation_options['instagram_url'] ?>" target="_blank" class="instagram social-icon">Instagram</a><?php endif; ?>
-			<?php if( !empty($wp_foundation_options['pinterest_url'])) : ?><a href="<?php echo $wp_foundation_options['pinterest_url'] ?>" target="_blank" class="pinterest social-icon">Pinterest</a><?php endif; ?>
-			<?php if( !empty($wp_foundation_options['youtube_url']) ) : ?><a href="<?php echo $wp_foundation_options['youtube_url'] ?>" target="_blank" class="youtube social-icon">Youtube</a><?php endif; ?>
+			<?php if(!empty($social['facebook']))  : ?><a href="<?php echo $social['facebook'] ?>" target="_blank" class="facebook social-icon">Facebook</a><?php endif; ?>
+			<?php if(!empty($social['twitter']))   : ?><a href="<?php echo $social['twitter'] ?>" target="_blank" class="twitter social-icon">Twitter</a><?php endif; ?>
+			<?php if(!empty($social['instagram'])) : ?><a href="<?php echo $social['instagram'] ?>" target="_blank" class="instagram social-icon">Instagram</a><?php endif; ?>
+			<?php if(!empty($social['pinterest'])) : ?><a href="<?php echo $social['pinterest'] ?>" target="_blank" class="pinterest social-icon">Pinterest</a><?php endif; ?>
+			<?php if(!empty($social['youtube']))   : ?><a href="<?php echo $social['youtube'] ?>" target="_blank" class="youtube social-icon">Youtube</a><?php endif; ?>
 		</div><!-- #social-header -->
   </div><!-- #header .row -->  
    
