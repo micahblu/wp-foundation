@@ -339,8 +339,19 @@ function optionsframework_fields() {
 				$output .= '<option value="' . esc_attr( $key ) . '" ' . selected( $background['attachment'], $key, false ) . '>' . esc_html( $attachment ) . '</option>';
 			}
 			$output .= '</select>';
-			$output .= '</div>';
+			//$output .= '</div>';
 
+			// Background Sizes
+		
+			$output .= '<select class="of-background of-background-size" name="' . esc_attr( $option_name . '[' . $value['id'] . '][size]' ) . '" id="' . esc_attr( $value['id'] . '_size' ) . '">';
+			$sizes = of_recognized_background_sizes();
+
+			foreach ($sizes as $key => $size) {
+				$output .= '<option value="' . esc_attr( $key ) . '" ' . selected( $background['size'], $key, false ) . '>' . esc_html( $size ) . '</option>';
+			}
+			$output .= '</select>';
+			$output .= '</div>';
+		
 			break;
 			
 		// Editor

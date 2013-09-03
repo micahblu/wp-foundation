@@ -57,7 +57,8 @@ function optionsframework_options() {
 		'image' => '',
 		'repeat' => 'repeat',
 		'position' => 'top center',
-		'attachment'=>'scroll' );
+		'attachment'=>'scroll',
+		"size" => "auto" );
 
 	// Typography Defaults / Header
 	$typography_defaults_header = array(

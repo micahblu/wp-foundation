@@ -112,8 +112,16 @@
 #optionsframework .controls .of-background-attachment {
 	width:125px;
 	margin-right:5px;
+	float:left;
+	clear:both;
+}
+
+#optionsframework .controls .of-background-size {
+	width:125px;
+	margin-right:5px;
 	float:left
 }
+
 #optionsframework .section-background .wp-picker-container {
 	margin-bottom:10px;
 }

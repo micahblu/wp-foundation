@@ -124,6 +124,10 @@ function wp_foundation_head(){
 		if(!empty($background["attachment"])) :
 			echo "background-attachment:" . ($background["attachment"] == "fixed" ? "fixed" : "scroll") . ";";
 		endif;
+
+		if(!empty($background["size"])) :
+			echo "background-size:" . $background["size"]  . ";";
+		endif;
 	echo "}\n";
 	
 	echo "h1, .site-title{\n";

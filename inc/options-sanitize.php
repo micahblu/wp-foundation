@@ -164,6 +164,16 @@ function of_sanitize_background_attachment( $value ) {
 add_filter( 'of_background_attachment', 'of_sanitize_background_attachment' );
 
 
+function of_sanitize_background_size( $value ) {
+	$recognized = of_recognized_background_size();
+	if ( array_key_exists( $value, $recognized ) ) {
+		return $value;
+	}
+	return apply_filters( 'of_default_background_size', current( $recognized ) );
+}
+add_filter( 'of_background_size', 'of_sanitize_background_size' );
+
+
 /* Typography */
 
 function of_sanitize_typography( $input, $option ) {
@@ -266,10 +276,27 @@ function of_recognized_background_position() {
  */
 function of_recognized_background_attachment() {
 	$default = array(
-		'scroll' => __( 'Scroll Normally', 'options_framework_theme' ),
+		'scroll' => __( 'Scroll Normally', 'options_framework_theme'),
 		'fixed'  => __( 'Fixed in Place', 'options_framework_theme')
 		);
 	return apply_filters( 'of_recognized_background_attachment', $default );
+}
+
+/**
+ * Get recognized background sizes
+ *
+ * @return   array
+ *
+ */
+function of_recognized_background_sizes() {
+	$default = array(
+		'auto'     => __( 'Auto', 'options_framework_theme'),
+		'contain'  => __( 'Contain', 'options_framework_theme'),
+		'cover'    => __( 'Cover', 'options_framework_theme'),
+		'inherit'  => __( 'Inherit', 'options_framework_theme'),
+
+		);
+	return apply_filters( 'of_recognized_background_size', $default );
 }
 
 /**

@@ -35,6 +35,8 @@
 		// init foundation scripts
     $(document).foundation();
   </script>
+
+  <?php do_action("wp_foundation_did_footer"); ?>
   <!-- End Footer -->
 </body>
 </html>
