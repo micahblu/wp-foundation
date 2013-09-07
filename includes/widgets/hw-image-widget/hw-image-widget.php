@@ -14,7 +14,7 @@ function hwim_action_admin_enqueue_scripts() {
 		wp_enqueue_media();
 		wp_enqueue_script(
 			'hwim-be',
-			get_stylesheet_directory_uri() .'/includes/widgets/hw-image-widget/js/back-end.js',
+			get_template_directory_uri() .'/includes/widgets/hw-image-widget/js/back-end.js',
 			array( 'jquery' ),
 			'2.3'
 		);
