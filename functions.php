@@ -9,6 +9,7 @@
  
 if ( ! isset( $content_width ) ) $content_width = 1000;
 
+
 //before we go any further let's add our wordpress extension methods
 require dirname( __FILE__ ) . '/includes/wp-extend.php';
 require dirname( __FILE__ ) . '/includes/widgets.php';
@@ -16,7 +17,6 @@ require dirname( __FILE__ ) . '/includes/orbit-carousel-slider.php';
 require dirname( __FILE__ ) . '/includes/foundation-shortcodes.php';
 require dirname( __FILE__ ) . '/includes/pro-shortcodes.php';
 require dirname( __FILE__ ) . '/lib/prism/prism.php';
-
 
 /**
  * Sets up Theme Options
@@ -36,6 +36,7 @@ function wp_foundation_setup() {
 	// Add native Wordpress Theme support
 	add_theme_support( 'menus' ); 
 	/* add_theme_support( 'post-thumbnails', array( 'post', 'page' ) ); ! was conflicting w/woocommerce set featured image */
+	add_theme_support( 'post-thumbnails' );
 	add_theme_support( 'automatic-feed-links' );
 	
 	// Add our custom Foundation Menu Walker

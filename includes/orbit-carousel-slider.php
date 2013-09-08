@@ -44,7 +44,7 @@ function wp_foundation_carousel_slides_init() {
 
   register_post_type( 'slide', $args );
   
-  add_theme_support( 'post-thumbnails', array( 'post', 'slide' ) );
+  //add_theme_support( 'post-thumbnails', array( 'slide' ) );
 }
 
 /**
