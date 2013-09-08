@@ -9,7 +9,6 @@
  
 if ( ! isset( $content_width ) ) $content_width = 1000;
 
-
 //before we go any further let's add our wordpress extension methods
 require dirname( __FILE__ ) . '/includes/wp-extend.php';
 require dirname( __FILE__ ) . '/includes/widgets.php';
@@ -17,6 +16,7 @@ require dirname( __FILE__ ) . '/includes/orbit-carousel-slider.php';
 require dirname( __FILE__ ) . '/includes/foundation-shortcodes.php';
 require dirname( __FILE__ ) . '/includes/pro-shortcodes.php';
 require dirname( __FILE__ ) . '/lib/prism/prism.php';
+
 
 /**
  * Sets up Theme Options

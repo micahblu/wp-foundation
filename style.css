@@ -124,7 +124,25 @@ h3, h4, h5, h6, strong, b{
 .youtube{ background-image: url("images/social/youtube.png") }
 
 
+/* =Woocommerce fixes
+-------------------------------------------------------------- */
 
+/* fix plus/minus position for quantitiy input field */
+.woocommerce div.product form.cart div.quantity, .woocommerce-page div.product form.cart div.quantity, .woocommerce #content div.product form.cart div.quantity, .woocommerce-page #content div.product form.cart div.quantity {
+	height: 30px;
+}
+
+.woocommerce .quantity input.qty, .woocommerce-page .quantity input.qty, .woocommerce #content .quantity input.qty, .woocommerce-page #content .quantity input.qty {
+	height: 30px!important	;
+}
+
+/* Woocommerce uses .panel for its tabs, let's remove foundation's default .panel styles */
+.woocommerce div.product .woocommerce-tabs .panel, .woocommerce-page div.product .woocommerce-tabs .panel, .woocommerce #content div.product .woocommerce-tabs .panel, .woocommerce-page #content div.product .woocommerce-tabs .panel {
+	border-style: none;
+	border-width: 0px;
+	border-color: none;
+	background: transparent;
+}
 /* =WordPress Core
 -------------------------------------------------------------- */
 
