@@ -35,7 +35,7 @@ function wp_foundation_setup() {
 
 	// Add native Wordpress Theme support
 	add_theme_support( 'menus' ); 
-	add_theme_support( 'post-thumbnails', array( 'post', 'page' ) );
+	/* add_theme_support( 'post-thumbnails', array( 'post', 'page' ) ); ! was conflicting w/woocommerce set featured image */
 	add_theme_support( 'automatic-feed-links' );
 	
 	// Add our custom Foundation Menu Walker
