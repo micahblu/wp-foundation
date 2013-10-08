@@ -4,7 +4,7 @@ Theme URI: http://micahblu.com/lab/wp-foundation
 Description: A simple wordpress theme based on the Foundation CSS framework by Zurb
 Author: Micah Blu
 Author URI: http://micahblu.com
-Version: 1.0
+Version: 1.9.1
 
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -24,7 +24,7 @@ Text Domain: wp-foundation
 /* =Orbit Carousel Slider
 -------------------------------------------------------------- */
 .orbit-slides-container li{
-	min-height: 400px;
+	min-height: 350px;
 	-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
 	-moz-box-sizing: border-box;    /* Firefox, other Gecko */
 	box-sizing: border-box;         /* Opera/IE 8+ */
@@ -34,7 +34,6 @@ Text Domain: wp-foundation
 .orbit-slides-container li h1,
 .orbit-slides-container li p{
 	color: white;
-	text-shadow: 2px 3px 4px black;
 }
 
 /* Default Typography
