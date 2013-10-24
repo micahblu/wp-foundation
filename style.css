@@ -92,7 +92,7 @@ h3, h4, h5, h6, strong, b{
 }
 
 .meta {
-    display: block;
+  display: block;
 	font-size: .6em;
 	top: -5px;
 	padding: 0px;
@@ -104,18 +104,19 @@ h3, h4, h5, h6, strong, b{
 -------------------------------------------------------------- */
 
 #social-header-block{
-    float:right;
+	float:right;
 }
 
 .social-icon{
-    width: 32px;
-    height: 32px;
-    background-size: 32px 32px;
-    background-repeat: no-repeat;
-    overflow: hidden;
-    display: inline-block;
-    text-indent: -999em;
+	width: 32px;
+	height: 32px;
+	background-size: 32px 32px;
+	background-repeat: no-repeat;
+	overflow: hidden;
+	display: inline-block;
+	text-indent: -999em;
 }
+
 .facebook{ background-image: url("images/social/facebook.png") }
 .twitter{ background-image: url("images/social/twitter.png") }
 .instagram{ background-image: url("images/social/instagram.png") }
@@ -142,10 +143,11 @@ h3, h4, h5, h6, strong, b{
 	border-color: none;
 	background: transparent;
 }
+
 /* =WordPress Core
 -------------------------------------------------------------- */
 
-/* Body Classes */
+/* Body Classes 
 .rtl {}
 .home {}
 .blog {}
@@ -178,6 +180,7 @@ h3, h4, h5, h6, strong, b{
 .date-paged-(page number) {}
 .author-paged-(page number) {}
 .search-paged-(page number) {}
+*/
 
 /* Default Post Styles */
 .post-id {}
@@ -185,7 +188,7 @@ h3, h4, h5, h6, strong, b{
 	border-bottom: 1px solid #ccc;
 	padding-bottom: 55px;
 	margin-bottom: 45px;
-    margin-top: 3em;
+  margin-top: 3em;
 }
 
 .post:last-child{
@@ -193,9 +196,15 @@ h3, h4, h5, h6, strong, b{
 	border-bottom: 0px;
 }
 
+.sticky { background: white }
+
+.entry-content{
+	margin: 1em 0;	
+}
+
+/*
 .page {}
 .attachment {}
-.sticky { background: white }
 .hentry {}
 .category-misc {}
 .category-example {}
@@ -204,7 +213,7 @@ h3, h4, h5, h6, strong, b{
 .tag-markup {}
 
 
-/* Default Post Format styles */
+/* Default Post Format styles 
 .format-image {}
 .format-gallery {}
 .format-chat {}
@@ -213,7 +222,7 @@ h3, h4, h5, h6, strong, b{
 .format-status {}
 .format-video {}
 
-/* Default WYSIWYG Styles */
+/* Default WYSIWYG Styles 
 .entry-content img {}
 .wp-smiley {}
 
@@ -231,7 +240,7 @@ blockquote.right {}
 .size-large {}
 .size-medium {}
 .size-thumbnail {}
-
+*/
 .alignnone {
     margin: 5px 20px 20px 0;
 }
@@ -319,6 +328,7 @@ a img.aligncenter {
     margin-top: 3em;
 }
 
+/*
 #searchform {}
 .widget_search {}
 .screen-reader-text {}
@@ -395,8 +405,8 @@ a img.aligncenter {
 .widget_text {}
 .textwidget p {}
 
-/* Default comment styles */
-/*Comment Output*/
+/* Default comment styles 
+/*Comment Output*
 
 .commentlist .reply {}
 .commentlist .reply a {}
@@ -446,7 +456,7 @@ a img.aligncenter {
 #cancel-comment-reply {}
 #cancel-comment-reply a {}
 
-/*Comment Form */
+/*Comment Form 
 
 #respond { } 
 #reply-title { } 
@@ -465,6 +475,6 @@ a img.aligncenter {
 .comment-form-comment { } 
 .form-allowed-tags { } 
 .form-submit
-
+*/
 
 /* Ends Wordpress Core CSS */
