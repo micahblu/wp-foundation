@@ -36,16 +36,11 @@ get_header(); ?>
   
   	foreach($slides as $slide) : ?>
   		
-  		<?php if ( $url = wp_get_attachment_url( get_post_thumbnail_id($slide->ID) ) ): ?>
-
-				<li style="background: url('<?php echo $url; ?>') no-repeat center center">
-					<h1><?php echo $slide->post_title; ?></h1>
-					<p><?php echo $slide->post_content; ?></p>	
-				</li>
-				<?php else : ?>
+			<li style="background: url('<?php echo $url; ?>') no-repeat center center">
+				<!--<h1><?php echo $slide->post_title; ?></h1>-->
+				<p><?php echo $slide->post_content; ?></p>
+			</li>
 				
-				<?php endif; ?>
-
   	<?php endforeach; ?>
   </ul>
   
