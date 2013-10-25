@@ -23,6 +23,13 @@ Text Domain: wp-foundation
 
 /* =Orbit Carousel Slider
 -------------------------------------------------------------- */
+
+.orbit-slides-container{
+	background: white;
+	height: auto;
+}
+
+
 .orbit-slides-container li{
 	min-height: 350px;
 	-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
@@ -33,7 +40,7 @@ Text Domain: wp-foundation
 
 .orbit-slides-container li h1,
 .orbit-slides-container li p{
-	color: white;
+
 }
 
 /* Default Typography
@@ -145,7 +152,7 @@ h3, h4, h5, h6, strong, b{
 }
 
 /* =WordPress Core
--------------------------------------------------------------- */
+-------------------------------------------------------------- 
 
 /* Body Classes 
 .rtl {}
@@ -196,6 +203,7 @@ h3, h4, h5, h6, strong, b{
 	border-bottom: 0px;
 }
 
+
 .sticky { background: white }
 
 .entry-content{
@@ -213,7 +221,11 @@ h3, h4, h5, h6, strong, b{
 .tag-markup {}
 
 
+
 /* Default Post Format styles 
+
+/* Default Post Format styles
+
 .format-image {}
 .format-gallery {}
 .format-chat {}
@@ -223,6 +235,9 @@ h3, h4, h5, h6, strong, b{
 .format-video {}
 
 /* Default WYSIWYG Styles 
+
+/* Default WYSIWYG Styles
+
 .entry-content img {}
 .wp-smiley {}
 
@@ -318,8 +333,6 @@ a img.aligncenter {
 }
 
 /* Default widget styles */
-.widget {}
-
 #secondary{
   margin-top: 3em;
 }
@@ -329,6 +342,8 @@ a img.aligncenter {
 }
 
 /*
+.widget {}
+>>>>>>> dev
 #searchform {}
 .widget_search {}
 .screen-reader-text {}
@@ -406,7 +421,11 @@ a img.aligncenter {
 .textwidget p {}
 
 /* Default comment styles 
+
 /*Comment Output*
+
+/*Comment Output
+
 
 .commentlist .reply {}
 .commentlist .reply a {}

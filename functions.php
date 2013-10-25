@@ -86,8 +86,8 @@ function wp_foundation_enqueue_scripts() {
 	wp_enqueue_script('modernizr', get_template_directory_uri() . '/js/vendor/custom.modernizr.js', null, null, true);
 	
 	// deregister wp's jquery as we want to use the version that has been tested with and comes with foundation
-	wp_deregister_script('jquery');
-	wp_register_script('jquery', get_template_directory_uri() . '/js/vendor/jquery.js', null, null, true);
+	//wp_deregister_script('jquery');
+	//wp_register_script('jquery', get_template_directory_uri() . '/js/vendor/jquery.js', null, null, true);
 	wp_enqueue_script('jquery');
 	
 	wp_enqueue_script('foundation-js', get_template_directory_uri() . '/js/foundation.min.js', null, null, true);
