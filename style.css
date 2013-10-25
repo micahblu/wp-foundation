@@ -23,6 +23,13 @@ Text Domain: wp-foundation
 
 /* =Orbit Carousel Slider
 -------------------------------------------------------------- */
+
+.orbit-slides-container{
+	background: white;
+	height: auto;
+}
+
+
 .orbit-slides-container li{
 	min-height: 400px;
 	-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */

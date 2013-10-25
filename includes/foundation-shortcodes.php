@@ -25,7 +25,7 @@ class WPFoundationShortcodes {
 	*
 	*-------------------------------------------------------------------------------------*/
 	function add_shortcodes() {
-	
+
 		add_shortcode('button', array( $this, 'wpf_button' ));
 		add_shortcode('alert', array( $this, 'wpf_alert' ));
 		add_shortcode('row', array( $this, 'wpf_row' ));
@@ -33,6 +33,7 @@ class WPFoundationShortcodes {
 		add_shortcode('panel', array( $this, 'wpf_panel' ));
 		add_shortcode('label', array( $this, 'wpf_label' ));
 		add_shortcode('line', array( $this, 'wpf_line' ));
+		
 	}
 
 
@@ -104,7 +105,7 @@ class WPFoundationShortcodes {
 		  "addid" => ''
 		), $atts));
 		 
-		$content = str_replace("<br />", "", do_shortcode($content));
+		$content = do_shortcode($content);
 		
 		return '<div' . (isset($addid) ? ' id="' . $addid . '"' : '') . 'class="row' . (isset($addclass) ? ' ' . $addclass : '') . '">' . $content . '</div>';
 			

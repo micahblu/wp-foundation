@@ -35,10 +35,10 @@ get_header(); ?>
   	$slides = get_posts($args);
   
   	foreach($slides as $slide) : ?>
-  		
+  		<?php $url = wp_get_attachment_url( get_post_thumbnail_id($slide->ID) );	 ?>
 			<li style="background: url('<?php echo $url; ?>') no-repeat center center">
 				<!--<h1><?php echo $slide->post_title; ?></h1>-->
-				<p><?php echo $slide->post_content; ?></p>
+				<p><?php echo do_shortcode(wpautop($slide->post_content)); ?></p>
 			</li>
 				
   	<?php endforeach; ?>
