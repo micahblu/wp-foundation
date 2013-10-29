@@ -12,12 +12,16 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: dark, blue, light, white, black, gray, one-column, two-columns, left-sidebar, right-sidebar, fixed-width, flexible-width, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-images, flexible-header, full-width-template, microformats, post-formats, sticky-post, theme-options, translation-ready
 Text Domain: wp-foundation
 
+
  * WP Foundation WordPress Theme Copyright 2013 Micah Blu Sylvester.
  * This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
  
  * Note: You will see that most of this file is simply a CSS shell... its becuase most of the heavy lifting is done by the Foundation framework, I've included the standard wordpress classnames & Id's so that you can begin to add your custom styles without having to look for all the elements yourself. Happy theming... :)
-
+	
+	Foundation
+	Foundation (http://foundation.zurb.com/), (c) 2013 ZURB (http://zurb.com/).
+	Foundation is licensed under the terms of the MIT Open Source License.
 */
 
 

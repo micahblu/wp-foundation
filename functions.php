@@ -12,11 +12,7 @@ if ( ! isset( $content_width ) ) $content_width = 1000;
 //before we go any further let's add our wordpress extension methods
 require dirname( __FILE__ ) . '/includes/wp-extend.php';
 require dirname( __FILE__ ) . '/includes/widgets.php';
-require dirname( __FILE__ ) . '/includes/orbit-carousel-slider.php';	
-require dirname( __FILE__ ) . '/includes/foundation-shortcodes.php';
-require dirname( __FILE__ ) . '/includes/pro-shortcodes.php';
 require dirname( __FILE__ ) . '/lib/prism/prism.php';
-
 
 /**
  * Sets up Theme Options
@@ -86,8 +82,7 @@ function wp_foundation_enqueue_scripts() {
 	wp_enqueue_script('modernizr', get_template_directory_uri() . '/js/vendor/custom.modernizr.js', null, null, true);
 	
 	// deregister wp's jquery as we want to use the version that has been tested with and comes with foundation
-	//wp_deregister_script('jquery');
-	//wp_register_script('jquery', get_template_directory_uri() . '/js/vendor/jquery.js', null, null, true);
+	
 	wp_enqueue_script('jquery');
 	
 	wp_enqueue_script('foundation-js', get_template_directory_uri() . '/js/foundation.min.js', null, null, true);
@@ -176,12 +171,22 @@ function wp_foundation_head(){
  */
 function wp_foundation_footer(){
 		
-		$footer_scripts = of_get_option('footer_scripts');
-    if(!empty($footer_scripts)) echo '<script>' . $footer_scripts . '</script>';
-}
+	$footer_scripts = of_get_option('footer_scripts');
+	?>
+	<script>
+	 <?php if(!empty($footer_scripts)) echo  $footer_scripts ?>
+
+	 (function($){ 	
+			// buffer class to wordpress generated inputs where id=submit. i.e. commment submit button
+			$("input[id=submit]").addClass("button"); 
+
+	    $(document).foundation('topbar', {stickyClass: 'sticky-topbar'});
+  	})(jQuery);
+	</script>
+<?php }
 
 add_action("wp_head", "wp_foundation_head");
-add_action("wp_footer", "wp_foundation_footer");
+add_action("wp_footer", "wp_foundation_footer", 999); //put a late priority to ensure dependencies have been added
 
 /**
  * Prints HTML with meta information for current post: categories, tags, permalink, author, and date.
@@ -272,7 +277,4 @@ function apply_shortcode_to_widget_text($content){
 }
 
 add_filter("widget_text", "apply_shortcode_to_widget_text");
-
-
-
 ?>
