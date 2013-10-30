@@ -54,7 +54,6 @@ get_header(); ?>
 		</div><!-- .author-info -->
 		<?php endif; ?>
 
-		<?php /* Start the Loop */ ?>
 		<?php while ( have_posts() ) : the_post(); ?>
 			<?php get_template_part( 'content', get_post_format() ); ?>
 		<?php endwhile; ?>
@@ -62,7 +61,6 @@ get_header(); ?>
 	<?php else : ?>
 		<?php get_template_part( 'content', 'none' ); ?>
 	<?php endif; ?>
-
 	</div><!-- .large-8 .columns -->
 	
 	<div class="large-4 columns">

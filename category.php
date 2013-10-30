@@ -14,7 +14,6 @@
 get_header(); ?>
 
 	<div class="large-8 columns" role="main">
-
 	<?php if ( have_posts() ) : ?>
 		<header class="archive-header">
 			<h1 class="archive-title"><?php printf( __( 'Category Archives: %s', 'wp-foundation' ), '&ldquo;' . single_cat_title( '', false ) . '&rdquo;' ); ?></h1>
@@ -24,8 +23,7 @@ get_header(); ?>
 		<?php endif; ?>
 		</header><!-- .archive-header -->
 
-		<?php
-		/* Start the Loop */	
+		<?php	
 		while ( have_posts() ) : the_post();
 			/* Include the post format-specific template for the content. If you want to
 			 * this in a child theme then include a file called called content-___.php
@@ -35,11 +33,9 @@ get_header(); ?>
 
 		endwhile;
 		?>
-
 	<?php else : ?>
 		<?php get_template_part( 'content', 'none' ); ?>
 	<?php endif; ?>
-
 	</div><!-- .large-8 .columns -->
 	
 	<div class="large-4 columns">

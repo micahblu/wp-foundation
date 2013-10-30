@@ -44,7 +44,6 @@ get_header(); ?>
 	<?php endif; ?>
 	
 	<?php wp_foundation_paginate(); ?>
-	
 	</div><!-- .large-8 .columns -->
 	
 	<div class="large-4 columns">
