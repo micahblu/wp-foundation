@@ -24,6 +24,9 @@ Text Domain: wp-foundation
 	Foundation is licensed under the terms of the MIT Open Source License.
 */
 
+body,div,span,p,ul,ol{
+	word-wrap:break-word;
+}
 
 /* =Orbit Carousel Slider
 -------------------------------------------------------------- */
@@ -50,13 +53,11 @@ Text Domain: wp-foundation
 /* Default Typography
 -------------------------------------------------------------- */
 h1, h2, p{
-	font-family: 'Open Sans', Helvetica, sans-serif;
-	font-weight: 300;
+
 }
 
 h3, h4, h5, h6, strong, b{
-	font-family: 'Open Sans', Helvetica, sans-serif;
-	font-weight: 800;
+
 }
 
 /* =Header 
@@ -206,9 +207,6 @@ h3, h4, h5, h6, strong, b{
 	margin-bottom: 0px;
 	border-bottom: 0px;
 }
-
-
-.sticky { background: white }
 
 .entry-content{
 	margin: 1em 0;	

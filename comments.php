@@ -24,20 +24,20 @@ if ( post_password_required() )
 <div id="comments" class="comments-area">
 
 	<?php if ( have_comments() ) : ?>
-		<h2 class="comments-title">
+		<h3 class="comments-title">
 			<?php
 				printf( _n( 'One thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', get_comments_number(), 'wp-foundation' ),
 					number_format_i18n( get_comments_number() ), '<span>' . get_the_title() . '</span>' );
 			?>
-		</h2>
+		</h3>
 
 		<ol class="commentlist">
-			<?php wp_list_comments( array( 'callback' => '', 'style' => 'ol' ) ); ?>
+			<?php wp_list_comments( array( 'callback' => '', 'style' => 'ul' ) ); ?>
 		</ol><!-- .commentlist -->
 		
 		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // are there comments to navigate through ?>
 		<nav id="comment-nav-below" class="navigation" role="navigation">
-			<h1 class="assistive-text section-heading"><?php _e( 'Comment navigation', 'wp-foundation' ); ?></h1>
+			<h3 class="assistive-text section-heading"><?php _e( 'Comment navigation', 'wp-foundation' ); ?></h3>
 			<div class="nav-previous"><?php previous_comments_link( __( '&larr; Older Comments', 'wp-foundation' ) ); ?></div>
 			<div class="nav-next"><?php next_comments_link( __( 'Newer Comments &rarr;', 'wp-foundation' ) ); ?></div>
 		</nav>

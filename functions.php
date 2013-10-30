@@ -14,6 +14,27 @@ require dirname( __FILE__ ) . '/includes/wp-extend.php';
 require dirname( __FILE__ ) . '/includes/widgets.php';
 require dirname( __FILE__ ) . '/lib/prism/prism.php';
 
+
+/**
+ * Pagination
+ *
+ * @since 1.0
+ * @access private
+ * @return null
+ */
+function wp_foundation_paginate(){
+	global $wp_query;
+	die(__LINE__ . " page " . $_SERVER['PHP_SELF']);
+	$big = 999999999; // need an unlikely integer
+	
+	echo paginate_links( array(
+		'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
+		'format' => '?paged=%#%',
+		'current' => max( 1, get_query_var('paged') ),
+		'total' => $wp_query->max_num_pages
+	) );
+}
+
 /**
  * Sets up Theme Options
  *
@@ -72,23 +93,12 @@ add_action("after_setup_theme", "wp_foundation_setup");
  * @return null
  */
 function wp_foundation_enqueue_scripts() {
-
-	// styles	
 	wp_enqueue_style('foundation-core', get_template_directory_uri() . '/css/foundation.css', false);
-	
 	wp_enqueue_style('core', get_stylesheet_directory_uri() . '/style.css', false); 
-	
-	// scripts
 	wp_enqueue_script('modernizr', get_template_directory_uri() . '/js/vendor/custom.modernizr.js', null, null, true);
-	
-	// deregister wp's jquery as we want to use the version that has been tested with and comes with foundation
-	
 	wp_enqueue_script('jquery');
-	
 	wp_enqueue_script('foundation-js', get_template_directory_uri() . '/js/foundation.min.js', null, null, true);
-	
 	if ( is_singular() ) wp_enqueue_script( 'comment-reply' );
-
 }
 
 add_action( 'wp_enqueue_scripts', 'wp_foundation_enqueue_scripts' );
@@ -111,7 +121,6 @@ function wp_foundation_head(){
 
 	echo "<style type=\"text/css\">\n";
 	echo "/* Custom Theme Styles */\n";
-
 	echo "body{\n";
 		if(!empty($background["image"]) or !empty($background["color"])) :
 			echo "background:" . (!empty($background["image"]) ? "url(".$background["image"].") " . $background["position"] . " " . $background["repeat"] : $background["color"]) . ";";
@@ -130,21 +139,21 @@ function wp_foundation_head(){
 		echo (!empty($header["size"]) ? "font-size: " . $header['size'] : '') . ";";
 		echo (!empty($header["face"]) ? "font-family: " . $header['face'] : '') . ";";
 		echo (!empty($header["style"]) ? "font-weight: " . $header['style'] : '') . ";";
-		echo (!empty($header["color"]) ? "font-size: " . $header['color'] : '') . ";";
+		echo (!empty($header["color"]) ? "color: " . $header['color'] : '') . ";";
 	echo "}\n";
 
 	echo ".subheader{\n";
 		echo (!empty($subheader["size"]) ? "font-size: " . $subheader['size'] : '') . ";";
 		echo (!empty($subheader["face"]) ? "font-family: " . $subheader['face'] : '') . ";";
 		echo (!empty($subheader["style"]) ? "font-weight: " . $subheader['style'] : '') . ";";
-		echo (!empty($subheader["color"]) ? "font-size: " . $subheader['color'] : '') . ";";
+		echo (!empty($subheader["color"]) ? "color: " . $subheader['color'] : '') . ";";
 	echo "}\n";
 
 	echo "p{\n";
 			echo (!empty($paragraph["size"]) ? "font-size: " . $paragraph['size'] : '') . ";";
 			echo (!empty($paragraph["face"]) ? "font-family: " . $paragraph['face'] : '') . ";";
 			echo (!empty($paragraph["style"]) ? "font-weight: " . $paragraph['style'] : '') . ";";
-			echo (!empty($paragraph["color"]) ? "font-size: " . $paragraph['color'] : '') . ";";
+			echo (!empty($paragraph["color"]) ? "color: " . $paragraph['color'] : '') . ";";
 	echo "}\n";
 	
 	if(!empty($linkcolor)) :

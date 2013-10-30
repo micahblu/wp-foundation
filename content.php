@@ -7,37 +7,30 @@
  * @since WP Foundation 0.7 
  */
  ?>
-
 	<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-		<?php if ( is_sticky() && is_home() && ! is_paged() ) : ?>
+	<?php if ( is_sticky() && is_home() && ! is_paged() ) : ?>
 		<div class="featured-post">
 			<?php _e( 'Featured post', 'wp-foundation' ); ?>
 		</div>
-		<?php endif; ?>
+	<?php endif; ?>
+		
 		<header class="entry-header">
-			
-			<?php if ( is_single() ) : ?>
+		<?php if ( is_single() ) : ?>
 			<h1 class="entry-title"><?php the_title(); ?></h1>
-			<?php else : ?>
+		<?php else : ?>
+
 			<h1 class="entry-title">
 				<a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( sprintf( __( 'Permalink to %s', 'wp-foundation' ), the_title_attribute( 'echo=0' ) ) ); ?>" rel="bookmark"><?php the_title(); ?></a>
 			</h1>
-			
-			<?php endif; // is_single() ?>
-			
-			<?php if ( comments_open() ) : ?>
-				<!--
-				<div class="comments-link">
-					<?php comments_popup_link( '<span class="leave-reply">' . __( 'Leave a reply', 'wp-foundation' ) . '</span>', __( '1 Reply', 'wp_foundation' ), __( '% Replies', 'wp-foundation' ) ); ?>
-				</div> .comments-link -->
-				
-			<?php endif; // comments_open() ?>
+		<?php endif; // is_single() ?>
 		</header><!-- .entry-header -->
+
 		<?php the_post_thumbnail('thumbnail'); ?>
+
 		<?php if ( is_search() ) : // Only display Excerpts for Search ?>
-		<div class="entry-summary">
-			<?php the_excerpt(); ?>
-		</div><!-- .entry-summary -->
+			<div class="entry-summary">
+				<?php the_excerpt(); ?>
+			</div><!-- .entry-summary -->
 		<?php else : ?>
 		<div class="entry-content">
 			<?php the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'wp-foundation' ) ); ?>
@@ -66,16 +59,3 @@
 			<?php endif; ?>
 		</footer><!-- .entry-meta -->
 	</article><!-- #post -->
-	
-	<?php
-	global $wp_query;
-
-	$big = 999999999; // need an unlikely integer
-	
-	echo paginate_links( array(
-		'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
-		'format' => '?paged=%#%',
-		'current' => max( 1, get_query_var('paged') ),
-		'total' => $wp_query->max_num_pages
-	) );
-	?>

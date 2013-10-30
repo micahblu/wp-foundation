@@ -37,8 +37,9 @@ get_header(); ?>
 		endwhile;
 		?>
 
-	<?php else : ?>
+	<?php else :  ?>
 		<?php get_template_part( 'content', 'none' ); ?>
+		<?php wp_foundation_paginate(); ?>
 	<?php endif; ?>
 
 	</div><!-- .large-8 .columns -->
