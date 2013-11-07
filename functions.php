@@ -286,4 +286,3 @@ function apply_shortcode_to_widget_text($content){
 }
 
 add_filter("widget_text", "apply_shortcode_to_widget_text");
-?>

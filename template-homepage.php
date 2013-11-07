@@ -80,6 +80,4 @@ get_header(); ?>
   <?php endif; ?>
   	</div><!-- .panel -->
   </div><!-- .large-4 columns -->
-<?php 
-get_footer();
-?>
+<?php get_footer();

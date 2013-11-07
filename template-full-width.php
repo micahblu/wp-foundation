@@ -22,4 +22,4 @@ get_header(); ?>
 
 	</div><!-- .large-8 .columns -->
 	
-<?php get_footer(); ?>
+<?php get_footer();

@@ -25,7 +25,5 @@ get_header(); ?>
 
 	<div class="large-4 columns">
 		<?php get_sidebar(); ?>
-	</div><!-- .large-4 .columns -->
-	
-	
-<?php get_footer(); ?>
+	</div><!-- .large-4 .columns -->	
+<?php get_footer();
