@@ -72,7 +72,7 @@ function optionsframework_options() {
 		'size' => '20px',
 		'face' => 'Open Sans',
 		'style' => 'bold',
-		'color' => '#333' );
+		'color' => '#333333' );
 
 	// Typography Defaults / Body 
 	$typography_defaults_body = array(

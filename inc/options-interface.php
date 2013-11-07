@@ -52,7 +52,7 @@ function optionsframework_fields() {
 		$select_value = '';
 		$checked = '';
 		$output = '';
-
+		//echo  print_r($value) . "<br />\n";
 		// Wrap all options
 		if ( ( $value['type'] != "heading" ) && ( $value['type'] != "info" ) ) {
 
@@ -199,6 +199,7 @@ function optionsframework_fields() {
 		// Color picker
 		case "color":
 			$default_color = '';
+
 			if ( isset($value['std']) ) {
 				if ( $val !=  $value['std'] )
 					$default_color = ' data-default-color="' .$value['std'] . '" ';
@@ -215,7 +216,7 @@ function optionsframework_fields() {
 
 		// Typography
 		case 'typography':
-		
+			
 			unset( $font_size, $font_style, $font_face, $font_color );
 		
 			$typography_defaults = array(
@@ -233,7 +234,7 @@ function optionsframework_fields() {
 				'styles' => of_recognized_font_styles(),
 				'color' => true
 			);
-			
+		
 			if ( isset( $value['options'] ) ) {
 				$typography_options = wp_parse_args( $value['options'], $typography_options );
 			}
@@ -253,6 +254,13 @@ function optionsframework_fields() {
 			// Font Face
 			if ( $typography_options['faces'] ) {
 				$font_face = '<select class="of-typography of-typography-face" name="' . esc_attr( $option_name . '[' . $value['id'] . '][face]' ) . '" id="' . esc_attr( $value['id'] . '_face' ) . '">';
+				
+			
+				//echo print_r($typography_options['faces']);	
+				//echo $key . "<br />\n";
+				//echo $typography_stored['face'] . " vs "  . $value['std']['face'];
+
+
 				$faces = $typography_options['faces'];
 				foreach ( $faces as $key => $face ) {
 					$font_face .= '<option value="' . esc_attr( $key ) . '" ' . selected( $typography_stored['face'], $key, false ) . '>' . esc_html( $face ) . '</option>';
@@ -273,11 +281,17 @@ function optionsframework_fields() {
 			// Font Color
 			if ( $typography_options['color'] ) {
 				$default_color = '';
+
 				if ( isset( $value['std']['color'] ) ) {
-					if ( $val !=  $value['std']['color'] )
+					if ( $val['color'] !=  $value['std']['color'] )
 						$default_color = ' data-default-color="' .$value['std']['color'] . '" ';
 				}
-				$font_color = '<input name="' . esc_attr( $option_name . '[' . $value['id'] . '][color]' ) . '" id="' . esc_attr( $value['id'] . '_color' ) . '" class="of-color of-typography-color  type="text" value="' . esc_attr( $typography_stored['color'] ) . '"' . $default_color .' />';
+
+				if(empty($typography_stored['color'])){
+					$typography_stored['color'] = $value['std']['color'];
+				}
+				$font_color = '<input name="' . esc_attr( $option_name . '[' . $value['id'] . '][color]' ) . '" id="' . esc_attr( $value['id'] . '_color' ) . '" class="of-color of-typography-color" type="text" value="' . esc_attr( $typography_stored['color'] ) . '" ' . $default_color .' />';
+
 			}
 	
 			// Allow modification/injection of typography fields
