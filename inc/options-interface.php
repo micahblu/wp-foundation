@@ -254,12 +254,6 @@ function optionsframework_fields() {
 			// Font Face
 			if ( $typography_options['faces'] ) {
 				$font_face = '<select class="of-typography of-typography-face" name="' . esc_attr( $option_name . '[' . $value['id'] . '][face]' ) . '" id="' . esc_attr( $value['id'] . '_face' ) . '">';
-				
-			
-				//echo print_r($typography_options['faces']);	
-				//echo $key . "<br />\n";
-				//echo $typography_stored['face'] . " vs "  . $value['std']['face'];
-
 
 				$faces = $typography_options['faces'];
 				foreach ( $faces as $key => $face ) {

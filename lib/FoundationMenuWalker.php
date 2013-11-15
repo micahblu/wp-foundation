@@ -17,7 +17,7 @@ function wp_foundation_basic_nav_bar() {
         'container' => false,             // remove menu container
         'container_class' => '',          // class of container
         'menu' => '',                     // menu name
-        'menu_class' => 'nav-bar right button-group',        // adding custom nav class
+        'menu_class' => 'nav-bar left button-group',        // adding custom nav class
         'theme_location' => 'main-menu',  // where it's located in the theme
         'before' => '',                   // before each link <a>
         'after' => '',                    // after each link </a>
@@ -33,7 +33,7 @@ function wp_foundation_basic_nav_bar() {
 http://codex.wordpress.org/Template_Tags/wp_list_pages
 */
 function main_nav_fb() {
-	echo '<ul class="nav-bar right button-group">';
+	echo '<ul class="nav-bar left button-group">';
 	wp_list_pages(array(
 		'depth'        => 0,
 		'child_of'     => 0,
