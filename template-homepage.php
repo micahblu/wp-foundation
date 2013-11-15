@@ -13,7 +13,7 @@
 
 get_header(); ?>
 
-  <div class="large-12 columns">
+  <div id="main" class="large-12 columns">
     <ul data-orbit>
   	<?php
 		$args = array(
@@ -50,7 +50,7 @@ get_header(); ?>
 
 <!-- Three-up Content Blocks -->
 <div id="home-widgets" class="row">
-	<div class="large-4 columns">
+	<div class="large-4 columns widget">
 		<div class="panel">
 		<?php if(!dynamic_sidebar('home-widget-left')) : ?>
 		
@@ -61,7 +61,7 @@ get_header(); ?>
 		</div>
 	</div>
   
-  <div class="large-4 columns">
+  <div class="large-4 columns widget">
   	<div class="panel">
     <?php if(!dynamic_sidebar('home-widget-center')) : ?>
     <img src="http://placehold.it/400x300&text=[img]" />
@@ -71,7 +71,7 @@ get_header(); ?>
   	</div><!-- .panel -->
   </div><!-- .large-4 columns -->
   
-  <div class="large-4 columns">
+  <div class="large-4 columns widget">
   	<div class="panel">
     <?php if(!dynamic_sidebar('home-widget-right')) : ?>
       <img src="http://placehold.it/400x300&text=[img]" />

@@ -13,7 +13,7 @@
 
 get_header(); ?>
 
-	<div class="large-8 columns" role="main">
+	<div id="main" class="large-8 columns" role="main">
 
 	<?php if ( have_posts() ) : ?>
 
@@ -63,7 +63,7 @@ get_header(); ?>
 	<?php endif; ?>
 	</div><!-- .large-8 .columns -->
 	
-	<div class="large-4 columns">
+	<div id="sidebar" class="large-4 columns">
 		<?php get_sidebar(); ?>
 	</div><!-- .large-4 .columns -->
 

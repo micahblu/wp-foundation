@@ -13,7 +13,7 @@
 
 get_header(); ?>
 
-	<div class="large-12 columns">
+	<div id="main" class="large-12 columns">
 
 		<?php while ( have_posts() ) : the_post(); ?>
 			<?php get_template_part("content", "page"); ?>

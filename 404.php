@@ -9,7 +9,7 @@
 
 get_header(); ?>
 
-	<div class="large-8 columns" role="main">
+	<div id="main" class="large-8 columns" role="main">
 
 		<article id="post-0" class="post error404 no-results not-found">
 			<header class="entry-header">
@@ -25,7 +25,7 @@ get_header(); ?>
 
 	</div><!-- .large-8 .columns -->
 	
-	<div class="large-4 columns">
+	<div id="sidebar" class="large-4 columns">
 		<?php get_sidebar(); ?>
 	</div><!-- .large-4 .columns -->
 
