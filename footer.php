@@ -4,10 +4,8 @@
     <div class="large-12 columns">
       <hr />
       <div class="row">
-        <div class="large-6 columns">
-          <p><?php //here is where copyright message should be ?></p>
-        </div>
-        <div class="large-6 columns">
+
+        <div class="large-12 columns">
          
             <?php //footer menu
             	wp_nav_menu(array( 
