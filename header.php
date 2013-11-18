@@ -66,7 +66,6 @@ $social  = array(
   <div id="header" class="row">
     <div id="brand" class="large-9 columns">
 
-
     <?php if(!empty($logo)) : ?>
 			<a href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
 				<img id="logo" src="<?php echo $logo ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" />
@@ -100,4 +99,4 @@ $social  = array(
   </div><!-- .row -->
   <?php endif; ?>
   <!-- End Header and Nav -->
-  <div class="row">
+  <div id="container">

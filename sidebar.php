@@ -10,7 +10,6 @@
  */
 
 $pagetype = is_blog() ? "blog" : "page";
-
 ?>
 	<div id="secondary" class="widget-area" role="complementary">
 	<?php if ( is_active_sidebar( $pagetype . '-sidebar' ) ) : ?>

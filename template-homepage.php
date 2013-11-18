@@ -12,41 +12,18 @@
  */
 
 get_header(); ?>
+<div id="home-featured-row" class="row">
+  <?php if(have_posts()) : the_post(); ?>
+    <div class="large-6 columns">
+     <?php the_post_thumbnail(); ?>
+    </div><!-- .large-6 .columns -->
 
-  <div id="main" class="large-12 columns">
-    <ul data-orbit>
-  	<?php
-		$args = array(
-			'posts_per_page'  => 5,
-			'offset'          => 0,
-			'category'        => '',
-			'orderby'         => 'post_date',
-			'order'           => 'DESC',
-			'include'         => '',
-			'exclude'         => '',
-			'meta_key'        => '',
-			'meta_value'      => '',
-			'post_type'       => 'slide',
-			'post_mime_type'  => '',
-			'post_parent'     => '',
-			'post_status'     => 'publish',
-			'suppress_filters' => true 
-		);
-  	$slides = get_posts($args);
-  
-  	foreach($slides as $slide) : ?>
-  		<?php $url = wp_get_attachment_url( get_post_thumbnail_id($slide->ID) );	 ?>
-			<li style="background: url('<?php echo $url; ?>') no-repeat center center">
-				<!--<h1><?php echo $slide->post_title; ?></h1>-->
-				<p><?php echo do_shortcode(wpautop($slide->post_content)); ?></p>
-			</li>
-				
-  	<?php endforeach; ?>
-  </ul>
-  
-  <hr />
-  </div>
-</div>
+    <div class="large-6 columns">
+     <?php the_content(); ?>
+    </div><!-- .large-6 .columns -->
+<?php endif; ?>
+
+</div><!-- .row -->
 
 <!-- Three-up Content Blocks -->
 <div id="home-widgets" class="row">

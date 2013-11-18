@@ -24,6 +24,15 @@ Text Domain: wp-foundation
 	Foundation is licensed under the terms of the MIT Open Source License.
 */
 
+#container{
+	max-width: 62.5em;
+	margin: 0px auto;
+}
+
+#home-featured-row{
+	margin: 2.5em 0;
+}
+
 body,div,span,p,ul,ol{
 	word-wrap:break-word;
 }
