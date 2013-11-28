@@ -16,7 +16,8 @@ get_header(); ?>
 		<?php while ( have_posts() ) : the_post(); ?>
 			<?php get_template_part( 'content', get_post_format() ); ?>
 		<?php endwhile; ?>
-		
+		<?php wp_foundation_paginate(); ?>
+
 	<?php else : ?>
 		<?php get_template_part( 'content', 'none'); ?>
 	<?php endif; // end have_posts() check ?>

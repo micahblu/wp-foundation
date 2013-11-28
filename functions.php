@@ -24,7 +24,7 @@ require dirname( __FILE__ ) . '/lib/prism/prism.php';
  */
 function wp_foundation_paginate(){
 	global $wp_query;
-	die(__LINE__ . " page " . $_SERVER['PHP_SELF']);
+	//die(__LINE__ . " page " . $_SERVER['PHP_SELF']);
 	$big = 999999999; // need an unlikely integer
 	
 	echo paginate_links( array(

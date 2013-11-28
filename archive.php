@@ -15,8 +15,8 @@ get_header(); ?>
 
 	<?php if ( have_posts() ) : ?>
 		<header class="archive-header">
-			<h1 class="archive-title"><?php
-				if ( is_day() ) :
+			<h1 class="archive-title">
+			<?php if ( is_day() ) :
 					printf( __( 'Daily Archives: %s', 'wp-foundation' ), '<span>' . get_the_date() . '</span>' );
 				elseif ( is_month() ) :
 					printf( __( 'Monthly Archives: %s', 'wp-foundation' ), '<span>' . get_the_date( _x( 'F Y', 'monthly archives date format', 'wp-foundation' ) ) . '</span>' );
@@ -36,6 +36,7 @@ get_header(); ?>
 			 * (where ___ is the post format) and that will be used instead.
 			 */
 			get_template_part( 'content', get_post_format() );
+
 		endwhile;
 		?>
 
@@ -43,7 +44,6 @@ get_header(); ?>
 		<?php get_template_part( 'content', 'none' ); ?>
 	<?php endif; ?>
 	
-	<?php wp_foundation_paginate(); ?>
 	</div><!-- .large-8 .columns -->
 	
 	<div id="sidebar" class="large-4 columns">
