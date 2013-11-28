@@ -28,33 +28,27 @@ get_header(); ?>
 <!-- Three-up Content Blocks -->
 <div id="home-widgets" class="row">
 	<div class="large-4 columns widget">
-		<div class="panel">
 		<?php if(!dynamic_sidebar('home-widget-left')) : ?>
-		
       <img src="http://placehold.it/400x300&text=[img]" />
       <h4><?php echo __('This is a content section.', 'wp-foundation') ;?></h4>
       <p>Bacon ipsum dolor sit amet nulla ham qui sint exercitation eiusmod commodo, chuck duis velit. Aute in reprehenderit, dolore aliqua non est magna in labore pig pork biltong. Eiusmod swine spare ribs reprehenderit culpa. Boudin aliqua adipisicing rump corned beef.</p>
     <?php endif; ?>
-		</div>
 	</div>
   
   <div class="large-4 columns widget">
-  	<div class="panel">
     <?php if(!dynamic_sidebar('home-widget-center')) : ?>
-    <img src="http://placehold.it/400x300&text=[img]" />
+      <img src="http://placehold.it/400x300&text=[img]" />
       <h4><?php echo __('This is a content section.', 'wp-foundation') ;?></h4>
       <p>Bacon ipsum dolor sit amet nulla ham qui sint exercitation eiusmod commodo, chuck duis velit. Aute in reprehenderit, dolore aliqua non est magna in labore pig pork biltong. Eiusmod swine spare ribs reprehenderit culpa. Boudin aliqua adipisicing rump corned beef.</p>
-  <?php endif; ?>
-  	</div><!-- .panel -->
+    <?php endif; ?>
   </div><!-- .large-4 columns -->
   
   <div class="large-4 columns widget">
-  	<div class="panel">
     <?php if(!dynamic_sidebar('home-widget-right')) : ?>
       <img src="http://placehold.it/400x300&text=[img]" />
       <h4><?php echo __('This is a content section.', 'wp-foundation') ;?></h4>
       <p>Bacon ipsum dolor sit amet nulla ham qui sint exercitation eiusmod commodo, chuck duis velit. Aute in reprehenderit, dolore aliqua non est magna in labore pig pork biltong. Eiusmod swine spare ribs reprehenderit culpa. Boudin aliqua adipisicing rump corned beef.</p>
   <?php endif; ?>
-  	</div><!-- .panel -->
+  	
   </div><!-- .large-4 columns -->
 <?php get_footer();

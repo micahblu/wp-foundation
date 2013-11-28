@@ -374,10 +374,10 @@ function optionsframework_options() {
 		'type' => 'text' );
 
 	/**
+	 * 
 	$options[] = array(
 		'name' => __('Text Editor', 'wp-foundation'),
 		'type' => 'heading' );
-
 
 	 * For $settings options see:
 	 * http://codex.wordpress.org/Function_Reference/wp_editor
