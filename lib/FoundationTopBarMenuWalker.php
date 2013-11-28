@@ -7,32 +7,27 @@ register_nav_menus(array(
     'top-bar-menu' => 'Top Bar'
 ));
  
- 
 /*
 http://codex.wordpress.org/Function_Reference/wp_nav_menu
 */
- 
-// the right top bar
 function foundation_top_bar_menu() {
 	echo '<section class="top-bar-section">';
     wp_nav_menu(array( 
         'container' => false,                           // remove nav container
-        'container_class' => '',           		// class of container
-        'menu' => '',                      	        // menu name
-        'menu_class' => 'right',         	// adding custom nav class
-        'theme_location' => 'top-bar-menu',                // where it's located in the theme
+        'container_class' => '',           		        // class of container
+        'menu' => '',                      	            // menu name
+        'menu_class' => 'right',         	            // adding custom nav class
+        'theme_location' => 'top-bar-menu',             // where it's located in the theme
         'before' => '',                                 // before each link <a> 
         'after' => '',                                  // after each link </a>
         'link_before' => '',                            // before each link text
         'link_after' => '',                             // after each link text
         'depth' => 5,                                   // limit the depth of the nav
-    	  'fallback_cb' => 'main_nav_top_bar_fb',         // fallback function (see below)
+    	  'fallback_cb' => 'main_nav_top_bar_fb',       // fallback function (see below)
         'walker' => new Top_Bar_Walker()
 	));
 	echo '</section>';
-} // end right top bar
-
-
+}
 
 /*
 http://codex.wordpress.org/Template_Tags/wp_list_pages

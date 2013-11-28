@@ -24,7 +24,7 @@ function wp_foundation_basic_nav_bar() {
         'link_before' => '',              // before each link text
         'link_after' => '',               // after each link text
         'depth' => 1,                     // limit the depth of the nav
-    	  'fallback_cb' => 'main_nav_fb',   // fallback function (see below)
+    	'fallback_cb' => 'main_nav_fb',  // fallback function (see below)
         'walker' => new Nav_Walker()      // walker to customize menu (see foundation-nav-walker)
 	));
 }
@@ -70,7 +70,7 @@ class Nav_Walker extends Walker_Nav_Menu {
         $classes = empty($item->classes) ? array() : (array) $item->classes;
 		  
         $classes[] = ($item->current) ? 'active' : '';
-        $classes[] = ($args->has_children) ? 'dropdown' : '';
+        //$classes[] = ($args->has_children) ? 'dropdown' : '';
 
         $class_names = join(' ', apply_filters('nav_menu_css_class', array_filter($classes), $item, $args ) );
         $class_names = strlen(trim($class_names)) > 0 ? ' class="'.esc_attr($class_names).'"' : '';
@@ -89,7 +89,7 @@ class Nav_Walker extends Walker_Nav_Menu {
         $description = !empty($item->description) ? '<span class="menu-item-description">'.esc_attr($item->description).'</span>' : '';
 
         $item_output  = $args->before;
-        $item_output .= '<a'.$attributes.' class="button dropdown">';
+        $item_output .= '<a'.$attributes.' class="button">';
         $item_output .= $args->link_before.apply_filters('the_title', $item->title, $item->ID);
         $item_output .= $description.$args->link_after;
         
@@ -147,7 +147,7 @@ class Page_Walker extends Walker_Page {
 		
         $output .= $indent.'<li class="'.$classes.'">';
         
-        $output .= '<a ' . (get_children($page->ID) ? 'data-dropdown="' . $depth . '"' :'' ) . ' class="small button ' . (get_children($page->ID) ? 'dropdown' :'' ) . '" href="'.get_page_link($page->ID).'" title="'.esc_attr(wp_strip_all_tags($page->post_title)).'">';
+        $output .= '<a ' . (get_children($page->ID) ? 'data-dropdown="' . $depth . '"' :'' ) . ' class="small button ' . (get_children($page->ID) ? '' :'' ) . '" href="'.get_page_link($page->ID).'" title="'.esc_attr(wp_strip_all_tags($page->post_title)).'">';
         
         $output .= $args['link_before'].$page->post_title.$args['link_after'];
         $output .= '</a>';

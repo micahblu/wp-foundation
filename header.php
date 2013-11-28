@@ -8,6 +8,7 @@ $social  = array(
 	"pinterest"  => of_get_option("pinterest_url"),
 	"youtube"    => of_get_option("youtube_url"),
 );
+$nav_type = of_get_option('nav_type') ? of_get_option('nav_type') : 'top_bar';
 ?>
 <!DOCTYPE html>
 <!--[if IE 8]>    <html class="no-js lt-ie9"  <?php language_attributes(); ?>> <![endif]-->
@@ -50,7 +51,7 @@ $social  = array(
   
 </head>
 <body <?php body_class(); ?>>
-	<?php if(true) : //if top_bar==true ?>
+	<?php if($nav_type == 'top_bar') : ?>
 	<nav class="top-bar">
 		<ul class="title-area">
 	    <!-- Title Area -->
@@ -87,14 +88,10 @@ $social  = array(
 		</div><!-- #social-header -->
   </div><!-- #header .row -->  
    
-  <?php 
-  /**
-   * TODO - Basic Menu Support
-   */
-  if(false) : //if basic_menu == true ?> 
+  <?php if($nav_type == "basic_bar") : //if basic_menu == true ?> 
   <div class="row">
     <div class="large-12 columns">
-    <?php foundation_nav_bar(); ?>
+    <?php wp_foundation_basic_nav_bar(); ?>
     </div><!-- .large-9 .columns -->
   </div><!-- .row -->
   <?php endif; ?>

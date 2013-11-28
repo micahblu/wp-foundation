@@ -45,6 +45,20 @@ function optionsframework_options() {
 		'five' => __('Waffle', 'wp-foundation')
 	);
 
+	// Navigation radio options 
+	$nav_types = array(
+		'top_bar' => __('Top Bar Navigation', 'wp-foundation'),
+		'basic_bar' => __('Basic Navigation', 'wp-foundation')
+	);
+
+	$multicheck_array = array(
+		'one' => __('French Toast', 'wp-foundation'),
+		'two' => __('Pancake', 'wp-foundation'),
+		'three' => __('Omelette', 'wp-foundation'),
+		'four' => __('Crepe', 'wp-foundation'),
+		'five' => __('Waffle', 'wp-foundation')
+	);
+
 	// Multicheck Defaults
 	$multicheck_defaults = array(
 		'one' => '1',
@@ -142,11 +156,20 @@ function optionsframework_options() {
 		'type' => 'background' );
 
 	$options[] = array(
-		'name' => __('Footer Scripts', 'wp-foundation'),
+		'name' => __('Footer scripts', 'wp-foundation'),
 		'desc' => __('Place your analytics or other code here. No need to include &script> tags', 'wp-foundation'),
 		'id' => 'footer_scripts',
 		'std' => '',
 		'type' => 'textarea');
+
+	$options[] = array(
+		'name' => __('Navigation type', 'wp-foundation'),
+		'desc' => __('Choose either the responsive top bar or basic navigation', 'wp-foundation'),
+		'id' => 'nav_type',
+		'std' => 'top_bar',
+		'type' => 'radio',
+		'options' => $nav_types);
+
 	/*
 	$options[] = array(
 		'name' => __('Input Text Mini', 'wp-foundation'),
@@ -209,7 +232,7 @@ function optionsframework_options() {
 		'name' => __('Select a Page', 'wp-foundation'),
 		'desc' => __('Passed an pages with ID and post_title', 'wp-foundation'),
 		'id' => 'example_select_pages',
-		'type' => 'select',
+		'type'	 => 'select',
 		'options' => $options_pages);
 
 	$options[] = array(
