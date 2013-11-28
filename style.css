@@ -103,6 +103,16 @@ p{
 	font-size: 1.6em;
 }
 
+#home-widgets a {
+	display: inline-block;
+	width: 100%;
+}
+
+#home-widgets img,
+#home-widgets a img{
+	width: 100%;
+}
+
 .home-widget-text-wrapper{
 	margin-top: 15px;
 }

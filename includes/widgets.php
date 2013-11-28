@@ -42,8 +42,8 @@ function wp_foundation_widgets_init() {
 		'id' => 'home-widget-left',
 		'before_widget' => '<aside id="%1$s" class="home-widget %2$s">',
 		'after_widget' => "</aside>",
-		'before_title' => '<h2 class="home-widget-title">',
-		'after_title' => '</h2>',
+		'before_title' => '<h4 class="home-widget-title">',
+		'after_title' => '</h4>',
 	) );
 	
 	register_sidebar( array(
@@ -51,8 +51,8 @@ function wp_foundation_widgets_init() {
 		'id' => 'home-widget-center',
 		'before_widget' => '<aside id="%1$s" class="home-widget %2$s">',
 		'after_widget' => "</aside>",
-		'before_title' => '<h2 class="home-widget-title">',
-		'after_title' => '</h2>',
+		'before_title' => '<h4 class="home-widget-title">',
+		'after_title' => '</h4>',
 	) );
 
 	register_sidebar( array(
@@ -60,11 +60,11 @@ function wp_foundation_widgets_init() {
 		'id' => 'home-widget-right',
 		'before_widget' => '<aside id="%1$s" class="home-widget %2$s">',
 		'after_widget' => "</aside>",
-		'before_title' => '<h2 class="home-widget-title">',
-		'after_title' => '</h2>',
+		'before_title' => '<h4 class="home-widget-title">',
+		'after_title' => '</h4>',
 	) );
-
 }
+
 add_action( 'widgets_init', 'wp_foundation_widgets_init' );
 
 // load any additional widgets
