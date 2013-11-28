@@ -31,12 +31,11 @@ get_header(); ?>
 						</span>
 					</h1>
 				</header>
-			</article>
-			<?php the_post_thumbnail(get_the_ID()); ?>
-				<?php the_content(); ?>
-			<?php comments_template( '', true ); ?>
-		<?php endwhile; // end of the loop. ?>
-
+				<?php the_post_thumbnail(get_the_ID()); ?>
+					<?php the_content(); ?>
+				<?php comments_template( '', true ); ?>
+			<?php endwhile; // end of the loop. ?>
+		</article>
 	</div><!-- .large-8 .columns -->
 
 	<div id="sidebar" class="large-4 columns">
