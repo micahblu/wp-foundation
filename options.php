@@ -76,10 +76,10 @@ function optionsframework_options() {
 
 	// Typography Defaults / Header
 	$typography_defaults_header = array(
-		'size' => '24px',
+		'size' => '34px',
 		'face' => 'Open Sans',
 		'style' => 'normal',
-		'color' => '#2ba6cb' );
+		'color' => '#333333' );
 
 	// Typography Defaults / Sub Header
 	$typography_defaults_sub_header = array(
@@ -97,7 +97,7 @@ function optionsframework_options() {
 		
 	// Typography Options
 	$typography_options = array(
-		'sizes' => array( '6','12','14','15','16','20', 24, 30, 38, 44 ),
+		'sizes' => array( '6','12','14','15','16','20', '22', '24', '26', '30', '34', '38', '44' ),
 		'faces' => array( 'Helvetica Neue' => 'Helvetica Neue',
 											'Helvetica' => 'Helvetica',
 											'Arial' => 'Arial',

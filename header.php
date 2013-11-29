@@ -72,8 +72,8 @@ $nav_type = of_get_option('nav_type') ? of_get_option('nav_type') : 'top_bar';
 				<img id="logo" src="<?php echo $logo ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" />
 			</a>
 		<?php else: ?>
-			<h1 class="site-title"><a href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-			<h2 class="subheader site-description"><small><?php bloginfo( 'description' ); ?></small></h2>
+			<h2 class="site-title"><a href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h2>
+			<h3 class="subheader site-description"><small><?php bloginfo( 'description' ); ?></small></h3>
 		<?php endif; ?>
 
     </div><!-- #brand .large-9 .columns -->

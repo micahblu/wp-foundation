@@ -4,7 +4,7 @@ Theme URI: http://micahblu.com/lab/wp-foundation
 Description: A simple wordpress theme based on the Foundation CSS framework by Zurb
 Author: Micah Blu
 Author URI: http://micahblu.com
-Version: 1.9.2
+Version: 1.9.3
 
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -61,8 +61,8 @@ body,div,span,p,ul,ol{
 
 /* Default Typography
 -------------------------------------------------------------- */
-h1, h2, p{
-
+h1, h2, h3, h4, h5, p{
+	font-size: 1em;
 }
 
 h3, h4, h5, h6, strong, b{
@@ -78,10 +78,12 @@ p{
 
 #header .site-title{
 	margin-bottom: 0px;
+	font-size: 1.35em;
 }
 
 #header .subheader{
 	margin-top:0px;
+	font-size: 1.35em; 
 }
 
 .archive-title,
@@ -115,6 +117,10 @@ p{
 
 .home-widget-text-wrapper{
 	margin-top: 15px;
+}
+
+.home-widget-title{
+	font-size: 1.15em;
 }
 
 /* =Meta

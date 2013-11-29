@@ -1,7 +1,7 @@
 WP Foundation
 =============
 
-Version 1.9.2
+Version 1.9.3
 
 LIVE DEMO
 ________
@@ -54,4 +54,5 @@ There are 2 sidebars, 1 is a generic page sidebar the other is the dedicated blo
 WIDGETS
 _______
 
-* Image widget that allows you to upload images from the widget panel, make them linkable and add text.
+* The theme supports 3 home page widget areas
+* Theme has a built in Image widget that allows you to upload images from the widget panel, make them linkable and add text.
