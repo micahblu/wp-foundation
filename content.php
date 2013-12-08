@@ -25,7 +25,7 @@
 		<?php endif; // is_single() ?>
 		</header><!-- .entry-header -->
 
-		<?php the_post_thumbnail('thumbnail'); ?>
+		<?php the_post_thumbnail('medium'); ?>
 
 		<?php if ( is_search() ) : // Only display Excerpts for Search ?>
 			<div class="entry-summary">
