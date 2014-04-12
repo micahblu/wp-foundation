@@ -25,24 +25,15 @@
 	  </ul>
 
 	  <section class="top-bar-section">
-	  	<?php echo wp_nav_menu( array( 'container_class' => 'menu-header', 'theme_location' => 'primary' ) ); ?>
-
-	    <!-- Right Nav Section 
-	    <ul class="right">
-	      <li class="active"><a href="#">Right Button Active</a></li>
-	      <li class="has-dropdown">
-	        <a href="#">Right Button Dropdown</a>
-	        <ul class="dropdown">
-	          <li><a href="#">First link in dropdown</a></li>
-	        </ul>
-	      </li>
-	    </ul>
-			-->
-	    <!-- Left Nav Section 
-	    <ul class="left">
-	      <li><a href="#">Left Nav Button</a></li>
-	    </ul>
-	    -->
+	  <?php 
+	  
+	  wp_nav_menu(array(
+			  'menu' => 'main_menu', 
+			  'menu_class' => 'right',
+			  'container_id' => 'cssmenu', 
+			  'walker' => new WPF_Menu_Walker()
+			));
+		?>
 	  </section>
 	</nav>
 <?php 
