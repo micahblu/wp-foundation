@@ -1,7 +1,0 @@
-
-11-27-2013
-
- 1. Added Basic Navigation option
- 2. Default typography clean up
- 3. Got rid of panel classes on home widgets 
- 4. Fixed an improperly closed arcticle tag in single.php
