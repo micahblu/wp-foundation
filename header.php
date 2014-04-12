@@ -16,7 +16,35 @@
 
 <body <?php body_class(); ?>>
 
-<a href="<?php echo home_url( '/' ); ?>">Home Page</a>
+	<nav class="top-bar" data-topbar>
+	  <ul class="title-area">
+	    <li class="name">
+	      <h1><a href="#"><?php bloginfo('name'); ?></a></h1>
+	    </li>
+	    <li class="toggle-topbar menu-icon"><a href="#">Menu</a></li>
+	  </ul>
+
+	  <section class="top-bar-section">
+	  	<?php echo wp_nav_menu( array( 'container_class' => 'menu-header', 'theme_location' => 'primary' ) ); ?>
+
+	    <!-- Right Nav Section 
+	    <ul class="right">
+	      <li class="active"><a href="#">Right Button Active</a></li>
+	      <li class="has-dropdown">
+	        <a href="#">Right Button Dropdown</a>
+	        <ul class="dropdown">
+	          <li><a href="#">First link in dropdown</a></li>
+	        </ul>
+	      </li>
+	    </ul>
+			-->
+	    <!-- Left Nav Section 
+	    <ul class="left">
+	      <li><a href="#">Left Nav Button</a></li>
+	    </ul>
+	    -->
+	  </section>
+	</nav>
 <?php 
   // Uncomment to show menu
   // wp_nav_menu( array( 'menu' => 'Main' ) );
