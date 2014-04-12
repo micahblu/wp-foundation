@@ -15,11 +15,10 @@ endif;
 
 add_editor_style( 'editor-style.css' );
 
-function my_init_method() {
-    // LOAD JQUERY LOCALLY
-    wp_deregister_script( 'jquery' );
-    wp_register_script( 'jquery', get_bloginfo('template_directory') . '/js/jquery-2.0.3.min.js');
-    wp_enqueue_script( 'jquery' );
-}    
-add_action('init', 'my_init_method');
+function wpf_scripts() {
+  wp_enqueue_style('foundation', get_template_directory_uri() . '/stylesheets/main.css' );
+}
+
+add_action('wp_enqueue_scripts', 'wpf_scripts');
+
 ?>
