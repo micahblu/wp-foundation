@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 
   <div class="row">
-    <div class="medium-9 columns">
+    <div class="<?php echo $content_columns; ?> columns">
       <?php if ( have_posts() ): ?>
         <?php while ( have_posts() ) : the_post(); ?>
           <h2>
@@ -21,10 +21,10 @@
           <?php previous_posts_link( __( 'Newer posts &rarr;' ) ); ?>
         </div>
       <?php endif; ?>
-    </div><!-- .medium-9 columns -->
+    </div><!-- .<?php echo $content_columns; ?> columns -->
 
-    <div class="medium-3 columns">
+    <div class="<?php echo $sidebar_columns; ?> columns">
       <?php get_sidebar(); ?>
-    </div><!-- .medium-3 columns -->
+    </div><!-- .<?php echo $sidebar_columns; ?> columns -->
   </div><!-- .row -->
 <?php get_footer(); ?>

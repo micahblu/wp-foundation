@@ -1,6 +1,6 @@
 <?php get_header(); ?>
   <div class="row">
-    <div class="medium-9 columns">
+    <div class="<?php echo $content_columns; ?> columns">
       <h1>
         <?php if( is_author() ): ?>
           Author: <?php echo $author_name ?>
@@ -39,10 +39,10 @@
           <?php previous_posts_link( __( 'Newer posts &rarr;' ) ); ?>
         </div>
       <?php endif; ?>
-    </div><!-- .medium-9 columns -->
+    </div><!-- .<?php echo $content_columns; ?> columns -->
 
-    <div class="medium-3 columns">
+    <div class="<?php echo $sidebar_columns; ?> columns">
       <?php get_sidebar(); ?>
-    </div><!-- .medium-3 columns -->
+    </div><!-- .<?php echo $sidebar_columns; ?> columns -->
   </div><!-- .row -->
 <?php get_footer(); ?>

@@ -2,6 +2,10 @@
 
 include "includes/wpf-walker.php";
 
+// global layout vars
+$content_columns = 'medium-8';
+$sidebar_columns = 'medium-4';
+
 //register menus
 register_nav_menus( array(
   'main_menu' => 'Main Menu',

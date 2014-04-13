@@ -1,6 +1,6 @@
 <?php get_header(); ?>
   <div class="row">
-    <div class="medium-9 columns">
+    <div class="<?php echo $content_columns; ?> columns">
     <h1><?php printf( __( 'Search Results for: %s' ), '' . get_search_query() . '' ); ?></h1>
     <?php if ( have_posts() ) : ?>
       <?php while (have_posts()) : the_post(); ?>
@@ -24,10 +24,10 @@
         <?php next_posts_link( __( 'Next' ) ); ?>
       </div>
     <?php endif; ?>
-    </div><!-- .medium-9 columns -->
+    </div><!-- .<?php echo $content_columns; ?> columns -->
 
-    <div class="medium-3 columns">
+    <div class="<?php echo $sidebar_columns; ?> columns">
       <?php get_sidebar(); ?>
-    </div><!-- .medium-3 columns -->
+    </div><!-- .<?php echo $sidebar_columns; ?> columns -->
   </div><!-- .row -->
 <?php get_footer(); ?>
