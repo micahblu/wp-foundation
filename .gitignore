@@ -28,3 +28,4 @@ ehthumbs.db
 Thumbs.db
 
 .sass-cache
+bower_components/
