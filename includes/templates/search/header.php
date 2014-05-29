@@ -1,0 +1,1 @@
+ <h1><?php printf( __( 'Search Results for: %s' ), '' . get_search_query() . '' ); ?></h1>

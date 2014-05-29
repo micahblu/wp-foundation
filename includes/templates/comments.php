@@ -19,11 +19,11 @@
   <h3>Add Comment</h3>
   <form  method="post" action="<?php echo get_option('siteurl'); ?>/wp-comments-post.php">
     <div>
-      <label for="author">Name<?php if ($req) echo "*"; ?></label>
+      <label for="author">Name</label>
       <input type="text" name="author" id="author" />
     </div>
     <div>
-      <label for="email">Email<?php if ($req) echo "*"; ?></label>
+      <label for="email">Email</label>
       <input type="text" name="email" id="email" />
     </div>
     <div>

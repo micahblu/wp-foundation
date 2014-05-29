@@ -1,6 +1,7 @@
 <?php
 
-include "includes/wpf-walker.php";
+include "includes/WPFMenuWalker.php";
+include "includes/LayoutFactory.php";
 
 // global layout vars
 $content_columns = 'medium-8';
