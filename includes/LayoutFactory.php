@@ -84,7 +84,7 @@ class LayoutFactory{
 
 		$this->header(); ?>
 		
-		<div class="row">
+		<div class="row body">
 	    <div class="main medium-8 columns">
 				<?php $this->body(); ?>
 			</div>

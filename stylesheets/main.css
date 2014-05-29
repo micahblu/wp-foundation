@@ -7987,3 +7987,18 @@ th.hide-for-touch {
 .sidebar ul li {
   list-style: none;
 }
+
+/* line 1, ../sass/_layout.scss */
+.body {
+  padding-top: 2em;
+}
+
+/* line 5, ../sass/_layout.scss */
+header {
+  margin-bottom: 2em;
+}
+/* line 8, ../sass/_layout.scss */
+header h2 small {
+  display: block;
+  margin: 1em 0;
+}
