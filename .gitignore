@@ -30,3 +30,5 @@ Thumbs.db
 .sass-cache
 bower_components/
 sass/
+git-auto-deploy/
+sftp-config.json
