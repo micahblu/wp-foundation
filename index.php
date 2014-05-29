@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 
   <div class="row">
-    <div class="<?php echo $content_columns; ?> columns">
+    <div class="main <?php echo $content_columns; ?> columns">
       <?php if ( have_posts() ): ?>
         <?php while ( have_posts() ) : the_post(); ?>
           <h2>
@@ -23,7 +23,7 @@
       <?php endif; ?>
     </div><!-- .<?php echo $content_columns; ?> columns -->
 
-    <div class="<?php echo $sidebar_columns; ?> columns">
+    <div class="sidebar <?php echo $sidebar_columns; ?> columns">
       <?php get_sidebar(); ?>
     </div><!-- .<?php echo $sidebar_columns; ?> columns -->
   </div><!-- .row -->
