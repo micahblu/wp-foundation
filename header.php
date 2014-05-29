@@ -36,7 +36,3 @@
 		?>
 	  </section>
 	</nav>
-<?php 
-  // Uncomment to show menu
-  // wp_nav_menu( array( 'menu' => 'Main' ) );
-?>
