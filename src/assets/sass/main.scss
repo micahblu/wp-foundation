@@ -46,7 +46,15 @@ and Blueprint http://www.blueprintcss.org/
 	12.2 - Galleries
 --------------------------------------------------------------*/
 
+// Reset
 @import "reset";
+
+// Import Foundation
+@import "../../vendors/foundation/scss/foundation.scss";
+
+@import "variables";
+@import "mixins";
+
 @import "typography";
 @import "elements";
 @import "forms";

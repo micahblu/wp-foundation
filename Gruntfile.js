@@ -30,6 +30,13 @@ module.exports = function(grunt) {
 				dest: 'dist/'
 			},
 
+			js: {
+				expand: true,
+				cwd: 'src/assets/',
+				src: ['js/**/*.js'],
+				dest: 'dist'
+			},
+
 			layouts: {
 				expand: true,
 				cwd: 'src/assets/',
