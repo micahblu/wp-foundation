@@ -1,0 +1,27 @@
+{
+  "name": "wp-foundation",
+  "version": "0.0.1",
+  "homepage": "https://github.com/micahblu/wp-foundation",
+  "authors": [
+    "micahblu <micahblu@gmail.com>"
+  ],
+  "description": "A wordpress theme based on the foundation framework",
+  "main": "index.php",
+  "keywords": [
+    "Wordpress",
+    "theme",
+    "foundation"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "foundation": "~5.3.0"
+  }
+}

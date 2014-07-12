@@ -1,0 +1,65 @@
+/*
+Theme Name: wp-foundation
+Theme URI: http://lab.micahblu.com/wp-foundation
+Author: Micah Blu
+Author URI: http://micahblu.com
+Description: Description
+Version: 0.0.1
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: wp-foundation
+Domain Path: /languages/
+Tags:
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+
+ wp-foundation is based on Underscores http://underscores.me/, (C) 2012-2014 Automattic, Inc.
+
+Resetting and rebuilding styles have been helped along thanks to the fine work of
+Eric Meyer http://meyerweb.com/eric/tools/css/reset/index.html
+along with Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
+and Blueprint http://www.blueprintcss.org/
+*/
+
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+1.0 - Reset
+2.0 - Typography
+3.0 - Elements
+4.0 - Forms
+5.0 - Navigation
+	5.1 - Links
+	5.2 - Menus
+6.0 - Accessibility
+7.0 - Alignments
+8.0 - Clearings
+9.0 - Widgets
+10.0 - Content
+	10.1 - Posts and pages
+	10.2 - Asides
+	10.3 - Comments
+11.0 - Infinite scroll
+12.0 - Media
+	12.1 - Captions
+	12.2 - Galleries
+--------------------------------------------------------------*/
+
+@import "reset";
+@import "typography";
+@import "elements";
+@import "forms";
+@import "navigation/links";
+@import "navigation/menus";
+@import "accessibility";
+@import "alignments";
+@import "clearings";
+@import "widgets";
+@import "content/posts";
+@import "content/asides";
+@import "content/comments";
+@import "infin-scroll";
+@import "media/media";
+@import "media/captions";
+@import "media/galleries";

@@ -28,7 +28,6 @@ ehthumbs.db
 Thumbs.db
 
 .sass-cache
-bower_components/
-sass/
-git-auto-deploy/
+node_modules/
 sftp-config.json
+dist/
