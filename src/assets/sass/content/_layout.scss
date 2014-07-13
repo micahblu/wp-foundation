@@ -4,6 +4,8 @@
 
 #content {
 	@include grid-row;
+	
+	padding-top: 1em;
 
 	#primary {
 		
@@ -27,4 +29,6 @@
 
 #colophon {
 	@include grid-row;
+
+	font-size: 16px;
 }

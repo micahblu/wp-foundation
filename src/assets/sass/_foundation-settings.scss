@@ -10,7 +10,7 @@
 // $rem-base: 16px;
 
 // Allows the use of rem-calc() or lower-bound() in your settings
-//@import "./../vendors/foundation/scss/foundation/functions";
+@import "../../vendors/foundation/scss/foundation/functions";
 
 // $experimental: true;
 
@@ -20,7 +20,7 @@
 // Since the typical default browser font-size is 16px, that makes the calculation for grid size.
 // If you want your base font-size to be different and not have it affect the grid breakpoints,
 // set $rem-base to $base-font-size and make sure $base-font-size is a px value.
-// $base-font-size: 100%;
+// $base-font-size: rem-calc(16);
 
 // The $base-font-size is 100% while $base-line-height is 150%
 // $base-line-height: 150%;

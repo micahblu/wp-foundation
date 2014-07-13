@@ -26,3 +26,17 @@
 	clear: both;
 	margin: 0 0 1.5em;
 }
+
+article {
+	&.post {
+		.entry-header {
+			.entry-title {
+			
+			}
+
+			.entry-meta {
+				font-size: small;
+			}
+		}
+	}
+}

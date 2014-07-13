@@ -5093,23 +5093,23 @@ h1 small, h2 small, h3 small, h4 small, h5 small, h6 small {
 }
 
 h1 {
-  font-size: rem-calc(34)-0.625rem;
+  font-size: 1.5rem;
 }
 
 h2 {
-  font-size: rem-calc(27)-0.625rem;
+  font-size: 1.0625rem;
 }
 
 h3 {
-  font-size: rem-calc(17)-0.3125rem;
+  font-size: 0.75rem;
 }
 
 h4 {
-  font-size: rem-calc(13)-0.3125rem;
+  font-size: 0.5rem;
 }
 
 h5 {
-  font-size: rem-calc(11)-0;
+  font-size: 0.6875rem;
 }
 
 h6 {
@@ -5296,23 +5296,23 @@ blockquote p {
   }
 
   h1 {
-    font-size: rem-calc(34);
+    font-size: 2.125rem;
   }
 
   h2 {
-    font-size: rem-calc(27);
+    font-size: 1.6875rem;
   }
 
   h3 {
-    font-size: rem-calc(17);
+    font-size: 1.0625rem;
   }
 
   h4 {
-    font-size: rem-calc(13);
+    font-size: 0.8125rem;
   }
 
   h5 {
-    font-size: rem-calc(11);
+    font-size: 0.6875rem;
   }
 
   h6 {
@@ -6225,7 +6225,7 @@ meta.foundation-mq-topbar {
   margin: 0;
 }
 .tab-bar h1, .tab-bar h2, .tab-bar h3, .tab-bar h4 {
-  font-size: rem-calc(11);
+  font-size: 0.6875rem;
 }
 
 .left-small {
@@ -7074,20 +7074,6 @@ th {
 /*--------------------------------------------------------------
 5.1 Links
 --------------------------------------------------------------*/
-a {
-  color: royalblue;
-}
-
-a:visited {
-  color: purple;
-}
-
-a:hover,
-a:focus,
-a:active {
-  color: midnightblue;
-}
-
 /*--------------------------------------------------------------
 5.2 Menus
 --------------------------------------------------------------*/
@@ -7300,6 +7286,7 @@ a:active {
   margin-top: 0;
   margin-bottom: 0;
   max-width: 62.5rem;
+  padding-top: 1em;
 }
 #content:before, #content:after {
   content: " ";
@@ -7344,6 +7331,7 @@ a:active {
   margin-top: 0;
   margin-bottom: 0;
   max-width: 62.5rem;
+  font-size: 16px;
 }
 #colophon:before, #colophon:after {
   content: " ";
@@ -7382,6 +7370,10 @@ a:active {
 .page-links {
   clear: both;
   margin: 0 0 1.5em;
+}
+
+article.post .entry-header .entry-meta {
+  font-size: small;
 }
 
 /*--------------------------------------------------------------

@@ -85,8 +85,8 @@ function wp_foundation_widgets_init() {
 		'description'   => '',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
-		'before_title'  => '<h1 class="widget-title">',
-		'after_title'   => '</h1>',
+		'before_title'  => '<h3 class="widget-title">',
+		'after_title'   => '</h3>',
 	) );
 }
 add_action( 'widgets_init', 'wp_foundation_widgets_init' );
@@ -97,7 +97,7 @@ add_action( 'widgets_init', 'wp_foundation_widgets_init' );
 function wp_foundation_scripts() {
 
 	wp_enqueue_script( 'jquery' );
-	
+
 	wp_enqueue_style( 'wp-foundation-style', get_stylesheet_uri() );
 
 	wp_enqueue_script( 'wp-foundation-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
