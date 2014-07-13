@@ -7296,6 +7296,12 @@ input[type="submit"]:hover, input[type="submit"]:focus {
 #masthead:after {
   clear: both;
 }
+#masthead .site-branding {
+  padding-left: 0.9375rem;
+  padding-right: 0.9375rem;
+  width: 100%;
+  float: left;
+}
 
 #content {
   width: 100%;
@@ -7358,6 +7364,12 @@ input[type="submit"]:hover, input[type="submit"]:focus {
 }
 #colophon:after {
   clear: both;
+}
+#colophon .site-info {
+  padding-left: 0.9375rem;
+  padding-right: 0.9375rem;
+  width: 100%;
+  float: left;
 }
 
 /*--------------------------------------------------------------

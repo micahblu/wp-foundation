@@ -1,5 +1,9 @@
 #masthead {
 	@include grid-row;
+
+	.site-branding {
+		@include grid-column(12);
+	}
 }
 
 #content {
@@ -33,4 +37,8 @@
 	font-size: 16px;
 
 	padding-bottom: 1em;
+
+	.site-info {
+		@include grid-column(12);
+	}
 }
