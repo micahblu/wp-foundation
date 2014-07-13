@@ -62,7 +62,7 @@ Below is the grunt deploy task configuration, the dist task actually creates a l
 
 _Warning_ Do not name the dist dest: to the same name as the project dir you're working in, you'll erase your entire working project with dist ready version. Yikes
 
-```json
+```js
    rsync: {
 		    options: {
 		        args: ["--verbose"],
@@ -79,14 +79,12 @@ _Warning_ Do not name the dist dest: to the same name as the project dir you're 
 		        options: {
 		            src: "dist/",
 		            dest: "/path/to/wordpress/wp-content/themes/wp-foundation/",
-		            host: "user@site.com",
-		            syncDestIgnoreExcl: true
+		            host: "user@site.com"
 		        }
 		    }
 		}
 ```
 
-* [Zurb Foundation Docs](http://foundation.zurb.com/docs/)
 
 
 ## Learn how to use WordPress
