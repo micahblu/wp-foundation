@@ -19,6 +19,28 @@
 </head>
 
 <body <?php body_class(); ?>>
+
+<nav class="top-bar" data-topbar>
+  <ul class="title-area">
+    <li class="name">
+      <h1><a href="<?php echo site_url() ?>"><?php bloginfo('name'); ?></a></h1>
+    </li>
+    <li class="toggle-topbar menu-icon"><a href="#">Menu</a></li>
+  </ul>
+
+  <section class="top-bar-section">
+  <?php 
+
+  wp_nav_menu(array(
+		  'menu' => 'main_menu', 
+		  'menu_class' => 'right',
+		  'container_id' => 'cssmenu', 
+		  'walker' => new WPF_Menu_Walker()
+		));
+	?>
+  </section>
+</nav>
+
 <div id="page" class="hfeed site">
 	<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'wp-foundation' ); ?></a>
 
@@ -27,11 +49,6 @@
 			<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 			<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
 		</div>
-
-		<nav id="site-navigation" class="main-navigation" role="navigation">
-			<button class="menu-toggle"><?php _e( 'Primary Menu', 'wp-foundation' ); ?></button>
-			<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
-		</nav><!-- #site-navigation -->
 	</header><!-- #masthead -->
 
 	<div id="content" class="site-content">

@@ -34,14 +34,5 @@ $xxlarge-only: "#{$screen} and (min-width:#{lower-bound($xxlarge-range)}) and (m
 
 @media #{$medium-up} { }
 @media #{$medium-only} { }
-
-@media #{$large-up} { }
-@media #{$large-only} { }
-
-@media #{$xlarge-up} { }
-@media #{$xlarge-only} { }
-
-@media #{$xxlarge-up} { }
-@media #{$xxlarge-only} { }
-
+etc..
 */

@@ -1,0 +1,30 @@
+#masthead {
+	@include grid-row;
+}
+
+#content {
+	@include grid-row;
+
+	#primary {
+		
+		@include grid-column(12);
+
+		@media #{$medium-up} { 
+			@include grid-column(8);
+		}
+
+	}
+
+	#secondary {
+
+		@include grid-column(12);
+		
+		@media #{$medium-up} {
+			@include grid-column(4);
+		}
+	}
+}
+
+#colophon {
+	@include grid-row;
+}

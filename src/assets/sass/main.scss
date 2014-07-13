@@ -50,6 +50,7 @@ and Blueprint http://www.blueprintcss.org/
 @import "reset";
 
 // Import Foundation
+@import "foundation-settings";
 @import "../../vendors/foundation/scss/foundation.scss";
 
 @import "variables";
@@ -64,6 +65,7 @@ and Blueprint http://www.blueprintcss.org/
 @import "alignments";
 @import "clearings";
 @import "widgets";
+@import "content/layout";
 @import "content/posts";
 @import "content/asides";
 @import "content/comments";

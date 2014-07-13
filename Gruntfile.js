@@ -30,11 +30,25 @@ module.exports = function(grunt) {
 				dest: 'dist/'
 			},
 
+			modernizr_js: {
+				expand: true,
+				cwd: 'src/vendors/foundation/js/vendor',
+				src: ['modernizr.js'],
+				dest: 'dist/js/'
+			},
+
+			foundation_js: {
+				expand: true,
+				cwd: 'src/vendors/foundation/js/',
+				src: ['foundation.min.js'],
+				dest: 'dist/js/'
+			},
+
 			js: {
 				expand: true,
 				cwd: 'src/assets/',
 				src: ['js/**/*.js'],
-				dest: 'dist'
+				dest: 'dist/'
 			},
 
 			layouts: {

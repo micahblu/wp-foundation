@@ -40,11 +40,14 @@ function wp_foundation_setup() {
 	 */
 	//add_theme_support( 'post-thumbnails' );
 
+	include "inc/WPFMenuWalker.php";
+
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
-		'primary' => __( 'Primary Menu', 'wp-foundation' ),
+	  'primary' => __( 'Primary Menu', 'wp-foundation' ),
+	  'footer' => __( 'Footer Menu', 'wp-foundation' )
 	) );
-	
+
 	/*
 	 * Switch default core markup for search form, comment form, and comments
 	 * to output valid HTML5.
@@ -92,9 +95,22 @@ add_action( 'widgets_init', 'wp_foundation_widgets_init' );
  * Enqueue scripts and styles.
  */
 function wp_foundation_scripts() {
+
+	wp_enqueue_script( 'jquery' );
+	
 	wp_enqueue_style( 'wp-foundation-style', get_stylesheet_uri() );
 
 	wp_enqueue_script( 'wp-foundation-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
+
+	wp_enqueue_script('modernizr', get_template_directory_uri() . '/js/modernizr.js', array('jquery'), '1.0.0', true);
+	
+	wp_enqueue_script('foundation-js', get_template_directory_uri() . '/js/foundation.min.js', array('jquery', 'modernizr'), '1.0.0', true);
+	
+	wp_enqueue_script('main', get_template_directory_uri() . '/js/main.js', array('jquery', 'foundation-js'), '1.0.0', true);
+
+
+add_action('wp_enqueue_scripts', 'wpf_scripts');
+
 
 	wp_enqueue_script( 'wp-foundation-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
 
