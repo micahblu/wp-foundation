@@ -6922,18 +6922,6 @@ etc..
 /*--------------------------------------------------------------
 2.0 Typography
 --------------------------------------------------------------*/
-body,
-button,
-input,
-select,
-textarea {
-  color: #404040;
-  font-family: sans-serif;
-  font-size: 16px;
-  font-size: 1.6rem;
-  line-height: 1.5;
-}
-
 h1, h2, h3, h4, h5, h6 {
   clear: both;
 }
@@ -7063,6 +7051,36 @@ table {
 
 th {
   font-weight: bold;
+}
+
+input[type="submit"] {
+  border-style: solid;
+  border-width: 0px;
+  cursor: pointer;
+  font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+  font-weight: normal;
+  line-height: normal;
+  margin: 0 0 1.25rem;
+  position: relative;
+  text-decoration: none;
+  text-align: center;
+  -webkit-appearance: none;
+  -webkit-border-radius: 0;
+  display: inline-block;
+  padding-top: 1rem;
+  padding-right: 2rem;
+  padding-bottom: 1.0625rem;
+  padding-left: 2rem;
+  font-size: 1rem;
+  background-color: #008cba;
+  border-color: #007095;
+  color: white;
+}
+input[type="submit"]:hover, input[type="submit"]:focus {
+  background-color: #007095;
+}
+input[type="submit"]:hover, input[type="submit"]:focus {
+  color: white;
 }
 
 /*--------------------------------------------------------------
@@ -7332,6 +7350,7 @@ th {
   margin-bottom: 0;
   max-width: 62.5rem;
   font-size: 16px;
+  padding-bottom: 1em;
 }
 #colophon:before, #colophon:after {
   content: " ";
