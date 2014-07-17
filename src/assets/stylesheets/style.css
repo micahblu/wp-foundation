@@ -7181,6 +7181,11 @@ input[type="submit"]:hover, input[type="submit"]:focus {
   width: 50%;
 }
 
+/* Top bar */
+.top-bar-section ul:first-child {
+  float: right;
+}
+
 /*--------------------------------------------------------------
 6.0 Accessibility
 --------------------------------------------------------------*/
