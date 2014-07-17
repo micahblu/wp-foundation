@@ -33,8 +33,8 @@
 
   wp_nav_menu(array(
 		  'menu' => 'main_menu', 
-		  'menu_class' => 'right',
-		  'container_id' => 'cssmenu', 
+		  'menu_class' => '',
+		  'container_id' => 'menu', 
 		  'walker' => new WPF_Menu_Walker()
 		));
 	?>
