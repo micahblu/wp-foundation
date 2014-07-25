@@ -69,6 +69,25 @@ function wp_foundation_setup() {
 		'default-color' => 'ffffff',
 		'default-image' => '',
 	) ) );
+
+	/*
+	 * WooCommerce Support
+	 */
+	remove_action( 'woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10);
+	remove_action( 'woocommerce_after_main_content', 'woocommerce_output_content_wrapper_end', 10);
+
+	add_action('woocommerce_before_main_content', 'wp_foundation_wrapper_start', 10);
+	add_action('woocommerce_after_main_content', 'wp_foundation_wrapper_end', 10);
+
+	function wp_foundation_wrapper_start() {
+	  echo '<section id="main" class="row">';
+	}
+
+	function wp_foundation_wrapper_end() {
+	  echo '</section>';
+	}
+
+	add_theme_support( 'woocommerce' );
 }
 endif; // wp_foundation_setup
 add_action( 'after_setup_theme', 'wp_foundation_setup' );

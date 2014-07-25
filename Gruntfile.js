@@ -81,8 +81,8 @@ module.exports = function(grunt) {
 		    stage: {
 		        options: {
 		            src: "dist/",
-		            dest: "/var/www/vhosts/default/subdomains/lab/wp-foundation/wp-content/themes/wp-foundation/",
-		            host: "micahblu@micahblu.com",
+		            dest: "/remote/path",
+		            host: "you@site.com",
 		            syncDestIgnoreExcl: true
 		        }
 		    }
