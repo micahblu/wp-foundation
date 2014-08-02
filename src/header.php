@@ -29,19 +29,18 @@
   </ul>
 
   <section class="top-bar-section">
-  <?php 
-
-  wp_nav_menu(array(
-		  'menu' => 'main_menu', 
-		  'menu_class' => '',
-		  'container_id' => 'menu', 
-		  'walker' => new WPF_Menu_Walker()
-		));
+  <?php
+  	wp_nav_menu(array(
+	  'menu' => 'main_menu', 
+	  'menu_class' => '',
+	  'container_id' => 'menu', 
+	  'walker' => new WPF_Menu_Walker()
+	));
 	?>
   </section>
 </nav>
 
-<div id="page" class="hfeed site">
+<div id="page" class="hfeed site row">
 	<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'wp-foundation' ); ?></a>
 
 	<header id="masthead" class="site-header" role="banner">

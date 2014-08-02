@@ -1,44 +1,22 @@
 #masthead {
-	@include grid-row;
 
-	.site-branding {
-		@include grid-column(12);
-	}
 }
 
 #content {
-	@include grid-row;
 	
 	padding-top: 1em;
 
 	#primary {
 		
-		@include grid-column(12);
-
-		@media #{$medium-up} { 
-			@include grid-column(8);
-		}
 
 	}
 
 	#secondary {
 
-		@include grid-column(12);
-		
-		@media #{$medium-up} {
-			@include grid-column(4);
-		}
+
 	}
 }
 
 #colophon {
-	@include grid-row;
-
-	font-size: 16px;
-
-	padding-bottom: 1em;
-
-	.site-info {
-		@include grid-column(12);
-	}
+	
 }
