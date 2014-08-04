@@ -1,7 +1,7 @@
 WP Foundation
 ===
 
-A Wordpress theme based on Foundation 5 and Underscores
+A Wordpress starter theme based on Foundation 5 and Underscores
 
 Please fork, copy, modify, delete, share or do whatever you like with this. 
 
