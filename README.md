@@ -10,10 +10,13 @@ All contributions are welcome!
 ## Requirements
 
 *You'll need to have the following items installed before continuing.*
+  - [Sass](http://sass-lang.com/): Please use Sass 3.3 or 3.2, 3.4 conflicts with Foundation 5.4
+  - [Ruby](https://www.ruby-lang.org/): Needed for Sass
+  - [Ruby Gems](https://rubygems.org/): Used to install Sass
+  - [Node.js](http://nodejs.org): Use the installer provided on the NodeJS website.
+  - [Grunt](http://gruntjs.com/): Run `[sudo] npm install -g grunt-cli`
+  - [Bower](http://bower.io): Run `[sudo] npm install -g bower`
 
-  * [Node.js](http://nodejs.org): Use the installer provided on the NodeJS website.
-  * [Grunt](http://gruntjs.com/): Run `[sudo] npm install -g grunt-cli`
-  * [Bower](http://bower.io): Run `[sudo] npm install -g bower`
 
 ## Quickstart
 
@@ -23,18 +26,16 @@ The default grunt task will build your dist ready version in a folder called dis
 
 ```bash
 cd my-wordpress-folder/wp-content/themes/
-git clone git@github.com:micahblu/wp-foundation.git
-mv wp-foundation your-theme-name
-cd your-theme-name
+git clone https://github.com/micahblu/wp-foundation.git
+mv wp-foundation .wp-foundation
+cd .wp-foundation
 npm install && bower install
 grunt
 ```
 
-While you're working on your project, run:
+When you're ready to generate the actual theme files run: `grunt`. It will create a dist folder with all the theme files ready to be used as wordpress theme or parent theme.
 
-`grunt`
-
-And you're set!
+** Notice that I do `mv wp-foundation .wp-foundation`. Since you're likely to install the project in your `wp-content/themes` directory, you'll want to hide the actual project directory from Wordpress, otherwise you may see duplicate themes in appearance/themes once you've run grunt as it will build your actual theme in the theme directory as well as the dist folder.
 
 Check for Foundation Updates? Run:
 `foundation update` 
