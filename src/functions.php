@@ -81,9 +81,11 @@ function wp_foundation_setup() {
 
 	function wp_foundation_wrapper_start() {
 	  echo '<section id="main" class="row">';
+	  echo '	<div class="large-12 columns">';
 	}
 
 	function wp_foundation_wrapper_end() {
+		echo '	</div>';
 	  echo '</section>';
 	}
 
