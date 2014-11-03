@@ -31,3 +31,5 @@ Thumbs.db
 node_modules/
 sftp-config.json
 dist/
+src/vendors/
+src/assets/stylesheets/
