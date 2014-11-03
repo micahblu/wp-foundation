@@ -40,14 +40,16 @@
   </section>
 </nav>
 
-<div id="page" class="hfeed site row">
+<div id="page" class="hfeed site">
 	<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'wp-foundation' ); ?></a>
 
-	<header id="masthead" class="site-header" role="banner">
-		<div class="site-branding">
-			<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-			<small class="site-description"><?php bloginfo( 'description' ); ?></small>
-		</div>	
-	</header><!-- #masthead -->
+	<div class="row">
+		<header id="masthead" class="large-12 columns site-header" role="banner">
+			<div class="site-branding">
+				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+				<small class="site-description"><?php bloginfo( 'description' ); ?></small>
+			</div>
+		</header><!-- #masthead -->
+	</div>
 
-	<div id="content" class="site-content">
+	<div id="content" class="site-content row">

@@ -67,33 +67,45 @@ module.exports = function(grunt) {
 		},
 
 		rsync: {
-		    options: {
-		        args: ["--verbose"],
-		        exclude: [".git*","*.scss","node_modules"],
-		        recursive: true
-		    },
-		    dist: {
-		        options: {
-		            src: "./dist/",
-		            dest: "../wp-foundation/"
-		        }
-		    },
-		    stage: {
-		        options: {
-		            src: "dist/",
-		            dest: "/remote/path",
-		            host: "you@site.com",
-		            syncDestIgnoreExcl: true
-		        }
-		    }
+	    options: {
+        args: ["--verbose"],
+        exclude: [".git*","*.scss","node_modules"],
+        recursive: true
+	    },
+	    dist: {
+        options: {
+          src: "./dist/",
+          dest: "../wp-foundation/"
+        }
+	    },
+	    stage: {
+        options: {
+          src: "dist/",
+          dest: "/remote/path",
+          host: "you@site.com",
+          syncDestIgnoreExcl: true
+        }
+	    }
+		},
+
+		watch: {
+			php: {
+				files: ['src/**/*.php'],
+				tasks: ['copy:php', 'rsync:dist']
+			},
+			sass: {
+				files: ['src/assets/sass/**/*.scss'],
+				tasks: ['sass']
+			}
 		}
 	});
 
 	grunt.loadNpmTasks('grunt-contrib-copy');
 	grunt.loadNpmTasks('grunt-contrib-sass');
 	grunt.loadNpmTasks('grunt-rsync');
+	grunt.loadNpmTasks('grunt-contrib-watch');
 
-	grunt.registerTask('default', ['sass', 'copy', 'rsync:dist']);
+	grunt.registerTask('default', ['sass', 'copy', 'rsync:dist', 'watch']);
 
 	grunt.registerTask('deploy', ['rsync:stage']);
 
