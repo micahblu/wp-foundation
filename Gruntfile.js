@@ -63,6 +63,13 @@ module.exports = function(grunt) {
 				cwd: 'src',
 				src: ['languages/*'],
 				dest: 'dist/'
+			},
+
+			screenshot: {
+				expand: true,
+				cwd: 'src',
+				src: 'screenshot.png',
+				dest: 'dist/'
 			}
 		},
 
