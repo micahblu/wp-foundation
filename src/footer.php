@@ -13,7 +13,7 @@
 	<footer id="colophon" class="site-footer row" role="contentinfo">
 		<div class="site-info large-12 columns">
 			<a target="_blank" href="<?php echo esc_url( __( 'http://wordpress.org/', 'wp-foundation' ) ); ?>"><?php printf( __( 'Proudly powered by %s', 'wp-foundation' ), 'WordPress' ); ?></a>
-			<span class="sep"> | </span>
+			<span class="sep"> and </span>
 			<a target="_blank" href="https://github.com/micahblu/wp-foundation"><?php printf( __( 'Theme: %1$s.', 'wp-foundation' ), 'WP Fgitoundation'); ?></a>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
