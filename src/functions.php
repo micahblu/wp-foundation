@@ -40,7 +40,7 @@ function wp_foundation_setup() {
 	 */
 	//add_theme_support( 'post-thumbnails' );
 
-	include "inc/WPFMenuWalker.php";
+	include "inc/WPFoundationMenuWalker.php";
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(

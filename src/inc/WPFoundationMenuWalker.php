@@ -1,5 +1,5 @@
 <?php
-class WPF_Menu_Walker extends Walker {
+class WP_Foundation_Menu_Walker extends Walker {
 
   var $db_fields = array( 'parent' => 'menu_item_parent', 'id' => 'db_id' );
   

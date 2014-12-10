@@ -23,6 +23,13 @@ module.exports = function(grunt) {
 				dest: 'dist/'
 			},
 
+			readme: {
+				expand: true,
+				cwd: 'src',
+				src: ['readme.txt'],
+				dest: 'dist/'
+			},
+
 			css: {
 				expand: true,
 				cwd: 'src/assets/stylesheets',
@@ -40,7 +47,7 @@ module.exports = function(grunt) {
 			foundation_js: {
 				expand: true,
 				cwd: 'src/vendors/foundation/js/',
-				src: ['foundation.min.js'],
+				src: ['foundation.js', 'foundation.min.js'],
 				dest: 'dist/js/'
 			},
 

@@ -43,7 +43,7 @@ if ( ! function_exists( 'wp_foundation_header_style' ) ) :
  * @see wp_foundation_custom_header_setup().
  */
 function wp_foundation_header_style() {
-	$header_text_color = get_header_textcolor();
+	$header_text_color = esc_attr(get_header_textcolor());
 
 	// If no custom options for text are set, let's bail
 	// get_header_textcolor() options: HEADER_TEXTCOLOR is default, hide text (returns 'blank') or any hex value
